@@ -1,0 +1,2 @@
+// Blocking head bootstrap: choose the font stack before styles render.
+(()=>{const root=document.documentElement;const platform=navigator.userAgentData?.platform||navigator.platform||navigator.userAgent;let language=root.lang;try{if(!language&&window.parent!==window)language=window.parent.document.documentElement.lang;}catch{}language=(language||'en').toLowerCase();root.dataset.fontPlatform=/mac|iphone|ipad|ipod/i.test(platform)?'mac':'windows';root.dataset.fontLanguage=language.startsWith('zh')?'zh':language.startsWith('ja')?'ja':'latin';})();

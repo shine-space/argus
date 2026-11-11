@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[47873,["$3","$4","$5","$6","$d","$e"],"default"]
+14:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+15:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[97367,["$3","$4","$5","$6"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$3","$4","$5","$6"],"$1a"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#定义工作职责","title":"定义工作职责"},{"depth":2,"url":"#连接能力","title":"连接能力"},{"depth":2,"url":"#测试与发布","title":"测试与发布"},{"depth":2,"url":"#管理持续运行","title":"管理持续运行"}],"children":[["$","$L10",null,{"children":"Agent 与数字员工"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"配置数字员工的职责、知识、数据和工具，让它在授权范围内工作。"}],"\n",["$","$L12",null,{"as":"h2","id":"定义工作职责","children":"定义工作职责"}],"\n",["$","p",null,{"children":"说明员工负责的任务、输入与输出、何时需要追问以及哪些步骤交给人办理。岗位名称应对应可以复核的业务结果。"}],"\n",["$","$L12",null,{"as":"h2","id":"连接能力","children":"连接能力"}],"\n",["$","p",null,{"children":"为 Agent 选择需要的模型、知识、数据、Workflow 和工具。按任务授予必要资源范围；不在提示词里放置账号、密码或永久密钥。"}],"\n",["$","$L12",null,{"as":"h2","id":"测试与发布","children":"测试与发布"}],"\n",["$","p",null,{"children":"准备正常、缺失信息、无权访问和工具失败等样例。检查员工能否给出有依据的结果、明确人工边界并保留运行记录，然后按应用发布流程使用。"}],"\n",["$","$L12",null,{"as":"h2","id":"管理持续运行","children":"管理持续运行"}],"\n",["$","p",null,{"children":"跟踪实际任务状态、工具回执和结果。暂停或撤回访问后，新请求应遵循当前状态；在途任务如何处理需遵守该版本及业务合同。"}],"\n",["$","p",null,{"children":["通过",["$","$L13",null,{"href":"/api/#group-agents","children":"Agent 接口"}],"可管理授权资源；业务前端优先从应用运行入口调用，以保持应用上下文。"]}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"agents","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Agent 与数字员工 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1c","v":null,"s":"$b"}},"a":"$@1d","u":"$@1e","b":"xjybtJKVRSLowHaKRAZp5"}
+16:null
+1e:true
+b:300
+b:C
+1d:0
+9:"$undefined"
+1c:"$undefined"
+17:"$undefined"

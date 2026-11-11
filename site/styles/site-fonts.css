@@ -1,0 +1,18 @@
+/* Default text stacks, selected before first paint by OS and document language. */
+:root{
+ --ty-font-text-mac-latin:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+ --ty-font-text-mac-zh:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Hiragino Sans","SF Pro Text",system-ui,"Noto Sans SC","Helvetica Neue",Helvetica,Arial,sans-serif;
+ --ty-font-text-mac-ja:"Hiragino Sans","Hiragino Kaku Gothic ProN",-apple-system,BlinkMacSystemFont,"PingFang SC","SF Pro Text",system-ui,"Noto Sans JP","Helvetica Neue",Helvetica,Arial,sans-serif;
+ --ty-font-text-windows-latin:"Segoe UI",system-ui,Roboto,"Noto Sans","Helvetica Neue",Arial,sans-serif;
+ --ty-font-text-windows-zh:"Inter","PingFang SC",-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica Neue","Arial","Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+ --ty-font-text-windows-ja:Meiryo,"Yu Gothic UI","Segoe UI",system-ui,Roboto,"Noto Sans JP","Helvetica Neue",Arial,sans-serif;
+ --ty-font-text:var(--ty-font-text-windows-latin);
+}
+:root[data-font-platform="mac"]{--ty-font-text:var(--ty-font-text-mac-latin)}
+:root[data-font-platform="mac"][data-font-language="zh"]{--ty-font-text:var(--ty-font-text-mac-zh)}
+:root[data-font-platform="mac"][data-font-language="ja"]{--ty-font-text:var(--ty-font-text-mac-ja)}
+:root[data-font-platform="windows"][data-font-language="zh"]{--ty-font-text:var(--ty-font-text-windows-zh)}
+:root[data-font-platform="windows"][data-font-language="ja"]{--ty-font-text:var(--ty-font-text-windows-ja)}
+body.site-marketing{font-family:var(--ty-font-text)}
+body.site-marketing .fc{font-family:var(--ty-font-text)!important;--fc-font-b:var(--ty-font-text);--fc-font-m:var(--ty-font-text)}
+body.site-marketing :is(button,input,textarea,select){font-family:var(--ty-font-text)!important}

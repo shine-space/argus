@@ -1,0 +1,22 @@
+html[data-overlayscrollbars-viewport],
+[data-site-scroll-viewport] {
+  scrollbar-gutter: auto !important;
+}
+
+[data-site-scroll-viewport][data-overlayscrollbars] {
+  position: var(--site-scroll-position, relative);
+}
+
+.site-scrollbar {
+  --os-size: 9px;
+  --os-padding-perpendicular: 2px;
+  --os-padding-axis: 2px;
+  --os-handle-border-radius: 999px;
+  --os-handle-bg: rgb(114 113 111 / 68%);
+  --os-handle-bg-hover: rgb(114 113 111 / 86%);
+  --os-handle-bg-active: rgb(114 113 111 / 96%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-scrollbar { transition: none; }
+}

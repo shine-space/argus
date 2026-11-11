@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[47873,["$3","$4","$5","$6","$d","$e"],"default"]
+14:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+15:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[97367,["$3","$4","$5","$6"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$3","$4","$5","$6"],"$1a"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#选择协作范围","title":"选择协作范围"},{"depth":2,"url":"#多位数字员工协作","title":"多位数字员工协作"},{"depth":2,"url":"#人类业务行动","title":"人类业务行动"},{"depth":2,"url":"#结果复核","title":"结果复核"}],"children":[["$","$L10",null,{"children":"团队、项目与协作"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"在明确的团队和项目范围内共享上下文、分派行动与复核结果。"}],"\n",["$","$L12",null,{"as":"h2","id":"选择协作范围","children":"选择协作范围"}],"\n",["$","p",null,{"children":"团队承载长期工作上下文，项目围绕具体目标组织成员和应用。共享范围由企业和对象权限决定，不因员工参与对话而自动扩大。"}],"\n",["$","$L12",null,{"as":"h2","id":"多位数字员工协作","children":"多位数字员工协作"}],"\n",["$","p",null,{"children":"按项目参与关系与授权发现和委派工作，查看任务进展及结果。每位员工的职责和最终交付责任应清楚；委派不意味着私有会话或全部资源互通。"}],"\n",["$","$L12",null,{"as":"h2","id":"人类业务行动","children":"人类业务行动"}],"\n",["$","p",null,{"children":"从业务记录创建行动，指定责任人、期限及是否需要验收。行动可以经历开始、提交完成、验收、退回或取消，允许的操作由当前状态和权限决定。"}],"\n",["$","$L12",null,{"as":"h2","id":"结果复核","children":"结果复核"}],"\n",["$","p",null,{"children":"查看行动与原记录、版本和实际回执的关联。消息送达、AI 运行完成和业务验收是不同状态。"}],"\n",["$","p",null,{"children":["开发者可阅读",["$","$L13",null,{"href":"/records/","children":"业务记录与行动"}],"及",["$","$L13",null,{"href":"/api/#group-organization","children":"组织接口"}],"。"]}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"collaboration","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"团队、项目与协作 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1c","v":null,"s":"$b"}},"a":"$@1d","u":"$@1e","b":"xjybtJKVRSLowHaKRAZp5"}
+16:null
+1e:true
+b:300
+b:C
+1d:0
+9:"$undefined"
+1c:"$undefined"
+17:"$undefined"

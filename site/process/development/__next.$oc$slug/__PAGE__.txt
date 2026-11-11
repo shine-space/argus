@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[47873,["$3","$4","$5","$6","$d","$e"],"default"]
+14:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+15:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[97367,["$3","$4","$5","$6"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$3","$4","$5","$6"],"$1a"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#开发边界","title":"开发边界"},{"depth":2,"url":"#两种扩展方式","title":"两种扩展方式"},{"depth":2,"url":"#建议的接入顺序","title":"建议的接入顺序"},{"depth":2,"url":"#获取接口合同","title":"获取接口合同"}],"children":[["$","$L10",null,{"children":"开发者概览"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"通过稳定接口扩展本地部署的平台，不依赖后端源码。"}],"\n",["$","$L12",null,{"as":"h2","id":"开发边界","children":"开发边界"}],"\n",["$","p",null,{"children":"平台提供商业软件运行服务、受授权接口和按约定交付的前端开发包。业务界面可以在交付范围内修改；平台内核、执行引擎和服务端领域规则通过接口使用。"}],"\n",["$","$L12",null,{"as":"h2","id":"两种扩展方式","children":"两种扩展方式"}],"\n",["$","ul",null,{"children":["\n",["$","li",null,{"children":"独立业务前端：使用客户平台地址、认证流程、公开接口和配套 SDK 构建页面。"}],"\n",["$","li",null,{"children":"业务系统集成：由客户或实施团队维护独立业务服务，通过批准的 HTTP/MCP 工具与平台协作。"}],"\n"]}],"\n",["$","p",null,{"children":"平台内受控工作台包另有宿主和包版本要求。当前不能把任意远程 JavaScript 上传并当作平台内插件运行。"}],"\n",["$","$L12",null,{"as":"h2","id":"建议的接入顺序","children":"建议的接入顺序"}],"\n",["$","p",null,{"children":"先完成身份、工作区和当前应用上下文读取，再实现一次任务提交和原任务查询。随后接入文件、流式显示、业务记录及必要的写入。"}],"\n",["$","p",null,{"children":"每一步都覆盖无权限、版本变化、请求超时和重复操作。专业业务状态由相应领域服务返回，前端不自行将模型文字转换为已审批或已完成。"}],"\n",["$","$L12",null,{"as":"h2","id":"获取接口合同","children":"获取接口合同"}],"\n",["$","p",null,{"children":["从",["$","$L13",null,{"href":"/api/","children":"接口目录"}],"查看请求、参数和结果；也可下载",["$","a",null,{"href":"/process/openapi.json","children":"OpenAPI 合同","download":true}],"。接口中出现的相对路径均属于客户自己的部署实例。文档站不提供可直接执行业务的公共 API。"]}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"development","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"开发者概览 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1c","v":null,"s":"$b"}},"a":"$@1d","u":"$@1e","b":"xjybtJKVRSLowHaKRAZp5"}
+16:null
+1e:true
+b:300
+b:C
+1d:0
+9:"$undefined"
+1c:"$undefined"
+17:"$undefined"

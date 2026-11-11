@@ -1,0 +1,55 @@
+/* Shared text-color contract. Surface colors intentionally remain separate. */
+:root{
+ --site-ink:#0e0f12;
+ --site-inverse:#fff;
+ --site-accent:#f36a4b;
+ --site-text-on-light-primary:var(--site-ink);
+ --site-text-on-light-secondary:#5d605d;
+ --site-text-on-light-muted:#686c66;
+ --site-text-primary:var(--site-text-on-light-primary);
+ --site-text-secondary:var(--site-text-on-light-secondary);
+ --site-text-muted:var(--site-text-on-light-muted);
+ --site-text-on-dark-primary:var(--site-inverse);
+ --site-text-on-dark-secondary:rgb(255 255 255 / .78);
+ --site-text-on-dark-muted:rgb(255 255 255 / .58);
+ --site-text-accent:#a43d27;
+ --site-text-danger:#b42a1e;
+ --site-text-success:#326044;
+}
+body.site-marketing .fc{
+ --fc-ink:var(--site-ink)!important;
+ --fc-cloud:var(--site-inverse)!important;
+ --fc-brass:var(--site-accent)!important;
+ --fc-mut:var(--site-text-secondary)!important;
+}
+body.site-marketing :is(.fc-dark,.fcph,.fch,.fcsv-top,.fcx,header.fchd,footer){
+ --site-text-primary:var(--site-text-on-dark-primary);
+ --site-text-secondary:var(--site-text-on-dark-secondary);
+ --site-text-muted:var(--site-text-on-dark-muted);
+ --site-text-accent:var(--site-accent);
+ --fc-mut:var(--site-text-on-dark-secondary)!important;
+}
+body.site-marketing.site-marketing :is(:is(.site-type-hero,[data-site-type="hero"]),:is(.site-type-section,[data-site-type="section"]),:is(.site-type-card,[data-site-type="card"])){color:var(--site-text-primary)!important}
+body.site-marketing.site-marketing :is(:is(.site-type-description,[data-site-type="description"]),:is(.site-type-body,[data-site-type="body"])){color:var(--site-text-secondary)!important}
+body.site-marketing :is(.fchd-tx em,.fco-tag,.fcx-note,.fcpr-note,.fcsl-n,.fcpr-for){color:var(--site-text-secondary)!important}
+#features{
+ --token-3bf0a10b-4dab-42c3-8458-18291b3ca711:var(--site-ink)!important;
+ --token-c54891c0-6b81-4414-8e0f-b7ce6f68d49e:var(--site-text-secondary)!important;
+ --token-5a9e7cd1-8ba9-4735-baae-fa83e0646a1e:var(--site-text-muted)!important;
+ --token-a02e268c-c118-452f-a8e8-fed783e17050:var(--site-accent)!important;
+}
+#features h4{color:var(--site-text-primary)!important}
+#features .framer-gp25bj p{color:var(--site-text-secondary)!important}
+#features .framer-1v2ekdz p{color:var(--site-accent)!important}
+
+body.site-marketing .fcsl-n{color:var(--site-text-accent)!important}
+
+/* Light cards nested inside dark presentation panels must own their text theme. */
+body.site-marketing :is(.site-surface-light,.fc-lt,.service-workbench-preview,workbench-illustration){
+ --site-text-primary:var(--site-text-on-light-primary);
+ --site-text-secondary:var(--site-text-on-light-secondary);
+ --site-text-muted:var(--site-text-on-light-muted);
+ --site-text-accent:#a43d27;
+ --fc-mut:var(--site-text-on-light-secondary)!important;
+ color:var(--site-text-on-light-primary);
+}

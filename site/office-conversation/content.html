@@ -1,0 +1,80 @@
+<section class="conversation-stage" aria-label="用户端与数字员工的对话演示">
+  <aside class="office-navigation" aria-label="用户端主导航展示">
+    <div class="navigation-brand-row"><img class="navigation-brand-logo" src="/office-conversation/assets/logo.svg" alt="朝夕智能"><img class="navigation-brand-mark" src="/office-conversation/assets/logo-mark.svg" alt="朝夕智能"><span class="navigation-brand-actions" aria-hidden="true"><svg><use href="#icon-search"></use></svg><svg><use href="#icon-sidebar"></use></svg></span></div>
+    <div class="navigation-fixed-links" aria-label="工作区导航展示">
+      <div class="navigation-primary-action" aria-label="工作台"><svg><use href="#icon-monitor"></use></svg><span>工作台</span></div>
+      <div class="navigation-primary-action" aria-label="概览"><svg><use href="#icon-gauge"></use></svg><span>概览</span></div>
+      <div class="navigation-primary-action" aria-label="资料库"><svg><use href="#icon-folder"></use></svg><span>资料库</span></div>
+      <div class="navigation-primary-action" aria-label="人才与技能"><svg><use href="#icon-store"></use></svg><span>人才与技能</span></div>
+    </div>
+    <div class="navigation-section-header"><span>全部对话<svg><use href="#icon-chevron"></use></svg></span><svg aria-hidden="true"><use href="#icon-circle-plus"></use></svg></div>
+    <div class="navigation-item-list">
+      <div class="navigation-content-row is-active" aria-current="true"><img class="navigation-application-icon" src="/office-conversation/assets/employee-analyst.png" alt="经营分析专员"><div class="navigation-content-copy"><span class="navigation-content-label">经营分析专员</span><span class="navigation-content-latest">正在核对订单与物料</span></div></div>
+      <div class="navigation-content-row"><span class="navigation-project-icon navigation-project-icon-group" data-count="3" role="img" aria-label="订单交付保障的团队组合头像"><img src="/office-conversation/assets/employee-purchasing.png" alt=""><img class="is-administrator" src="/office-conversation/assets/employee-finance.png" alt=""><img src="/office-conversation/assets/employee-planner.png" alt=""></span><div class="navigation-content-copy"><span class="navigation-content-label">订单交付保障</span><span class="navigation-content-latest">补货与排产方案已汇总</span></div></div>
+      <div class="navigation-content-row"><img class="navigation-application-icon" src="/office-conversation/assets/employee-purchasing.png" alt="采购专员"><div class="navigation-content-copy"><span class="navigation-content-label">采购专员</span><span class="navigation-content-latest">供应商报价比选</span></div></div>
+      <div class="navigation-content-row"><img class="navigation-application-icon" src="/office-conversation/assets/employee-planner.png" alt="生产计划专员"><div class="navigation-content-copy"><span class="navigation-content-label">生产计划专员</span><span class="navigation-content-latest">本周产线安排已整理</span></div></div>
+      <div class="navigation-content-row"><span class="navigation-project-icon navigation-project-icon-group" data-count="3" role="img" aria-label="经营日报的团队组合头像"><img src="/office-conversation/assets/employee-product.png" alt=""><img class="is-administrator" src="/office-conversation/assets/employee-analyst.png" alt=""><img src="/office-conversation/assets/employee-finance.png" alt=""></span><div class="navigation-content-copy"><span class="navigation-content-label">经营日报</span><span class="navigation-content-latest">销售、成本与交付进度</span></div></div>
+    </div>
+    <div class="navigation-footer"><div class="navigation-mode"><span class="is-selected">日常办公</span><span>应用构建</span></div><div class="navigation-team"><span class="team-avatar">朝</span><span class="team-name">朝夕智能<svg><use href="#icon-chevron"></use></svg></span><svg class="team-settings"><use href="#icon-settings"></use></svg></div></div>
+  </aside>
+  <div class="conversation-title">订单交付方案核对</div>
+  <div class="task-island-positioner" role="status" aria-label="经营分析专员，任务执行中">
+    <img class="employee-avatar" src="/office-conversation/assets/employee-analyst.png" alt="">
+    <div class="task-island-copy"><strong>经营分析专员</strong><span>任务执行中</span></div>
+    <i class="running-indicator" aria-hidden="true"></i>
+  </div>
+  <div class="conversation-quick-nav" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="thread-viewport">
+    <div class="thread-content">
+      <article class="message-row user-message-row" data-stage="正在读取订单与物料资料">
+        <div class="message-column">
+          <div class="user-message-surface">请核对订单 ZX-1028 的物料与排产，11 月 5 日交付 1,000 件，整理一份可评审的交付方案</div>
+          <div class="message-attachments"><span><svg><use href="#icon-file"></use></svg>订单交付计划.xlsx</span><span><svg><use href="#icon-file"></use></svg>库存与在途明细.csv</span></div>
+        </div>
+      </article>
+      <article class="message-row assistant-message-row" data-stage="正在核对库存与在途数量">
+        <div class="assistant-identity"><img class="employee-avatar" src="/office-conversation/assets/employee-analyst.png" alt=""><span>经营分析专员</span></div>
+        <div class="assistant-body">
+          <div class="thinking-trigger"><svg class="thinking-mark"><use href="#icon-sparkle"></use></svg><span>思考与执行</span><i></i><span>执行中 · 3 项</span><svg class="chevron"><use href="#icon-chevron"></use></svg></div>
+          <p>收到。我先查库存和在途物料，再结合产线安排判断交付风险。关键变更请你确认</p>
+          <ol class="execution-steps"><li><svg><use href="#icon-check"></use></svg>已读取订单交付计划</li><li><svg><use href="#icon-check"></use></svg>已关联库存与在途明细</li><li class="is-running"><span class="loading-ring"></span>正在核对物料齐套情况</li></ol>
+        </div>
+      </article>
+      <article class="message-row assistant-message-row" data-stage="正在分析物料齐套情况">
+        <div class="assistant-identity"><img class="employee-avatar" src="/office-conversation/assets/employee-analyst.png" alt=""><span>经营分析专员</span></div>
+        <div class="assistant-body"><p>物料已核对，还缺 160 件。正在查供应商交期和产线可用时间</p>
+          <table class="material-table"><thead><tr><th>核对项目</th><th>数量</th><th>核对结果</th></tr></thead><tbody><tr><td>可用库存</td><td>640 件</td><td><span class="result-dot"></span>可安排生产</td></tr><tr><td>确认在途</td><td>200 件</td><td>明日下午到货</td></tr><tr><td>待补物料</td><td>160 件</td><td class="attention">需确认加急方案</td></tr></tbody></table>
+          <div class="source-line"><svg><use href="#icon-link"></use></svg>依据：库存与在途明细.csv · 订单交付计划.xlsx</div>
+        </div>
+      </article>
+      <article class="message-row user-message-row" data-stage="正在结合业务要求调整方案"><div class="message-column"><div class="user-message-surface">先保证现有订单，160 件缺口优先考虑加急补货，费用确认后再下单</div></div></article>
+      <article class="message-row assistant-message-row" data-stage="正在整理交付方案与核对依据">
+        <div class="assistant-identity"><img class="employee-avatar" src="/office-conversation/assets/employee-analyst.png" alt=""><span>经营分析专员</span></div>
+        <div class="assistant-body"><div class="thinking-trigger"><svg class="thinking-mark"><use href="#icon-sparkle"></use></svg><span>思考与执行</span><i></i><span>正在整理方案</span><svg class="chevron"><use href="#icon-chevron"></use></svg></div><p>现有订单仍优先安排，加急费用等你确认。方案草稿已整理好，正在补充排产时间和引用来源</p>
+          <div class="delivery-file"><span class="file-symbol"><svg><use href="#icon-file"></use></svg></span><div><strong>订单交付保障方案.md</strong><span>方案草稿 · 物料、排产与待确认事项</span></div><svg class="file-arrow"><use href="#icon-arrow-out"></use></svg></div>
+        </div>
+      </article>
+    </div>
+  </div>
+  <div class="composer-footer"><div class="composer-root" aria-label="消息输入框展示"><span class="composer-add" aria-hidden="true"><svg><use href="#icon-plus"></use></svg></span><div class="composer-placeholder">继续向数字员工交办任务…</div><span class="composer-stop" aria-label="任务执行中"><i></i></span></div></div>
+  <div class="conversation-tools" aria-label="数字员工工作区工具展示"><span aria-label="设置"><svg><use href="#icon-settings"></use></svg></span><span aria-label="文件"><svg><use href="#icon-folder"></use></svg></span><span aria-label="Skill 技能"><svg><use href="#icon-sparkle"></use></svg></span><span aria-label="定时任务"><svg><use href="#icon-clock"></use></svg></span><span aria-label="记忆"><svg><use href="#icon-brain"></use></svg></span><span aria-label="运行记录"><svg><use href="#icon-monitor"></use></svg></span></div>
+  <svg class="icon-definitions" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="icon-sidebar" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18"/></symbol>
+    <symbol id="icon-gauge" viewBox="0 0 24 24"><path d="m12 14 4-4M3.3 19a10 10 0 1 1 17.4 0"/></symbol>
+    <symbol id="icon-store" viewBox="0 0 24 24"><path d="M4 10v10h16V10M3 10l3-7h12l3 7M3 10c1.5 2 3 2 4.5 0 1.5 2 3 2 4.5 0 1.5 2 3 2 4.5 0 1.5 2 3 2 4.5 0M9 20v-6h6v6"/></symbol>
+    <symbol id="icon-circle-plus" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></symbol>
+    <symbol id="icon-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></symbol>
+    <symbol id="icon-sparkle" viewBox="0 0 24 24"><path d="m12 3 2.4 6.6L21 12l-6.6 2.4L12 21l-2.4-6.6L3 12l6.6-2.4Z"/></symbol>
+    <symbol id="icon-chevron" viewBox="0 0 24 24"><path d="m8 10 4 4 4-4"/></symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-2 2M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l2-2"/></symbol>
+    <symbol id="icon-arrow-out" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><path d="m9 3-1 3-3 1v4l-2 1 2 2v3l3 1 1 3h5l1-3 3-1v-3l2-2-2-1V7l-3-1-1-3Z"/><circle cx="11.5" cy="12" r="3"/></symbol>
+    <symbol id="icon-folder" viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7ZM3 9h18"/></symbol>
+    <symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6M12 2v3"/></symbol>
+    <symbol id="icon-brain" viewBox="0 0 24 24"><path d="M12 4a3 3 0 0 0-6-1 4 4 0 0 0-3 6 4 4 0 0 0 0 6 4 4 0 0 0 4 6 3 3 0 0 0 5-2V4Zm0 0a3 3 0 0 1 6-1 4 4 0 0 1 3 6 4 4 0 0 1 0 6 4 4 0 0 1-4 6 3 3 0 0 1-5-2M6 9l2 1M6 16l2-1M18 9l-2 1M18 16l-2-1"/></symbol>
+    <symbol id="icon-monitor" viewBox="0 0 24 24"><rect x="3" y="3" width="15" height="12" rx="2"/><path d="M8 15v5M5 20h8"/><rect x="16" y="11" width="5" height="10" rx="1"/></symbol>
+  </defs></svg>
+</section>

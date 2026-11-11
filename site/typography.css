@@ -1,0 +1,34 @@
+@import url('/fonts/font-faces.css');
+
+:root {
+  --ty-font-text: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --ty-font-text-mac-latin: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ty-font-text-mac-zh: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Hiragino Sans", "SF Pro Text", system-ui, "Noto Sans SC", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ty-font-text-mac-ja: "Hiragino Sans", "Hiragino Kaku Gothic ProN", -apple-system, BlinkMacSystemFont, "PingFang SC", "SF Pro Text", system-ui, "Noto Sans JP", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --ty-font-text-windows-latin: "Segoe UI", system-ui, Roboto, "Noto Sans", "Helvetica Neue", Arial, sans-serif;
+  --ty-font-text-windows-zh: "Inter", "PingFang SC", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --ty-font-text-windows-ja: Meiryo, "Yu Gothic UI", "Segoe UI", system-ui, Roboto, "Noto Sans JP", "Helvetica Neue", Arial, sans-serif;
+  --ty-font-number: var(--ty-font-text);
+  --ty-font-code: var(--ty-font-text);
+  --font-display: var(--ty-font-text);
+  --font-data: var(--ty-font-text);
+  --font-mono: var(--ty-font-text);
+}
+:root[data-ty-platform="mac"] { --ty-font-text: var(--ty-font-text-mac-latin); }
+:root[data-ty-platform="mac"]:lang(zh) { --ty-font-text: var(--ty-font-text-mac-zh); }
+:root[data-ty-platform="mac"]:lang(ja) { --ty-font-text: var(--ty-font-text-mac-ja); }
+:root[data-ty-platform="windows"] { --ty-font-text: var(--ty-font-text-windows-latin); }
+:root[data-ty-platform="windows"]:lang(zh) { --ty-font-text: var(--ty-font-text-windows-zh); }
+:root[data-ty-platform="windows"]:lang(ja) { --ty-font-text: var(--ty-font-text-windows-ja); }
+
+/* One global font stack, including embedded shadow-root sections. */
+html, body, :host { font-family: var(--ty-font-text); }
+*, *::before, *::after {
+  font-family: var(--ty-font-text) !important;
+  --fc-font-d: var(--ty-font-text) !important;
+  --fc-font-b: var(--ty-font-text) !important;
+  --fc-font-m: var(--ty-font-text) !important;
+}
+
+/* Global type rhythm: each element uses its own font size plus 8px. */
+html, body, :host, *, *::before, *::after { line-height: calc(1em + 8px) !important; }

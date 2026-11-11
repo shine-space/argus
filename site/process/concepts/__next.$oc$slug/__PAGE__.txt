@@ -1,0 +1,33 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+14:"$Sreact.suspense"
+17:"ViewportBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"MetadataBoundary"
+1a:I[97367,["$3","$4","$5","$6"],"$19"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#应用与数字员工","title":"应用与数字员工"},{"depth":2,"url":"#工作区与协作范围","title":"工作区与协作范围"},{"depth":2,"url":"#知识与数据","title":"知识与数据"},{"depth":2,"url":"#命令运行与业务结果","title":"命令、运行与业务结果"},{"depth":2,"url":"#版本与当前权限","title":"版本与当前权限"}],"children":[["$","$L10",null,{"children":"核心概念"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"理解应用、数字员工、工作流、资源、任务与业务结果之间的关系。"}],"\n",["$","$L12",null,{"as":"h2","id":"应用与数字员工","children":"应用与数字员工"}],"\n",["$","p",null,{"children":"应用是企业持续使用的业务产品，组织工作入口、能力、资源、权限和版本。数字员工是应用的对话与执行入口。专业业务工作台和数字员工应操作同一套业务对象，遵循相同的服务端规则。"}],"\n",["$","p",null,{"children":"Agent 定义执行行为、模型和工具等配置；Workflow 定义步骤、数据传递、分支与人工处理。应用引用这些能力，运行时保留具体采用的版本与记录。"}],"\n",["$","$L12",null,{"as":"h2","id":"工作区与协作范围","children":"工作区与协作范围"}],"\n",["$","p",null,{"children":"工作区承载企业资源与权限边界。团队和项目提供具体协作上下文。加入一个项目不自动获得所有关联文件、知识或外部系统数据的访问权。"}],"\n",["$","$L12",null,{"as":"h2","id":"知识与数据","children":"知识与数据"}],"\n",["$","p",null,{"children":"知识用于文档、规则与经验的检索和引用；数据用于结构化记录、字段、口径与受控查询。应用记录用于应用自己的小型业务对象。三者的对象与权限语义不同，不应将所有数据都复制到一个通用记录集合。"}],"\n",["$","$L12",null,{"as":"h2","id":"命令运行与业务结果","children":"命令、运行与业务结果"}],"\n",["$","p",null,{"children":"应用命令记录用户的一次执行意图。命令可以关联原 Agent 或 Workflow 运行，包含输入、输出与状态。业务行动是责任人需要完成或验收的业务事项，与 AI 运行分别管理。"}],"\n",["$","p",null,{"children":"文件结果、审批状态、已保存记录和外部系统回执分别证明相应结果。运行成功不自动代表付款、审批、过账或对外发送已经完成。"}],"\n",["$","$L12",null,{"as":"h2","id":"版本与当前权限","children":"版本与当前权限"}],"\n",["$","p",null,{"children":"应用版本固定行为和能力引用；新任务按其实际运行配置记录上下文。历史任务保留原记录，当前访问仍受权限控制。版本引用或对象 ID 都不是授权凭据。"}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]]}],"p":"$@16","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"concepts","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L18",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1a",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"核心概念 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"xjybtJKVRSLowHaKRAZp5"}
+15:null
+1d:true
+b:300
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+16:"$undefined"

@@ -1,0 +1,33 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+14:"$Sreact.suspense"
+17:"ViewportBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"MetadataBoundary"
+1a:I[97367,["$3","$4","$5","$6"],"$19"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#开发包内容","title":"开发包内容"},{"depth":2,"url":"#可以修改的内容","title":"可以修改的内容"},{"depth":2,"url":"#独立前端与宿主应用","title":"独立前端与宿主应用"},{"depth":2,"url":"#请求与状态","title":"请求与状态"},{"depth":2,"url":"#构建和发布","title":"构建和发布"},{"depth":2,"url":"#新业务规则","title":"新业务规则"}],"children":[["$","$L10",null,{"children":"前端二次开发"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"修改企业业务界面，复用平台接口并保持独立的版本与权限边界。"}],"\n",["$","$L12",null,{"as":"h2","id":"开发包内容","children":"开发包内容"}],"\n",["$","p",null,{"children":"前端开发包按授权清单提供页面、组件、样式、必要 SDK、类型、锁文件、构建配置和环境示例。平台管理端是否包含在源码授权内，以交付范围为准。"}],"\n",["$","$L12",null,{"as":"h2","id":"可以修改的内容","children":"可以修改的内容"}],"\n",["$","p",null,{"children":"在交付范围内调整品牌、导航、页面布局、字段展示、业务交互和结果呈现。新增页面调用已有授权接口，不通过访问平台私有数据库或内部执行端点获取能力。"}],"\n",["$","$L12",null,{"as":"h2","id":"独立前端与宿主应用","children":"独立前端与宿主应用"}],"\n",["$","p",null,{"children":"独立 Web 前端自行组织路由和用户会话；平台内工作台包使用配套宿主 SDK。二者的认证传输、包注册和构建方式不同，请使用交付包对应的接入说明。"}],"\n",["$","$L12",null,{"as":"h2","id":"请求与状态","children":"请求与状态"}],"\n",["$","p",null,{"children":"统一处理平台响应、权限失效、修订冲突和流式断开。业务结果从原对象或命令读取，不通过前端写死成功提示。新内容进入编辑状态后，避免被晚到结果覆盖。"}],"\n",["$","$L12",null,{"as":"h2","id":"构建和发布","children":"构建和发布"}],"\n",["$","p",null,{"children":"使用交付包中固定的依赖和构建入口，配置客户平台地址或同源反向代理。只把公开配置编译进浏览器资源。发布时记录前端版本及适配的后端版本，并验证旧会话、文件及写入。"}],"\n",["$","$L12",null,{"as":"h2","id":"新业务规则","children":"新业务规则"}],"\n",["$","p",null,{"children":"轻量界面可以复用记录和已有动作；复杂审批、交易、主数据同步等需要相应领域服务。可由我们升级镜像或接入客户的独立服务，不能仅靠新增前端字段获得新的服务端业务语义。"}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]]}],"p":"$@16","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"frontend","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L18",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1a",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"前端二次开发 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"xjybtJKVRSLowHaKRAZp5"}
+15:null
+1d:true
+b:300
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+16:"$undefined"

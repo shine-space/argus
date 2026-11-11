@@ -1,0 +1,30 @@
+# Dependencies and generated documentation build intermediates
+node_modules/
+.next/
+.source/
+docs-center/out/
+*.tsbuildinfo
+
+# Local runtime, caches, and logs
+.cache/
+.runtime/
+__pycache__/
+*.py[cod]
+*.log
+.env
+.env.*
+!.env.example
+
+# Local capture, reconstruction, and preview artifacts
+artifacts/
+originals/
+RECON/
+/*.png
+/*.zip
+/*REPORT.md
+/design-qa.md
+/NOTES.md
+/TEARDOWN.md
+/.codex_match.json
+
+# Keep site/_remote and site/process: they are required offline runtime assets

@@ -1,0 +1,68 @@
+/* Match the existing on-site engineering section palette. */
+:host{
+ --token-fa640121-c1ab-4d08-9920-e63e9490a008:#fff;
+ --token-ecd697ca-470e-4cce-b58c-062e55dfc7d0:#e9e8e1;
+ --token-4a29f1fd-caf3-462a-881f-3a068e8951c2:rgba(14,15,18,.12);
+ --token-07ff22ec-631b-4444-a894-849f72404b61:#0e0f12;
+ --token-1047f8e1-c409-4a90-8887-3957a4ee778d:#5d605d;
+ --token-450d9726-9177-4858-9246-ff9620f6b3ec:#f36a4b;
+ background:#f1f0eb;color:#0e0f12;
+}
+.framer-kZk8h.framer-hwg9m,.framer-ivkTB.framer-72rtr7{background:#f1f0eb}
+/* Remove the two outer vertical rules framing the full module. */
+.framer-ivkTB .framer-1frby92{--border-left-width:0px;--border-right-width:0px}
+/* The current scroll step expands its supporting explanation. */
+.framer-inheq .plan-index-item{align-items:flex-start;gap:22px}
+.framer-ivkTB .framer-mgdfhv{padding-left:24px}
+@media(min-width:810px){.framer-ivkTB .framer-mgdfhv{width:340px}}
+.plan-index-item [data-framer-name$="Marker"]{
+ align-self:stretch;height:auto;min-height:22px;margin-top:0;
+ opacity:0!important;background:transparent!important;
+ transition:opacity .22s ease,background-color .22s ease;
+}
+.plan-index-item[aria-expanded="true"] [data-framer-name$="Marker"]{
+ opacity:1!important;background:#f36a4b!important;
+}
+.plan-index-detail{display:grid;grid-template-rows:0fr;opacity:0;transition:grid-template-rows .32s cubic-bezier(.22,1,.36,1),opacity .22s ease}
+.plan-index-detail>div{min-height:0;overflow:hidden}
+.plan-index-detail p{margin:0;padding-top:8px;font-size:13px;line-height:1.65;font-weight:400;color:#787b75;letter-spacing:0}
+.plan-index-item[aria-expanded="true"] .plan-index-detail{grid-template-rows:1fr;opacity:1}
+@media(prefers-reduced-motion:reduce){.plan-index-detail{transition:none}}
+/* Remove the two internal section dividers. */
+.framer-ivkTB .framer-1mzglud{--border-top-width:0px}
+.framer-ivkTB .framer-k2nzby{--border-left-width:0px}
+/* Keep the four feature stories visually connected. */
+.framer-ivkTB .framer-k2nzby{gap:72px!important}
+/* Stronger labels in the planning section index. */
+.framer-inheq [data-framer-name$="Text"] h4.framer-text{font-size:20px;font-weight:700;line-height:1.4}
+/* Let each caption fill the same width as its demo panel. */
+.framer-ivkTB [id^="feature-"] > div:has(> h3){width:100%;max-width:none}
+/* Use one text color across every feature caption. */
+.framer-ivkTB [id^="feature-"] h3.framer-text,
+.framer-ivkTB [id^="feature-"] h3.framer-text *{color:#0e0f12!important}
+.framer-ivkTB [id^="feature-"] h3.framer-text{font-size:28px!important;line-height:36px!important}
+/* More breathing room for the Chinese introduction. */
+.framer-ivkTB .framer-h6fudi h2.framer-text{line-height:1.4}
+/* Shared visual treatment with the field-engineering eyebrow. */
+.framer-ivkTB .framer-gy3iag{width:90.2777777778%}
+.framer-ivkTB .framer-gy3iag p.framer-text{
+ display:flex;align-items:center;gap:10px;width:fit-content;position:relative;
+ margin-inline:auto;
+ padding:7px 14px 7px 8px;border-radius:999px;background:#fff;
+ box-shadow:inset 0 0 0 1px #dad8d0;color:#0e0f12;
+ font-size:12px;font-weight:400;letter-spacing:1.2px;
+}
+.framer-ivkTB .framer-gy3iag p::before{content:"";display:block;flex:none;width:18px;height:18px;border-radius:50%;background:#f36a4b}
+.framer-ivkTB .framer-gy3iag p::after{content:"";position:absolute;left:13px;top:calc(50% - 4px);width:8px;height:8px;border:2px solid #0e0f12;border-right-color:transparent;border-radius:50%;box-sizing:border-box}
+
+/* Digital employee introduction: half-size, single-color copy. */
+.framer-ivkTB .framer-h6fudi h2.framer-text { font-size: 26px; color: #0e0f12; text-align: center; }
+.framer-ivkTB .framer-h6fudi h2.framer-text span { display: block; color: inherit; font-size: 52px; font-weight: 700; text-align: center; margin-bottom: 24px; }
+
+/* The homepage introduction follows the marketing scale, including small screens. */
+:host(digital-employee-intro) .framer-h6fudi h2.framer-text {
+  font-size: var(--marketing-lead-size, 26px);
+}
+:host(digital-employee-intro) .framer-h6fudi h2.framer-text span {
+  font-size: var(--marketing-heading-size, 52px);
+}

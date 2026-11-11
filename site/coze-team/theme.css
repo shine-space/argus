@@ -1,0 +1,48 @@
+/* Existing site's light palette and global typography. */
+:host { --sidebar-background: #f2f0eb; color: #101313; }
+*, *::before, *::after { font-family: var(--ty-font-text) !important; }
+.sem-marketing-page { font-family: inherit; }
+#team-workroom { background: #f2f0eb; padding-block: 128px; }
+@media (min-width: 768px) { #team-workroom { padding-block: 160px; } }
+#team-workroom { padding-top: var(--coze-content-gap,100px); }
+:host(#coze-team-workroom) #team-workroom { padding-bottom: 0; }
+@media (min-width: 1024px) { #team-workroom > .grid { column-gap: 96px; } }
+@media (min-width: 1024px) {
+  :host([reversed]) #team-workroom > .grid { grid-template-columns: 0.82fr 1.18fr; }
+  :host([reversed]) #team-workroom > .grid > .order-1 { order: 1; }
+  :host([reversed]) #team-workroom > .grid > .order-2 { order: 2; }
+}
+#team-workroom > div > .order-1 > h2 { font-size: var(--marketing-subheading-size, 34px); line-height: 42px; }
+@media (min-width: 640px) { #team-workroom > div > .order-1 > h2 { font-size: var(--marketing-subheading-size, 38px); line-height: 46px; } }
+@media (min-width: 1024px) { #team-workroom > div > .order-1 > h2 { font-size: var(--marketing-subheading-size, 42px); line-height: 50px; } }
+.coze-project-header { gap: 12px; font-size: 14px; font-weight: 400; line-height: 22px; white-space: nowrap; }
+.coze-project-name { color: rgba(0,0,0,.95); }
+.coze-project-divider { width: 1px; height: 13px; background: #d9d9d9; flex: none; }
+.coze-project-count { display: inline-flex; align-items: center; gap: 8px; color: rgba(0,0,0,.65); font-size: 12px; }
+.coze-project-count img { display: block; flex: none; width: 14px; height: 14px; }
+#team-workroom > div > .order-2 > .relative,
+#team-workroom > div > .order-2 > .relative > .absolute { border-width: 0; }
+#team-workroom > div > .order-2 > .relative { background: transparent; border-radius: 24px; }
+#team-workroom > div > .order-2 > .relative > .absolute { border-top-left-radius: 12px; inset: 0; }
+:host([reversed]) #team-workroom > div > .order-2 > .relative { background: #e9e8e1; }
+:host([reversed]) #team-workroom > div > .order-2 > .relative > .absolute {
+  inset: 40px 40px -40px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, .04), inset 0 0 0 1px #dbdbdb;
+}
+[class~="bg-[#E2E8E1]"] { background-color: #e8e6df; }
+[class~="border-[#444640]"] { border-color: #343633; }
+[class~="bg-[#E8E9E4]"], [class~="bg-[#F1F0EC]"], [class~="bg-[#F6F5F2]"] { background-color: #f2f0eb; }
+[class~="bg-[#FAFAF8]"], [class~="bg-[#FBFBF9]"] { background-color: #fcfbf8; }
+[class~="bg-[#F0E8D7]"], [class~="bg-[#F3F7F1]"], [class~="bg-[#FBF7F0]"], [class~="bg-[#EEF4EC]"] { background-color: #faeee7; }
+[class~="border-[#CFDCCB]"], [class~="border-[#E5D6C3]"] { border-color: #edcbbb; }
+[class~="bg-[#6E9367]"] { background-color: #f36a4b; }
+[class~="text-[#617B5D]"], [class~="text-[#637A5E]"], [class~="text-[#678261]"], [class~="text-[#617A5C]"], [class~="text-[#5B7657]"], [class~="text-[#668261]"] { color: #d45b40; }
+[class~="text-[#6B5A36]"], [class~="text-[#40513D]"], [class~="text-[#3F4B3C]"], [class~="text-[#665844]"], [class~="text-[#4D4335]"] { color: #784638; }
+[class~="text-[#11110F]"], [class~="text-[#302E2A]"], [class~="text-[#35332F]"] { color: #101313; }
+[class~="text-[#5F5D57]"], [class~="text-[#777269]"] { color: #6d706b; }
+[class~="bg-[#22211E]"], [class~="bg-[#292824]"] { background-color: #101313; }
+
+/* Copy uses the homepage type tokens; demo UI text keeps its original sizes. */
+#team-workroom > .grid > .order-1 > p { font-size: var(--marketing-lead-size, 20px); }
+#team-workroom > .grid > .order-1 .border-b > h3 { font-size: var(--marketing-point-size, 24px); }
+#team-workroom > .grid > .order-1 .border-b > p { font-size: var(--marketing-body-size, 16px); }

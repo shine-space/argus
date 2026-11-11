@@ -1,0 +1,42 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[44324,["$3","$4","$5","$6","$d","$e"],"CodeBlock"]
+14:I[44324,["$3","$4","$5","$6","$d","$e"],"Pre"]
+1d:"ViewportBoundary"
+1e:I[97367,["$3","$4","$5","$6"],"$1d"]
+1f:"MetadataBoundary"
+20:I[97367,["$3","$4","$5","$6"],"$1f"]
+21:"$Sreact.suspense"
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#请求地址","title":"请求地址"},{"depth":2,"url":"#登录与令牌","title":"登录与令牌"},{"depth":2,"url":"#json-响应","title":"JSON 响应"},{"depth":2,"url":"#工作区与业务权限","title":"工作区与业务权限"}],"children":[["$","$L10",null,{"children":"身份认证与请求约定"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"使用客户实例的登录与令牌，明确请求地址、返回结构和权限。"}],"\n",["$","$L12",null,{"as":"h2","id":"请求地址","children":"请求地址"}],"\n",["$","p",null,{"children":["将 ",["$","code",null,{"children":"BASE_URL"}]," 设置为客户平台地址，不包含末尾斜杠。例如 ",["$","code",null,{"children":"https://ai.example.com"}]," 是占位地址，需要替换为企业实际域名。接口路径按参考页完整拼接，不重复添加 ",["$","code",null,{"children":"/api/v1"}],"。"]}],"\n",["$","$L12",null,{"as":"h2","id":"登录与令牌","children":"登录与令牌"}],"\n",["$","p",null,{"children":["现有登录入口为 ",["$","code",null,{"children":"POST /api/auth/login"}],"，请求包含 ",["$","code",null,{"children":"email"}],"、",["$","code",null,{"children":"password"}],"。成功响应的 ",["$","code",null,{"children":"data"}]," 中返回 ",["$","code",null,{"children":"access_token"}],"、",["$","code",null,{"children":"refresh_token"}],"、",["$","code",null,{"children":"role"}],"。账号由企业按其开户流程提供；不要假设任意环境允许自助注册。"]}],"\n",["$","p",null,{"children":"受保护请求携带："}],"\n",["$","$L13",null,{"className":"shiki shiki-themes github-light github-dark","style":{"--shiki-light":"#24292e","--shiki-dark":"#e1e4e8","--shiki-light-bg":"#fff","--shiki-dark-bg":"#24292e"},"tabIndex":"0","icon":"<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>","children":["$","$L14",null,{"children":["$","code",null,{"children":[["$","span",null,{"className":"line","children":[["$","span",null,{"style":{"--shiki-light":"#22863A","--shiki-dark":"#85E89D"},"children":"Authorization"}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":":"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" Bearer <access_token>"}]]}],"\n",["$","span",null,{"className":"line","children":[["$","span",null,{"style":{"--shiki-light":"#22863A","--shiki-dark":"#85E89D"},"children":"Content-Type"}],["$","span",null,{"style":{"--shiki-light":"#D73A49","--shiki-dark":"#F97583"},"children":":"}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":" application/json"}]]}]]}]}]}],"\n",["$","p",null,{"children":[["$","code",null,{"children":"POST /api/auth/refresh"}]," 接收 ",["$","code",null,{"children":"refresh_token"}],"。刷新成功后使用响应中当前有效的令牌。",["$","code",null,{"children":"POST /api/auth/logout"}]," 使用访问令牌退出当前会话。"]}],"\n",["$","p",null,{"children":"这是现有用户身份的令牌合同，不是全员共用的应用管理员 Key。SSO、服务身份和自动化接入按交付版本另行配置；不伪造用户 ID 代替认证。"}],"\n",["$","$L12",null,{"as":"h2","id":"json-响应","children":"JSON 响应"}],"\n",["$","p",null,{"children":["成功响应包含 ",["$","code",null,{"children":"status: true"}],"、",["$","code",null,{"children":"message"}]," 和业务 ",["$","code",null,{"children":"data"}],"。错误通常包含 ",["$","code",null,{"children":"status: false"}],"、",["$","code",null,{"children":"code"}]," 和 ",["$","code",null,{"children":"message"}],"。HTTP 状态和业务结果一起检查；",["$","code",null,{"children":"code"}]," 在部分成功响应中可以省略。"]}],"\n",["$","$L13",null,{"className":"shiki shiki-themes github-light github-dark","style":{"--shiki-light":"#24292e","--shiki-dark":"#e1e4e8","--shiki-light-bg":"#fff","--shiki-dark-bg":"#24292e"},"tabIndex":"0","icon":"<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>","children":"$L15"}],"\n","$L16","\n","$L17","\n","$L18"]]}]]}],["$L19","$L1a"],"$L1b"]}],"p":"$@1c","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"authentication","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L1e",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L20",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$21",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"身份认证与请求约定 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@22","v":null,"s":"$b"}},"a":"$@23","u":"$@24","b":"xjybtJKVRSLowHaKRAZp5"}
+25:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+15:["$","$L14",null,{"children":["$","code",null,{"children":["$","span",null,{"className":"line","children":[["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":"{"}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"\"status\""}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":": "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"true"}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":", "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"\"message\""}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":": "}],["$","span",null,{"style":{"--shiki-light":"#032F62","--shiki-dark":"#9ECBFF"},"children":"\"success\""}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":", "}],["$","span",null,{"style":{"--shiki-light":"#005CC5","--shiki-dark":"#79B8FF"},"children":"\"data\""}],["$","span",null,{"style":{"--shiki-light":"#24292E","--shiki-dark":"#E1E4E8"},"children":": {}}"}]]}]}]}]
+16:["$","p",null,{"children":["以上仅说明通用外层结构，",["$","code",null,{"children":"data"}]," 按各接口返回定义解释。流式响应和二进制文件下载不使用该 JSON 外层结构。"]}]
+17:["$","$L12",null,{"as":"h2","id":"工作区与业务权限","children":"工作区与业务权限"}]
+18:["$","p",null,{"children":["传入 ",["$","code",null,{"children":"workspace_id"}]," 或绑定标识只是在选择目标范围，服务端仍检查身份、成员与资源权限。权限不足时停止本次操作，不能切换到一个全局管理员凭据继续执行。"]}]
+19:["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}]
+1a:["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]
+1b:["$","$L25",null,{"children":["$","$21",null,{"name":"Next.MetadataOutlet","children":"$@26"}]}]
+24:true
+b:300
+26:null
+b:C
+23:0
+9:"$undefined"
+22:"$undefined"
+1c:"$undefined"

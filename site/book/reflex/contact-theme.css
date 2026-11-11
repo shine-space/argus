@@ -1,0 +1,276 @@
+/* The embedded contact page uses the homepage's Night, Pine, Bone and Brass palette. */
+html body {
+  --book-night: #07100c;
+  --book-pine: #0d1b16;
+  --book-bone: #f1f0eb;
+  --book-ink: #0e0f12;
+  --book-brass: #f36a4b;
+  --book-brass-light: #ffae96;
+
+  /* Surfaces and readable foregrounds */
+  --token-6fe72707-ec9a-4cfa-bafd-092da8374989: var(--book-night);
+  --token-33f248b9-50d6-47f2-88a8-fb5daad1239a: #07100c00;
+  --token-9b4264e5-3d47-408b-a192-c51d6d504beb: #07100c99;
+  --token-e08d38f7-28d4-4659-b7a6-2259d8794fef: var(--book-bone);
+  --token-eac76b06-070e-4f8b-ac64-5cb563c7d396: #c9cdc8;
+  --token-618fd02b-80e0-453e-a58b-e4101ac59e05: #a6b0aa;
+  --token-6e24f3f6-77f7-44e2-8fc3-75ab895c83a9: #a6b0aa;
+  --token-e72e4fcf-9926-4983-89a6-37e3304fae22: var(--book-brass-light);
+  --token-1d7e7d23-3a6a-4cf7-87e7-5e67d57f44b8: var(--book-bone);
+
+  /* Particles, highlights and borders */
+  --token-8e5159b1-80a0-40db-bfa4-6c732c466f7a: var(--book-brass);
+  --token-8e4d6a58-5857-4d4e-baee-9bb30f645da8: var(--book-brass-light);
+  --token-b09572b9-5601-43cd-9724-2ee42a80c44b: var(--book-brass);
+  --token-29d05714-688c-4566-b249-fa9d34f05984: var(--book-brass);
+  --token-bae91134-b1ca-4b39-8e39-249d2eb55e41: var(--book-brass-light);
+  --token-db7be94a-96e2-4092-b6e4-25b9905644a4: #f36a4b1a;
+  --token-3784df48-58ae-4995-9972-f8d9773fe7fd: #f36a4b24;
+  --token-e9d3e934-66c1-42c2-baa8-82009518595d: #f36a4b38;
+  --token-54f0aeb0-e381-448b-b1d2-0d2d369a4bc8: #f36a4b0a;
+  --token-36efa9c2-6bfd-4306-bba3-42565096d3a7: #f36a4b1a;
+  --token-0a3b54dd-ce0a-49f5-b735-da71df2e1aa6: #f36a4b24;
+  --token-3314e7dc-a99a-4aaf-95b6-ceb23fd9e5b6: #f36a4b2e;
+  --token-2e0bf5fb-9a9f-41ca-b559-89239952b491: #f36a4b38;
+  --token-d6d81782-9601-49bb-9438-d1718b6779df: #f36a4b0f;
+  --token-29d1a321-e7ba-4b9e-a48e-3f759f433131: #f36a4b5c;
+  --token-5b273021-0ac5-44ac-9c04-a34de7cceb33: #f36a4b47;
+  --token-8587fcb5-a1e9-4824-879a-e86ab2d3893f: #f36a4b3d;
+  --token-a7edfafd-c6b2-4fac-8659-27e963093646: #f36a4b80;
+}
+
+.framer-1cbkl33 [data-text-fill="true"] {
+  background-image: linear-gradient(90deg, var(--book-bone), var(--book-brass-light)) !important;
+}
+
+.framer-z5229y [data-framer-name="Form Card"],
+.framer-z5229y a[data-framer-name] {
+  background-color: var(--book-pine);
+}
+
+.framer-z5229y a[data-framer-name="邮件联系"],
+.framer-z5229y a[data-framer-name="需求沟通"],
+.framer-z5229y a[data-framer-name="预约交流"] {
+  background-image: radial-gradient(90% 60% at 50% 0%, #f36a4b1a 0%, #07100c99 100%);
+}
+
+.framer-z5229y form {
+  color-scheme: dark;
+}
+
+.framer-z5229y button[type="submit"] {
+  --token-ebc68845-024c-4318-8559-54cabffe9d73: var(--book-ink);
+  background: #fff !important;
+  box-shadow: 0 0 32px -14px var(--book-brass) !important;
+}
+
+.framer-z5229y button[type="submit"]:hover {
+  background: var(--book-bone) !important;
+}
+
+.framer-z5229y button[type="submit"]:focus-visible {
+  outline: 2px solid var(--book-brass);
+  outline-offset: 3px;
+}
+
+.framer-z5229y [data-preview-status] {
+  color: var(--book-brass-light);
+}
+
+.framer-z5229y button[type="submit"] [data-framer-name="Label"] .framer-text {
+  color: var(--book-ink) !important;
+}
+
+/* Hardware intro copied from the services page, with the contact page palette. */
+.framer-z5229y > .hardware-products__demo-intro {
+  width: 100%;
+  margin: 0 0 clamp(64px, 10vw, 144px);
+  color: var(--book-bone);
+  text-align: center;
+  font-family: var(--ty-font-text);
+}
+
+.hardware-products__demo-intro > .fc-eb {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+  padding: 7px 14px 7px 8px;
+  border-radius: 999px;
+  background: #ffffff14;
+  box-shadow: inset 0 0 0 1px #ffffff29;
+  font: 400 12px/1.2 var(--ty-font-text);
+  letter-spacing: .1em;
+}
+
+.hardware-products__demo-intro > .fc-eb i {
+  position: relative;
+  flex: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--book-brass);
+}
+
+.hardware-products__demo-intro > .fc-eb i::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 2px solid var(--book-ink);
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: book-intro-spin 1.2s linear infinite;
+}
+
+@keyframes book-intro-spin {
+  to { transform: rotate(360deg); }
+}
+
+.hardware-products__demo-intro h2 {
+  margin: 0 0 8px;
+  font-size: clamp(32px, 3.2vw, 48px);
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.hardware-products__demo-intro p {
+  max-width: 52rem;
+  margin: 0 auto;
+  color: #c9cdc8;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@media (max-width: 809px) {
+  .hardware-products__demo-intro h2 { font-size: clamp(28px, 5.2vw, 38px); }
+  .hardware-products__demo-intro p { font-size: 17px; }
+}
+
+@media (max-width: 560px) {
+  .hardware-products__demo-intro h2 { font-size: clamp(26px, 7.2vw, 32px); }
+  .hardware-products__demo-intro p { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hardware-products__demo-intro > .fc-eb i::after { animation: none; }
+}
+
+/* Let the existing star field use the full contact page as its containing block. */
+#main > .framer-8TbPN {
+  isolation: isolate;
+}
+
+.framer-KaDTJ > section[data-framer-name="Page Hero"] {
+  position: static;
+  overflow: visible;
+}
+
+@media (min-width: 810px) {
+  .framer-KaDTJ > section[data-framer-name="Page Hero"] {
+    padding-top: 100px;
+  }
+}
+
+.framer-KaDTJ .framer-rjdne4-container {
+  pointer-events: none;
+}
+
+.framer-KaDTJ > section[data-framer-name="Contact"] {
+  z-index: 1;
+}
+
+.framer-KaDTJ .framer-t5b1nr {
+  --border-color: #f36a4b47;
+  background: #171311;
+}
+
+.framer-KaDTJ .framer-t5b1nr .framer-1rtl9ym {
+  background-color: var(--book-brass);
+  box-shadow: 0 0 10px 2px #f36a4b8c;
+}
+
+.framer-z5229y .framer-form-select-wrapper:has(select[name="company_size"]) {
+  background: var(--framer-input-background);
+  border-bottom-width: 0;
+}
+
+.framer-z5229y .framer-form-select-wrapper:has(select[name="company_size"])::after {
+  border-bottom-width: 0;
+}
+
+/* Style the native picker so keyboard use and form values stay native. */
+@supports (appearance: base-select) {
+  .framer-z5229y select[name="company_size"],
+  .framer-z5229y select[name="company_size"]::picker(select) {
+    appearance: base-select;
+  }
+
+  .framer-z5229y select[name="company_size"] {
+    align-items: center;
+    height: 46px;
+    padding-block: 0;
+    border: 0;
+    border-radius: inherit;
+    cursor: pointer;
+  }
+
+  .framer-z5229y select[name="company_size"]::picker-icon {
+    display: none;
+  }
+
+  .framer-z5229y select[name="company_size"]::picker(select) {
+    min-width: anchor-size(width);
+    max-height: min(320px, 60vh);
+    margin-block: 8px;
+    padding: 6px;
+    border: 1px solid #f36a4b47;
+    border-radius: 12px;
+    background: #141414;
+    color: var(--book-bone);
+    box-shadow: 0 16px 40px #0008, 0 2px 8px #0004;
+    scrollbar-width: thin;
+    scrollbar-color: #f36a4b66 transparent;
+  }
+
+  .framer-z5229y select[name="company_size"] option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 40px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--book-bone);
+    font: 500 14px/1.4 var(--ty-font-text);
+    cursor: pointer;
+  }
+
+  .framer-z5229y select[name="company_size"] option[value=""] {
+    color: #aaa;
+    font-size: 12px;
+  }
+
+  .framer-z5229y select[name="company_size"] option:hover,
+  .framer-z5229y select[name="company_size"] option:focus-visible {
+    background: #f36a4b1a;
+    outline: 1px solid #f36a4b47;
+    outline-offset: -1px;
+  }
+
+  .framer-z5229y select[name="company_size"] option:checked:not([value=""]) {
+    background: var(--book-brass);
+    color: var(--book-ink);
+  }
+
+  .framer-z5229y select[name="company_size"] option::checkmark {
+    order: 1;
+    margin-inline-start: auto;
+    color: var(--book-brass);
+  }
+
+  .framer-z5229y select[name="company_size"] option:checked:not([value=""])::checkmark {
+    color: var(--book-ink);
+  }
+}

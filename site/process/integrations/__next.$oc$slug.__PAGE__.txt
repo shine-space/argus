@@ -1,0 +1,33 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+14:"$Sreact.suspense"
+17:"ViewportBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"MetadataBoundary"
+1a:I[97367,["$3","$4","$5","$6"],"$19"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#先明确业务边界","title":"先明确业务边界"},{"depth":2,"url":"#客户独立业务服务","title":"客户独立业务服务"},{"depth":2,"url":"#读取与同步","title":"读取与同步"},{"depth":2,"url":"#写入与回执","title":"写入与回执"},{"depth":2,"url":"#工具合同","title":"工具合同"},{"depth":2,"url":"#联调验收","title":"联调验收"}],"children":[["$","$L10",null,{"children":"扩展与系统集成"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"通过受控 HTTP、MCP 和业务服务接入 ERP、MES、CRM 等系统。"}],"\n",["$","$L12",null,{"as":"h2","id":"先明确业务边界","children":"先明确业务边界"}],"\n",["$","p",null,{"children":"约定目标系统、对象、字段、读取与写入范围、身份和接口版本。通用 HTTP/MCP 连接能力不代表已经适配每家 ERP、MES、CRM、EHR 或 OA。"}],"\n",["$","$L12",null,{"as":"h2","id":"客户独立业务服务","children":"客户独立业务服务"}],"\n",["$","p",null,{"children":"客户可以维护自己的业务服务，由它对接企业专业规则和原系统，再通过经授权的工具合同供平台调用。平台后端源码无需交付；该服务的建设、运行与升级责任需明确。"}],"\n",["$","$L12",null,{"as":"h2","id":"读取与同步","children":"读取与同步"}],"\n",["$","p",null,{"children":"明确主键、来源权威、增量游标、更新频率、删除和撤权事件、重复数据及失败补偿。原系统暂时不可用时，展示数据更新时间和可用范围，避免把旧缓存当实时状态。"}],"\n",["$","$L12",null,{"as":"h2","id":"写入与回执","children":"写入与回执"}],"\n",["$","p",null,{"children":"使用原系统支持的业务接口，遵循其校验、审批和事务规则。写入需有幂等、当前权限、明确对象和可回读结果。不要直接修改专业系统的标准表绕过业务逻辑。"}],"\n",["$","$L12",null,{"as":"h2","id":"工具合同","children":"工具合同"}],"\n",["$","p",null,{"children":"按操作划分输入输出 Schema，固定可调用目标，控制参数和资源范围。连接凭证与模型参数分离；原始错误和敏感响应按平台错误合同处理。"}],"\n",["$","$L12",null,{"as":"h2","id":"联调验收","children":"联调验收"}],"\n",["$","p",null,{"children":"分别验证正常读取、无权访问、字段缺失、重复请求、超时未知、源系统拒绝、部分成功和撤权。业务写入成功以后，仍需在目标系统回读同一对象验证。"}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]]}],"p":"$@16","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"integrations","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L18",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1a",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"扩展与系统集成 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"xjybtJKVRSLowHaKRAZp5"}
+15:null
+1d:true
+b:300
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+16:"$undefined"

@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[47873,["$3","$4","$5","$6","$d","$e"],"default"]
+14:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+15:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[97367,["$3","$4","$5","$6"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$3","$4","$5","$6"],"$1a"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#部署方式","title":"部署方式"},{"depth":2,"url":"#组件与依赖","title":"组件与依赖"},{"depth":2,"url":"#部署前确认","title":"部署前确认"},{"depth":2,"url":"#部署责任","title":"部署责任"}],"children":[["$","$L10",null,{"children":"本地部署概览"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"了解客户环境中的组件、依赖和部署前准备。"}],"\n",["$","$L12",null,{"as":"h2","id":"部署方式","children":"部署方式"}],"\n",["$","p",null,{"children":"平台在客户指定的本地或私有基础设施中运行，通过镜像包和运行配置交付。当前文档的安装路径不需要克隆平台后端源码。"}],"\n",["$","$L12",null,{"as":"h2","id":"组件与依赖","children":"组件与依赖"}],"\n",["$","p",null,{"children":"按开通功能提供平台 API、AI 执行、前端静态站点及所需知识、文档和执行环境组件。数据存储、对象存储和向量索引按成套清单部署。模型可以由客户另行提供或按项目配套。"}],"\n",["$","p",null,{"children":"不同功能的资源需求不同。Office 文件生成需要对应执行环境；知识处理需要解析、索引与模型依赖。具体 CPU、内存、磁盘、GPU、网络和并发规格由交付版本的容量方案确定，不以通用最低配置保证所有场景。"}],"\n",["$","$L12",null,{"as":"h2","id":"部署前确认","children":"部署前确认"}],"\n",["$","ul",null,{"children":["\n",["$","li",null,{"children":"平台域名、HTTPS 证书、访问网络与企业身份方式。"}],"\n",["$","li",null,{"children":"数据存储位置、备份介质、保留策略与恢复负责人。"}],"\n",["$","li",null,{"children":"模型连接、业务系统地址、允许的网络出口及凭证保管方式。"}],"\n",["$","li",null,{"children":"功能模块、实际镜像版本、数据库迁移和回退方案。"}],"\n"]}],"\n",["$","$L12",null,{"as":"h2","id":"部署责任","children":"部署责任"}],"\n",["$","p",null,{"children":"客户负责约定的基础设施、企业网络和业务系统授权；实施与运维团队按交付范围完成安装、初始化、联调和验收。软件升级与客户前端更新分别记录版本。"}],"\n",["$","p",null,{"children":["下一步：",["$","$L13",null,{"href":"/installation/","children":"安装与初始化"}],"。"]}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"deployment","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"本地部署概览 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1c","v":null,"s":"$b"}},"a":"$@1d","u":"$@1e","b":"xjybtJKVRSLowHaKRAZp5"}
+16:null
+1e:true
+b:300
+b:C
+1d:0
+9:"$undefined"
+1c:"$undefined"
+17:"$undefined"

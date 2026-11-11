@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[47873,["$3","$4","$5","$6","$d","$e"],"default"]
+14:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+15:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[97367,["$3","$4","$5","$6"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$3","$4","$5","$6"],"$1a"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#选择渠道","title":"选择渠道"},{"depth":2,"url":"#绑定应用","title":"绑定应用"},{"depth":2,"url":"#发送与回执","title":"发送与回执"},{"depth":2,"url":"#权限变化","title":"权限变化"}],"children":[["$","$L10",null,{"children":"渠道与结果分发"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"将应用连接到获授权渠道，区分发送回执和业务办理结果。"}],"\n",["$","$L12",null,{"as":"h2","id":"选择渠道","children":"选择渠道"}],"\n",["$","p",null,{"children":"根据安装版本和项目范围配置飞书、企业微信等可用渠道。企业应用安装、成员范围、连接授权和消息能力需要分别完成配置。"}],"\n",["$","$L12",null,{"as":"h2","id":"绑定应用","children":"绑定应用"}],"\n",["$","p",null,{"children":"渠道调用继续使用同一应用和数字员工。渠道身份、会话、当前绑定和资源权限共同确定可执行范围，不通过创建另一个员工绕过原业务规则。"}],"\n",["$","$L12",null,{"as":"h2","id":"发送与回执","children":"发送与回执"}],"\n",["$","p",null,{"children":"对外消息、文件或业务动作应有明确发送对象、内容和授权。平台返回的发送状态以渠道实际回执为准；超时或未知结果需要先查询原记录，不能盲目重复发送。"}],"\n",["$","$L12",null,{"as":"h2","id":"权限变化","children":"权限变化"}],"\n",["$","p",null,{"children":"员工离职、渠道撤权或应用停用后，应按当前权限停止后续使用。旧消息中的链接与历史绑定不能恢复已撤销的权限。"}],"\n",["$","p",null,{"children":["API 见",["$","$L13",null,{"href":"/api/#group-channels","children":"应用渠道与身份"}],"。特定渠道的群聊、附件、回调和原生动作兼容性按交付版本验收。"]}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"channels","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"渠道与结果分发 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1c","v":null,"s":"$b"}},"a":"$@1d","u":"$@1e","b":"xjybtJKVRSLowHaKRAZp5"}
+16:null
+1e:true
+b:300
+b:C
+1d:0
+9:"$undefined"
+1c:"$undefined"
+17:"$undefined"

@@ -1,0 +1,109 @@
+/* Homepage type scale. Product previews retain their compact UI typography. */
+@font-face {
+  font-family: "HomeDingTalk";
+  src: url("/fonts/dingding/ddjbt.woff2") format("woff2"),
+       url("/fonts/dingding/ddjbt.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+body .fc.fch h1.fch-h,
+body .fc.fch h1.fch-h span {
+  font-family: "HomeDingTalk", var(--ty-font-text, sans-serif) !important;
+  font-weight: 400 !important;
+  font-synthesis: none;
+}
+
+:root {
+  --marketing-hero-size: clamp(56px, min(5.8vw, 10vh), 100px);
+  --marketing-heading-size: clamp(32px, 3.2vw, 48px);
+  --marketing-subheading-size: clamp(28px, 2.5vw, 36px);
+  --marketing-lead-size: 18px;
+  --marketing-body-size: 16px;
+  --marketing-point-size: 20px;
+}
+.fc .fc-hd,
+.fc.fcs .fc-hd,
+.fc.fcpr .fc-hd { font-size: var(--marketing-heading-size) !important; }
+.fc.fch { --hero-title-size: var(--marketing-hero-size); }
+.fc.fch .fc-hd { font-size: var(--marketing-hero-size) !important; }
+/* Use the shared word reveal, with room for the display font's slanted glyphs. */
+.fc.fch .fch-h .fc-hd-i {
+  translate: 0 108% !important;
+  opacity: 0;
+  transition: translate 1s cubic-bezier(.2,.75,.2,1), opacity .7s ease;
+}
+.fc.fch .fch-h .fc-hd.is-on .fc-hd-i {
+  translate: 0 0 !important;
+  opacity: 1;
+}
+.fc.fch .fch-h .fc-hd-w {
+  overflow: visible;
+  clip-path: inset(-.3em -.45em -.18em -.3em);
+}
+.fc.fch .fch-h .fc-hd-w.is-accw {
+  clip-path: inset(-.6em -.6em -.18em -.3em);
+}
+@media (prefers-reduced-motion: reduce) {
+  .fc.fch .fch-h .fc-hd-i {
+    translate: none !important;
+    opacity: 1;
+    transition: none;
+  }
+}
+.fc.fch:not(.is-ph) .fch-stage > .fch-top {
+  top: calc(var(--hero-title-top) - 30px);
+}
+.fc.fch.is-ph .fch-stage > .fch-h {
+  margin-top: 28px;
+}
+.fc.fch .fch-stats dt { font-size: clamp(20px, 1.6vw, 24px) !important; }
+.fc.fcs .fcs-copy > h3 { font-size: clamp(30px, 2.7vw, 40px) !important; }
+.fc.fcw .fcw-t { font-size: clamp(22px, 2vw, 30px); }
+.fc.fci .fc-hd { font-size: clamp(20px, 1.65vw, 26px) !important; }
+.fc.fci .fci-num.is-copy { font-size: var(--marketing-heading-size); }
+.fc.fci .fci-l { font-size: 17px; }
+.fc.fcpr .fcpr-price b { font-size: clamp(26px, 2.3vw, 34px); }
+.fc.fcpr .fcpr-card h3 { font-size: var(--marketing-point-size); }
+.zx-faq-head h2 { font-size: clamp(28px, 2.5vw, 40px); }
+.zx-faq-item summary { font-size: 18px; }
+.zx-faq-answer p { font-size: var(--marketing-body-size); }
+.fc.fcx h2.fc-hd { font-size: clamp(40px, 4.5vw, 64px) !important; }
+.fc.fcx .fcx-body { font-size: var(--marketing-body-size); }
+.fc.fco .fco-mail { font-size: clamp(24px, 2vw, 30px); }
+
+@media (max-width: 809px) {
+  :root {
+    --marketing-hero-size: clamp(40px, 7.4vw, 60px);
+    --marketing-heading-size: clamp(28px, 5.2vw, 38px);
+    --marketing-subheading-size: clamp(24px, 4.2vw, 30px);
+    --marketing-lead-size: 17px;
+    --marketing-point-size: 19px;
+  }
+  .fc.fch.is-tab { --hero-title-size: var(--marketing-hero-size); }
+  .fc.fcs .fcs-copy > h3 { font-size: 30px !important; }
+  .fc.fcw .fcw-t { font-size: 24px; }
+  .fc.fci .fci-l { font-size: 16px; }
+}
+@media (max-width: 560px) {
+  :root {
+    --marketing-hero-size: clamp(32px, 8.4vw, 44px);
+    --marketing-heading-size: clamp(26px, 7.2vw, 32px);
+    --marketing-subheading-size: clamp(24px, 6vw, 30px);
+    --marketing-lead-size: 16px;
+    --marketing-body-size: 15px;
+    --marketing-point-size: 18px;
+  }
+  .fc.fch .fch-sub { font-size: 14px; }
+  .fc.fch .fch-stats dt { font-size: 20px !important; }
+  .fc.fcs .fcs-copy > h3 { font-size: clamp(26px, 7vw, 32px) !important; }
+  .fc.fcw .fcw-t { font-size: 20px; }
+  .fc.fci .fc-hd { font-size: 20px !important; }
+  .fc.fci .fci-l { font-size: var(--marketing-body-size); }
+  .fc.fcpr .fcpr-price b { font-size: 26px; }
+  .zx-faq-head h2 { font-size: 28px; }
+  .zx-faq-item summary { font-size: 16px; }
+  .fc.fcx h2.fc-hd { font-size: clamp(32px, 8.5vw, 42px) !important; }
+  .fc.fco .fco-mail { font-size: 24px; }
+}

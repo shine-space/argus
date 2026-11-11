@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[47873,["$3","$4","$5","$6","$d","$e"],"default"]
+14:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+15:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[97367,["$3","$4","$5","$6"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$3","$4","$5","$6"],"$1a"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#skill-的用途","title":"Skill 的用途"},{"depth":2,"url":"#http-和-mcp-工具","title":"HTTP 和 MCP 工具"},{"depth":2,"url":"#安装和版本","title":"安装和版本"},{"depth":2,"url":"#使用反馈","title":"使用反馈"}],"children":[["$","$L10",null,{"children":"Skill 与工具"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"复用工作方法，并通过 HTTP 或 MCP 连接外部能力。"}],"\n",["$","$L12",null,{"as":"h2","id":"skill-的用途","children":"Skill 的用途"}],"\n",["$","p",null,{"children":"Skill 保存可复用的方法、适用条件和输出要求。它可以配合知识、模型与执行环境处理任务。提供某个 Skill 的名称，并不代表其依赖资源已经就绪。"}],"\n",["$","$L12",null,{"as":"h2","id":"http-和-mcp-工具","children":"HTTP 和 MCP 工具"}],"\n",["$","p",null,{"children":"HTTP 工具描述请求与结果；MCP 工具通过已配置的服务发现能力。凭证由平台连接管理，调用仍需通过资源和当前业务权限检查。"}],"\n",["$","$L12",null,{"as":"h2","id":"安装和版本","children":"安装和版本"}],"\n",["$","p",null,{"children":"按授权目录选用或安装 Skill。更新时检查依赖和对现有任务的影响。客户自己的内容与平台预置私有资源分别确定导出范围。"}],"\n",["$","$L12",null,{"as":"h2","id":"使用反馈","children":"使用反馈"}],"\n",["$","p",null,{"children":"用户纠正可以形成改进候选。是否修改规则、采用新版本及如何验证，需经过明确的评估与发布过程。一次点赞或确认不能直接等同于准确率提升。"}],"\n",["$","p",null,{"children":["接口参考包含",["$","$L13",null,{"href":"/api/#group-tools","children":"HTTP/MCP 工具"}],"。Skill 管理的可用接口和导出能力以交付版本提供的开发包为准。"]}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"skills-tools","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Skill 与工具 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1c","v":null,"s":"$b"}},"a":"$@1d","u":"$@1e","b":"xjybtJKVRSLowHaKRAZp5"}
+16:null
+1e:true
+b:300
+b:C
+1d:0
+9:"$undefined"
+1c:"$undefined"
+17:"$undefined"

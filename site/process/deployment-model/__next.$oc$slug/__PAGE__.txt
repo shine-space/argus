@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[47873,["$3","$4","$5","$6","$d","$e"],"default"]
+14:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+15:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[97367,["$3","$4","$5","$6"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$3","$4","$5","$6"],"$1a"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#商业软件交付","title":"商业软件交付"},{"depth":2,"url":"#前端二次开发","title":"前端二次开发"},{"depth":2,"url":"#平台后端交付","title":"平台后端交付"},{"depth":2,"url":"#客户资产","title":"客户资产"},{"depth":2,"url":"#当前提供方式","title":"当前提供方式"}],"children":[["$","$L10",null,{"children":"商业授权与交付范围"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"明确本地部署、前端二开、后端镜像和接口支持的边界。"}],"\n",["$","$L12",null,{"as":"h2","id":"商业软件交付","children":"商业软件交付"}],"\n",["$","p",null,{"children":"平台以商业授权的软件交付，不提供平台后端源码的开放仓库。企业可以在授权环境中运行软件、管理业务配置，并通过约定接口集成自己的系统。"}],"\n",["$","p",null,{"children":"前端修改范围、部署环境、模块、使用主体、升级及技术支持由交付清单和合同确定。购买或取得一个运行镜像，不自动扩大源码、模型或第三方素材的授权范围。"}],"\n",["$","$L12",null,{"as":"h2","id":"前端二次开发","children":"前端二次开发"}],"\n",["$","p",null,{"children":"按交付范围提供业务前端源码、必要 SDK、接口类型、构建配置和开发说明。客户可以修改页面、导航、品牌、交互与结果展示，并调用获授权的后端能力。"}],"\n",["$","p",null,{"children":"服务端权限、业务校验、执行策略和审计继续由平台实施。隐藏按钮或修改请求字段，不能代替后端授权。"}],"\n",["$","$L12",null,{"as":"h2","id":"平台后端交付","children":"平台后端交付"}],"\n",["$","p",null,{"children":"平台服务、AI 执行服务及配套组件以镜像和运行配置交付。企业运维团队按交付说明安装、备份和升级。平台内核维护与版本修复由约定的软件支持流程承接。"}],"\n",["$","p",null,{"children":["新增复杂业务可以通过应用配置、Workflow、HTTP/MCP 工具接入，也可以由独立业务服务提供领域能力。",["$","$L13",null,{"href":"/integrations/","children":"扩展与集成"}],"说明两种服务间的责任边界。"]}],"\n",["$","$L12",null,{"as":"h2","id":"客户资产","children":"客户资产"}],"\n",["$","p",null,{"children":"企业数据、客户自己编制的规则和知识，按企业权限与交付约定管理。客户自建的提示词、工作流和 Skill，与平台预置的私有能力分别确定查看、修改及导出权限。"}],"\n",["$","$L12",null,{"as":"h2","id":"当前提供方式","children":"当前提供方式"}],"\n",["$","p",null,{"children":"本地部署现已提供。云端服务即将上线，开放时间与具体服务范围以正式公告为准。"}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"deployment-model","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"商业授权与交付范围 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1c","v":null,"s":"$b"}},"a":"$@1d","u":"$@1e","b":"xjybtJKVRSLowHaKRAZp5"}
+16:null
+1e:true
+b:300
+b:C
+1d:0
+9:"$undefined"
+1c:"$undefined"
+17:"$undefined"

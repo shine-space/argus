@@ -1,0 +1,27 @@
+
+.fcpt{position:fixed;inset:0;z-index:9998;pointer-events:none;overflow:hidden;--e:cubic-bezier(.7,0,.2,1)}
+.fcpt-bars{position:absolute;inset:-10% -30%;display:grid;grid-template-columns:repeat(var(--n),1fr);transform:skewX(-14deg)}
+.fcpt-b{display:block;margin:0 -1px;background:var(--fc-night);box-shadow:inset 1px 0 0 color-mix(in srgb,var(--fc-brass) 14%,transparent)}
+.fcpt-b:nth-child(3n+2){background:color-mix(in srgb,var(--fc-pine) 55%,var(--fc-night))}
+.fcpt-run{position:absolute;left:50%;top:50%;translate:-50% -50%;display:grid;justify-items:center;gap:clamp(16px,3vh,28px);width:100%;padding:0 20px;text-align:center}
+.fcpt-flow{position:relative;display:flex;align-items:center;gap:clamp(22px,4vw,54px);margin:0;padding:0;list-style:none;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--site-text-on-dark-secondary,rgba(255,255,255,.78))}
+.fcpt-flow::before,.fcpt-flow::after{content:"";position:absolute;left:7px;right:7px;top:50%;height:1px;margin-top:-.5px;background:color-mix(in srgb,var(--fc-cloud) 18%,transparent);z-index:0}
+.fcpt-flow::after{background:linear-gradient(90deg,transparent,var(--fc-brass) 60%,#fff);height:2px;margin-top:-1px;transform-origin:0 50%;scale:0 1;box-shadow:0 0 12px var(--fc-brass)}
+.fcpt-flow li{position:relative;z-index:1;display:flex;align-items:center;gap:8px;padding:7px 12px 7px 9px;border-radius:999px;background:var(--fc-night);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fc-cloud) 16%,transparent);transition:box-shadow .25s,color .25s}
+.fcpt-flow li i{width:8px;height:8px;border-radius:50%;background:color-mix(in srgb,var(--fc-cloud) 25%,transparent);transition:background .25s,box-shadow .25s}
+.fcpt-name{display:flex;align-items:center;gap:.14em;margin:0;clip-path:inset(-.1em -.5em -.25em -.5em);font-size:clamp(44px,7.5vw,120px);font-weight:500;letter-spacing:-.05em;line-height:1;color:var(--fc-cloud);white-space:nowrap}
+.fcpt-name span{display:inline-block} .fcpt-name b{width:.16em;height:.16em;border-radius:50%;background:var(--fc-brass);box-shadow:0 0 24px var(--fc-brass);translate:0 .22em}
+/* leaving: bars sweep in from the clicked side, then the run plays */
+.fcpt-leave .fcpt-b{translate:calc(var(--dir)*-190vw) 0} .fcpt-leave .fcpt-run{opacity:0}
+.fcpt-leave.fcpt-on .fcpt-b{translate:0 0;transition:translate calc(var(--d)*.6) var(--e) calc(var(--o)*var(--d)*.05)}
+.fcpt-leave.fcpt-on .fcpt-run{opacity:1;transition:opacity .2s ease calc(var(--d)*.42)}
+.fcpt-leave.fcpt-on .fcpt-flow::after{scale:1 1;transition:scale calc(var(--d)*.55) cubic-bezier(.45,0,.2,1) calc(var(--d)*.5)}
+.fcpt-leave.fcpt-on .fcpt-flow li{box-shadow:inset 0 0 0 1px var(--fc-brass);color:var(--fc-cloud);transition-delay:calc(var(--d)*.5 + var(--k)*var(--d)*.2)} .fcpt-leave.fcpt-on .fcpt-flow li i{background:var(--fc-brass);box-shadow:0 0 10px var(--fc-brass);transition-delay:calc(var(--d)*.5 + var(--k)*var(--d)*.2)}
+.fcpt-leave .fcpt-name span{translate:0 110%} .fcpt-leave .fcpt-name b{scale:0}
+.fcpt-leave.fcpt-on .fcpt-name span{translate:0 0;transition:translate .5s cubic-bezier(.2,.8,.2,1) calc(var(--d)*.7)} .fcpt-leave.fcpt-on .fcpt-name b{scale:1;transition:scale .35s cubic-bezier(.2,.9,.3,1.4) calc(var(--d)*.95)}
+/* arrival: covered in the server HTML, bars sweep on out the far side */
+.fcpt-enter .fcpt-b{animation:fcpt-out calc(var(--d)*.75) var(--e) calc(.08s + var(--o)*var(--d)*.05) both} @keyframes fcpt-out{from{translate:0 0}to{translate:calc(var(--dir)*190vw) 0}}
+.fcpt-enter .fcpt-run{animation:fcpt-lo .3s ease both} @keyframes fcpt-lo{from{opacity:1}to{opacity:0}}
+.fcpt-enter .fcpt-flow li{box-shadow:inset 0 0 0 1px var(--fc-brass)} .fcpt-enter .fcpt-flow li i{background:var(--fc-brass)} .fcpt-enter .fcpt-flow::after{scale:1 1}
+@media (max-width:809px){.fcpt-flow{gap:14px;font-size:12px} .fcpt-flow li{padding:6px 9px 6px 7px} .fcpt-bars{transform:skewX(-8deg)}}
+@media (prefers-reduced-motion:reduce){.fcpt{display:none}}

@@ -1,0 +1,16 @@
+
+
+
+
+[data-framer-name="S0 FcPageHero"] .fcph-copy h1 {
+  --hero-display-font: "钉钉进步体 Regular";
+}
+
+.fc.fch h1.fch-h,
+.fc.fch h1.fch-h span,
+[data-framer-name="S0 FcPageHero"] .fcph-copy h1,
+[data-framer-name="S0 FcPageHero"] .fcph-copy h1 span {
+  font-family: var(--hero-display-font, "钉钉进步体 Regular"), var(--ty-font-text, sans-serif) !important;
+  font-weight: 400 !important;
+  font-variation-settings: normal;
+}

@@ -1,0 +1,112 @@
+@import 'tailwindcss';
+@import 'fumadocs-ui/css/neutral.css';
+@import 'fumadocs-ui/css/preset.css';
+
+@theme {
+  --font-sans: system-ui, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+:root {
+  --color-fd-background: #fbfaf7;
+  --color-fd-card: #fffefa;
+  --color-fd-muted: #f1efe9;
+  --color-fd-accent: #f4ede4;
+  --color-fd-primary: #9b381f;
+  --color-fd-primary-foreground: #fff;
+  --color-fd-border: #e5e0d8;
+}
+
+.dark {
+  --color-fd-background: #121211;
+  --color-fd-card: #1c1b19;
+  --color-fd-muted: #21201e;
+  --color-fd-accent: #2b2521;
+  --color-fd-primary: #ff8f73;
+  --color-fd-primary-foreground: #191412;
+  --color-fd-border: #36312d;
+}
+
+/* Keep the directory light, with a rail under each open section. */
+:is(#nd-sidebar, #nd-sidebar-mobile) {
+  background-color: var(--color-fd-background);
+}
+
+:is(#nd-sidebar, #nd-sidebar-mobile) :is(a[data-active], button[aria-expanded]:has(> svg[data-icon])) {
+  min-height: 32px;
+  border-radius: 10px;
+  padding-block: 6px;
+  line-height: 20px;
+}
+
+:is(#nd-sidebar, #nd-sidebar-mobile) button[aria-expanded]:has(> svg[data-icon]) {
+  gap: 6px;
+  color: var(--color-fd-foreground);
+  font-size: 12px;
+  font-weight: 550;
+}
+
+:is(#nd-sidebar, #nd-sidebar-mobile) :is(a[data-active], button[aria-expanded]) > svg[data-icon] {
+  order: -1;
+  width: 12px;
+  height: 12px;
+  margin-inline-start: 0;
+}
+
+:is(#nd-sidebar, #nd-sidebar-mobile) a[data-active] {
+  font-size: 14px;
+}
+
+:is(#nd-sidebar, #nd-sidebar-mobile) a[data-active="true"] {
+  background-color: transparent;
+  color: var(--color-fd-foreground);
+  font-weight: 600;
+}
+
+:is(#nd-sidebar, #nd-sidebar-mobile) a[data-active="true"]::before {
+  display: none;
+}
+
+:is(#nd-sidebar, #nd-sidebar-mobile) :is(a[data-active], button[aria-expanded]:has(> svg[data-icon])):hover {
+  background-color: var(--color-fd-muted);
+}
+
+:is(#nd-sidebar, #nd-sidebar-mobile) :is(a[data-active], button[aria-expanded]:has(> svg[data-icon])):focus-visible {
+  outline: 2px solid var(--color-fd-primary);
+  outline-offset: -2px;
+}
+
+@media (min-width: 48rem) {
+  #nd-notebook-layout[data-sidebar-collapsed="false"] {
+    --fd-header-height: 0px;
+  }
+
+  #nd-notebook-layout[data-sidebar-collapsed="false"] #nd-subnav {
+    display: none;
+  }
+}
+
+.docs-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .65rem;
+  white-space: nowrap;
+}
+
+.docs-logo {
+  width: 6.25rem;
+  height: auto;
+}
+
+.docs-brand-label {
+  padding-inline-start: .65rem;
+  border-inline-start: 1px solid var(--color-fd-border);
+  font-size: .875rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}

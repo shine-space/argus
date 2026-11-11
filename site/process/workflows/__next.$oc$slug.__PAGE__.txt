@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[47873,["$3","$4","$5","$6","$d","$e"],"default"]
+14:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+15:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[97367,["$3","$4","$5","$6"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$3","$4","$5","$6"],"$1a"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#什么时候使用工作流","title":"什么时候使用工作流"},{"depth":2,"url":"#定义输入输出","title":"定义输入输出"},{"depth":2,"url":"#人工处理节点","title":"人工处理节点"},{"depth":2,"url":"#执行与失败","title":"执行与失败"},{"depth":2,"url":"#发布和兼容","title":"发布和兼容"}],"children":[["$","$L10",null,{"children":"Workflow 与人工处理"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"将确定步骤、分支和人工确认组织为可追踪的流程。"}],"\n",["$","$L12",null,{"as":"h2","id":"什么时候使用工作流","children":"什么时候使用工作流"}],"\n",["$","p",null,{"children":"步骤、输入输出和分支规则相对明确时，用 Workflow 组织处理。例如收集材料、提取字段、核对规则、生成草稿并等待人工确认。"}],"\n",["$","$L12",null,{"as":"h2","id":"定义输入输出","children":"定义输入输出"}],"\n",["$","p",null,{"children":"明确字段类型、必填项、默认行为及文件引用。步骤间传递结构化数据，避免只靠自由文本判断关键业务状态。"}],"\n",["$","$L12",null,{"as":"h2","id":"人工处理节点","children":"人工处理节点"}],"\n",["$","p",null,{"children":"对需要确认、审批或补充信息的步骤，明确由谁处理、需要看到哪些依据、可以选择什么结果以及如何继续。AI 内部工具调用与人类业务行动分别记录。"}],"\n",["$","$L12",null,{"as":"h2","id":"执行与失败","children":"执行与失败"}],"\n",["$","p",null,{"children":"从原运行查看节点结果和错误。只有在允许的条件下进行重试、恢复或重新执行；新的运行与原失败证据分别保留。没有执行记录的节点状态，不应由前端推测为已经完成。"}],"\n",["$","$L12",null,{"as":"h2","id":"发布和兼容","children":"发布和兼容"}],"\n",["$","p",null,{"children":["编辑完成后按版本发布。输入或输出变化会影响调用方，采用更新时检查依赖应用和数据映射。详见",["$","$L13",null,{"href":"/api/#group-workflows","children":"工作流接口"}],"。"]}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"workflows","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"Workflow 与人工处理 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1c","v":null,"s":"$b"}},"a":"$@1d","u":"$@1e","b":"xjybtJKVRSLowHaKRAZp5"}
+16:null
+1e:true
+b:300
+b:C
+1d:0
+9:"$undefined"
+1c:"$undefined"
+17:"$undefined"

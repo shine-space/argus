@@ -1,0 +1,33 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+14:"$Sreact.suspense"
+17:"ViewportBoundary"
+18:I[97367,["$3","$4","$5","$6"],"$17"]
+19:"MetadataBoundary"
+1a:I[97367,["$3","$4","$5","$6"],"$19"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#接口与产品版本","title":"接口与产品版本"},{"depth":2,"url":"#前端与后端","title":"前端与后端"},{"depth":2,"url":"#应用与资源版本","title":"应用与资源版本"},{"depth":2,"url":"#数据结构变化","title":"数据结构变化"},{"depth":2,"url":"#开发包和文档","title":"开发包和文档"}],"children":[["$","$L10",null,{"children":"接口版本与兼容"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"使前端、API、应用配置和后端镜像保持可管理的兼容关系。"}],"\n",["$","$L12",null,{"as":"h2","id":"接口与产品版本","children":"接口与产品版本"}],"\n",["$","p",null,{"children":["Core API 使用 ",["$","code",null,{"children":"/api/v1"}],"，部分既有接口使用其他明确路径。路径中的 v1 不是软件产品版本号。安装版本、开通模块与发布配置共同决定接口可用范围。"]}],"\n",["$","$L12",null,{"as":"h2","id":"前端与后端","children":"前端与后端"}],"\n",["$","p",null,{"children":"记录前端开发包适配的后端版本和接口合同。升级前检查必填字段、枚举、对象权限、事件、文件和错误语义，不仅检查 URL 是否仍存在。"}],"\n",["$","$L12",null,{"as":"h2","id":"应用与资源版本","children":"应用与资源版本"}],"\n",["$","p",null,{"children":"应用采用更新时保留明确资源版本，历史任务按原记录回查。新的输入输出合同需要调用方适配，不能把旧任务改投给另一个执行器。"}],"\n",["$","$L12",null,{"as":"h2","id":"数据结构变化","children":"数据结构变化"}],"\n",["$","p",null,{"children":"业务记录出现结构不兼容时，执行显式迁移。保留原数据和来源，不通过前端忽略错误或强制覆盖实现升级。"}],"\n",["$","$L12",null,{"as":"h2","id":"开发包和文档","children":"开发包和文档"}],"\n",["$","p",null,{"children":"本网站提供接口参考和集成方法；具体交付版本的兼容清单由运行包与开发包共同提供。下载的 OpenAPI 可以用于类型生成与请求校验，但不能授予接口访问权限。"}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L13",null,{"children":["$","$14",null,{"name":"Next.MetadataOutlet","children":"$@15"}]}]]}],"p":"$@16","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"compatibility","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L18",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1a",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$14",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"接口版本与兼容 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1b","v":null,"s":"$b"}},"a":"$@1c","u":"$@1d","b":"xjybtJKVRSLowHaKRAZp5"}
+15:null
+1d:true
+b:300
+b:C
+1c:0
+9:"$undefined"
+1b:"$undefined"
+16:"$undefined"

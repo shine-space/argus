@@ -1,0 +1,15 @@
+/* Shared hero geometry for all five company detail pages. */
+:root{--site-hero-top:clamp(180px,18vw,280px);--site-hero-bottom:80px;--site-hero-column-height:clamp(380px,30vw,480px);--site-hero-gap:clamp(30px,5vw,80px);--site-hero-title-gap:22px}
+body.site-marketing[data-site-hero] :is(.site-hero-section,.fcph,.fcsv-top){padding-top:var(--site-hero-top)!important;padding-bottom:var(--site-hero-bottom)!important;min-height:0!important}
+body.site-marketing[data-site-hero] :is(.site-hero-grid,.fcph-grid,.fcsv-tg){display:grid!important;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr)!important;gap:var(--site-hero-gap)!important;align-items:start!important;container-type:inline-size}
+body.site-marketing[data-site-hero] :is(.site-hero-copy,.fcph-copy,.fcsv-copy){box-sizing:border-box;display:flex!important;flex-direction:column!important;align-items:flex-start!important;align-self:start!important;gap:0!important;height:var(--site-hero-column-height)!important;min-height:0!important;padding:0!important;translate:none!important;transform:none!important}
+body.site-marketing[data-site-hero] :is(.site-hero-copy,.fcph-copy,.fcsv-copy)>.fc-eb{margin:0!important;height:34px;flex:none}
+body.site-marketing[data-site-hero] :is(.site-hero-copy,.fcph-copy,.fcsv-copy)>h1{margin:var(--site-hero-title-gap) 0 0!important;padding:0!important;font-family:var(--site-font-display)!important;font-weight:400!important;font-synthesis:none!important;font-variation-settings:normal!important}
+body.site-marketing[data-site-hero] :is(.site-hero-copy,.fcph-copy,.fcsv-copy)>h1 :is(span,em,strong){font-family:inherit!important;font-weight:400!important;font-synthesis:none!important}
+body.site-marketing[data-site-hero] :is(.site-hero-copy,.fcph-copy,.fcsv-copy)>:is(.site-type-description,[data-site-type="description"]){position:static!important;inset:auto!important;translate:none!important;transform:none!important;flex:none;width:100%;max-width:560px!important;min-height:2lh!important;margin: auto 0 0!important;padding:0!important}
+@media(max-width:999px){
+ :root{--site-hero-top:150px;--site-hero-bottom:64px}
+ body.site-marketing[data-site-hero] :is(.site-hero-grid,.fcph-grid,.fcsv-tg){grid-template-columns:minmax(0,1fr)!important;gap:40px!important}
+ body.site-marketing[data-site-hero] :is(.site-hero-copy,.fcph-copy,.fcsv-copy){height:auto!important}
+ body.site-marketing[data-site-hero] :is(.site-hero-copy,.fcph-copy,.fcsv-copy)>:is(.site-type-description,[data-site-type="description"]){margin-top:28px!important}
+}

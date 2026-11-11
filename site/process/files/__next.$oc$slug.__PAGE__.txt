@@ -1,0 +1,34 @@
+2:"$Sreact.fragment"
+3:"/process/_next/static/chunks/2k4ib87stv7qn.js"
+4:"/process/_next/static/chunks/1t6iry9204tx4.js"
+5:"/process/_next/static/chunks/2-zz8ejeqzlhq.js"
+6:"/process/_next/static/chunks/25jruquilsekl.js"
+7:I[39756,["$3","$4","$5","$6"],"default"]
+8:I[37457,["$3","$4","$5","$6"],"default"]
+d:"/process/_next/static/chunks/25so3-l8latpu.js"
+e:"/process/_next/static/chunks/2sxfc-5__amaj.js"
+f:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsPage"]
+10:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsTitle"]
+11:I[46830,["$3","$4","$5","$6","$d","$e"],"DocsBody"]
+12:I[94157,["$3","$4","$5","$6","$d","$e"],"Heading"]
+13:I[47873,["$3","$4","$5","$6","$d","$e"],"default"]
+14:I[97367,["$3","$4","$5","$6"],"OutletBoundary"]
+15:"$Sreact.suspense"
+18:"ViewportBoundary"
+19:I[97367,["$3","$4","$5","$6"],"$18"]
+1a:"MetadataBoundary"
+1b:I[97367,["$3","$4","$5","$6"],"$1a"]
+a:X
+a:C
+b:X
+c:[["children",{"s":"__PAGE__","h":160,"d":{"r":["$","$2","c",{"children":[["$","$Lf",null,{"toc":[{"depth":2,"url":"#上传文件","title":"上传文件"},{"depth":2,"url":"#选择当前任务的材料","title":"选择当前任务的材料"},{"depth":2,"url":"#读取结果","title":"读取结果"},{"depth":2,"url":"#修改与新修订","title":"修改与新修订"},{"depth":2,"url":"#文件与知识","title":"文件与知识"}],"children":[["$","$L10",null,{"children":"文件、引用与成果"}],"$undefined",["$","$L11",null,{"children":[false,[["$","p",null,{"children":"上传任务文件、读取生成成果，并保持来源与权限边界。"}],"\n",["$","$L12",null,{"as":"h2","id":"上传文件","children":"上传文件"}],"\n",["$","p",null,{"children":"通过应用入口或文件接口上传，提供正确的工作区范围。保留服务端返回的 FileRef，不使用本地磁盘路径或任意对象存储 URL 代替平台文件身份。"}],"\n",["$","$L12",null,{"as":"h2","id":"选择当前任务的材料","children":"选择当前任务的材料"}],"\n",["$","p",null,{"children":"明确本次任务使用哪些文件。部分接口对省略文件字段与显式空数组有不同语义，调用时以参数说明为准。"}],"\n",["$","$L12",null,{"as":"h2","id":"读取结果","children":"读取结果"}],"\n",["$","p",null,{"children":"生成成功的文件应有可回查的成果引用。下载时仍需鉴权。引用的存在不代表接收人已经有权访问，不把内部存储地址当成公开链接分发。"}],"\n",["$","$L12",null,{"as":"h2","id":"修改与新修订","children":"修改与新修订"}],"\n",["$","p",null,{"children":"修改已有文件时保留新修订和来源。人工编辑中的内容不应被迟到的 AI 输出覆盖；采用新的结果前确认原任务与当前业务意图一致。"}],"\n",["$","$L12",null,{"as":"h2","id":"文件与知识","children":"文件与知识"}],"\n",["$","p",null,{"children":["对话附件、生成成果和知识文档有不同生命周期。需要沉淀知识的内容，按对应授权与处理流程使用。",["$","$L13",null,{"href":"/api/#group-files","children":"文件接口"}],"提供上传、下载和修订合同。"]}]]]}]]}],[["$","script","script-0",{"src":"/process/_next/static/chunks/25so3-l8latpu.js","async":true}],["$","script","script-1",{"src":"/process/_next/static/chunks/2sxfc-5__amaj.js","async":true}]],["$","$L14",null,{"children":["$","$15",null,{"name":"Next.MetadataOutlet","children":"$@16"}]}]]}],"p":"$@17","v":null,"s":"$b"}}]]
+1:[["children",{"s":{"n":"slug","t":"oc","k":"files","s":["search-index.json"]},"h":64,"d":{"r":["$","$2","c",{"children":[null,["$","$L7",null,{"parallelRouterKey":"children","template":["$","$L8",null,{}]}]]}],"p":"$@9","v":"$a","s":"$b"},"c":"$Qc"}]]
+0:{"t":{"t":{"s":"","h":16,"c":"$Q1"},"h":{"r":["$","$2","h",{"children":[null,["$","$L19",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","$L1b",null,{"children":[["$","div",null,{"hidden":true,"children":["$","$15",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"文件、引用与成果 - 朝夕智能"}]]}]}],null]}],null]}],"p":"$@1c","v":null,"s":"$b"}},"a":"$@1d","u":"$@1e","b":"xjybtJKVRSLowHaKRAZp5"}
+16:null
+1e:true
+b:300
+b:C
+1d:0
+9:"$undefined"
+1c:"$undefined"
+17:"$undefined"

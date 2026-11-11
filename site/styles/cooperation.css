@@ -1,0 +1,15 @@
+/* Shared cooperation module: base layout and decorative globe sizing. */
+@import url("/styles/blocks/4a5b4394-38ae.css");
+
+.fc.fcx > .fcx-cv {
+  scale: .88;
+  transform-origin: center;
+}
+
+.fc.fcx .fcx-in > h2.fc-hd {
+  font-family: var(--site-font-text, var(--ty-font-text, sans-serif)) !important;
+  font-size: var(--site-size-section, clamp(28px, 3.2vw, 48px)) !important;
+  font-weight: 600 !important;
+  line-height: var(--site-leading-heading, 1.2) !important;
+  letter-spacing: -.025em !important;
+}

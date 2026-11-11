@@ -1,0 +1,6 @@
+#aiora-features{width:100%;margin:0;flex:none;padding:0 0 160px;position:relative;box-sizing:border-box}#aiora-features .work-features-width iframe{display:block;width:100%;height:785px;border:0;background:#f6f7f9;color-scheme:light}@media(max-width:809px){#aiora-features .work-features-width iframe{height:1600px}}
+#aiora-features .work-features-width iframe{background:transparent}
+
+section.fcph h1.fc-hd,section.fcph h1.fc-hd .fc-it{font-family:var(--site-font-display) !important;font-weight:400!important;font-variation-settings:normal;font-style:normal!important}
+
+#aiora-features .work-features-width iframe{width:calc(100% + 64px);max-width:none;margin-left:-32px}#aiora-features .work-features-width,#aiora-features .work-features-width>.fc-wrap{overflow:visible}

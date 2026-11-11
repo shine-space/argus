@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="336" height="64" viewBox="0 0 336 64" preserveAspectRatio="none">
+  <!-- Existing 56 x 64 cover artwork, with the CSS 165deg gradient endpoints. -->
+  <defs>
+    <linearGradient id="cover-0" gradientUnits="userSpaceOnUse" x1="18.124355653" y1="-4.856406461" x2="37.875644347" y2="68.856406461" color-interpolation="sRGB">
+      <stop offset="0" stop-color="#3158a8"/><stop offset=".4" stop-color="#3158a8"/>
+      <stop offset=".75" stop-color="#35b7ae"/><stop offset="1" stop-color="#c9e99b"/>
+    </linearGradient>
+    <linearGradient id="cover-1" gradientUnits="userSpaceOnUse" x1="74.124355653" y1="-4.856406461" x2="93.875644347" y2="68.856406461" color-interpolation="sRGB">
+      <stop offset="0" stop-color="#62409b"/><stop offset=".4" stop-color="#62409b"/>
+      <stop offset=".75" stop-color="#ae80cc"/><stop offset="1" stop-color="#edbfd3"/>
+    </linearGradient>
+    <linearGradient id="cover-2" gradientUnits="userSpaceOnUse" x1="130.124355653" y1="-4.856406461" x2="149.875644347" y2="68.856406461" color-interpolation="sRGB">
+      <stop offset="0" stop-color="#176b52"/><stop offset=".4" stop-color="#176b52"/>
+      <stop offset=".75" stop-color="#62b98b"/><stop offset="1" stop-color="#d7e79c"/>
+    </linearGradient>
+    <linearGradient id="cover-3" gradientUnits="userSpaceOnUse" x1="186.124355653" y1="-4.856406461" x2="205.875644347" y2="68.856406461" color-interpolation="sRGB">
+      <stop offset="0" stop-color="#955017"/><stop offset=".4" stop-color="#955017"/>
+      <stop offset=".75" stop-color="#dfa650"/><stop offset="1" stop-color="#98dcd0"/>
+    </linearGradient>
+    <linearGradient id="cover-4" gradientUnits="userSpaceOnUse" x1="242.124355653" y1="-4.856406461" x2="261.875644347" y2="68.856406461" color-interpolation="sRGB">
+      <stop offset="0" stop-color="#913e79"/><stop offset=".4" stop-color="#913e79"/>
+      <stop offset=".75" stop-color="#ce8cb5"/><stop offset="1" stop-color="#f0cfad"/>
+    </linearGradient>
+    <linearGradient id="cover-5" gradientUnits="userSpaceOnUse" x1="298.124355653" y1="-4.856406461" x2="317.875644347" y2="68.856406461" color-interpolation="sRGB">
+      <stop offset="0" stop-color="#345f94"/><stop offset=".4" stop-color="#345f94"/>
+      <stop offset=".75" stop-color="#8995d0"/><stop offset="1" stop-color="#e9b2d0"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" width="56" height="64" fill="url(#cover-0)"/>
+  <rect x="56" width="56" height="64" fill="url(#cover-1)"/>
+  <rect x="112" width="56" height="64" fill="url(#cover-2)"/>
+  <rect x="168" width="56" height="64" fill="url(#cover-3)"/>
+  <rect x="224" width="56" height="64" fill="url(#cover-4)"/>
+  <rect x="280" width="56" height="64" fill="url(#cover-5)"/>
+</svg>
