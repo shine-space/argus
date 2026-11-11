@@ -56,3 +56,19 @@ npm run publish:local
 根目录的开发依赖由 `package.json` 和 `pnpm-lock.yaml` 管理。`scripts/` 中保留了不同阶段的导入和生成工具，运行前应确认其输入文件与当前页面对应
 
 本仓库只包含官网，不包含 Argus 产品服务端、管理端或用户端工程。依赖目录、运行缓存、日志、原始抓取快照及本地预览截图不纳入版本管理
+
+## GitHub 在线预览
+
+线上地址：https://shine-space.github.io/argus/
+
+GitHub Pages 使用 `.github/workflows/pages.yml`，推送到 `main` 后会自动构建和发布
+
+本地服务器的资源映射在发布时由 `scripts/export_pages.py` 转成普通静态文件，网站的页面与资源统一使用 `/argus/` 路径；`site/pages-runtime.js` 为静态托管处理导航和 CMS 数据分段请求
+
+手动生成同样的发布文件：
+
+```powershell
+python scripts/export_pages.py --base-path /argus --origin https://shine-space.github.io --output _site
+```
+
+`_site/` 为生成目录，不提交到仓库
