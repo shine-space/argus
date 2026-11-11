@@ -11,7 +11,17 @@
   // Framer's original router still contains its upstream route identifiers.
   // Use the published HTML links for marketing-page navigation on static hosting.
   const navigation = { '交付服务': '/pricing/', '文档中心': '/process/', '关于我们': '/about/' };
+  const publishedPath = path => {
+    let relative = path === base ? '/' : path.startsWith(base + '/') ? path.slice(base.length) : path;
+    relative = relative.replace(/^\/work(?=\/|$)/, '/solution/electronic');
+    return base + relative;
+  };
   const syncNavigation = () => {
+    document.querySelectorAll('a[href^="/"]:not([href^="//"])').forEach(link => {
+      const url = new URL(link.href, location.href);
+      const href = publishedPath(url.pathname) + url.search + url.hash;
+      if (link.getAttribute('href') !== href) link.setAttribute('href', href);
+    });
     document.querySelectorAll('header.fc.fchd .fchd-nav a').forEach(link => {
       const route = navigation[link.textContent.replace(/\s+/g, '')];
       if (route && link.getAttribute('href') !== base + route) link.setAttribute('href', base + route);
@@ -34,7 +44,7 @@
       const route = navigation[link.textContent.replace(/\s+/g, '')];
       if (route) url.pathname = base + route;
     }
-    if (!url.pathname.startsWith(base + '/') && url.pathname !== base) url.pathname = base + url.pathname;
+    url.pathname = publishedPath(url.pathname);
     if (url.pathname === location.pathname && url.search === location.search) return;
     if (location.pathname.startsWith(base + '/process/') && url.pathname.startsWith(base + '/process/')) return;
     event.preventDefault();
