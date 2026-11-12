@@ -1,7 +1,7 @@
 const setNavigationCurrentPage = header => {
   const normalizePath = pathname => {
     const path = pathname.replace(/\/+$/, '') || '/';
-    if (path === '/services/voice-agents') return '/services';
+    if (path === '/services/voice-agents') return '/product/agent';
     return path.replace(/^\/work(?=\/|$)/, '/solution/electronic');
   };
   const currentPath = normalizePath(location.pathname);
@@ -28,7 +28,7 @@ const setNavigationCurrentPage = header => {
     markCurrent([...drawer.querySelectorAll('.fchd-list > ul > li > a[href]')]);
   }
   markCurrent([...header.querySelectorAll('.fchd-schips a[href]')]);
-  const group = currentPath.startsWith('/services') ? 0 : currentPath.startsWith('/solution/') ? 1 : -1;
+  const group = currentPath.startsWith('/product/') ? 0 : currentPath.startsWith('/solution/') ? 1 : -1;
   header.querySelectorAll('.fchd-nav > ul > li > a').forEach((link, index) => {
     if (index < 2) link.classList.toggle('is-cur', index === group);
   });
@@ -67,7 +67,7 @@ const setNavigationCurrentPage = header => {
     if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     event.stopImmediatePropagation();
-    window.location.assign(link.matches(menuEntry) && !link.closest('.fchd-solution-drawer') ? '/services' : link.href);
+    window.location.assign(link.matches(menuEntry) && !link.closest('.fchd-solution-drawer') ? '/product/agent' : link.href);
   }, true);
   // Mobile uses the same navigation template and active product entries as desktop.
   const syncMobileNavigation = () => {
@@ -178,7 +178,7 @@ const setNavigationCurrentPage = header => {
       const about = header.querySelector('.fchd-nav li:has(> a[href="/about"])');
       if (docs && about && docs.nextElementSibling !== about) about.before(docs);
       header.querySelectorAll(iconSelector).forEach(link => {
-        const href = link.matches(selector) ? '/services' : link.getAttribute('href');
+        const href = link.matches(selector) ? '/product/agent' : link.getAttribute('href');
         const expected = sharedIcons.get(href);
         const icon = link.querySelector('.fchd-ic svg');
         if (expected && icon && !icon.isEqualNode(expected)) {
@@ -197,7 +197,7 @@ const setNavigationCurrentPage = header => {
       if (trigger.getAttribute('role') !== 'button') trigger.setAttribute('role', 'button');
       if (trigger.tabIndex !== 0) trigger.tabIndex = 0;
     });
-    document.querySelectorAll(selector).forEach(link => link.setAttribute('href', '/services'));
+    document.querySelectorAll(selector).forEach(link => link.setAttribute('href', '/product/agent'));
     document.querySelectorAll(headerSelector).forEach(setNavigationCurrentPage);
     syncMobileNavigation();
   };

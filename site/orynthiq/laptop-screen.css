@@ -121,3 +121,8 @@
   }
   #home.has-pointer-glow::before { opacity: 1; }
 }
+
+@media (min-width: 1200px) {
+  .framer-BlW2O #home .framer-1aus0yj { width: 100%; max-width: 1200px; }
+  #home .framer-4tgzny { width: 100%; }
+}

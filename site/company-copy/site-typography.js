@@ -21,7 +21,7 @@
  function sync(){
   document.querySelectorAll('.fc.fci .fc-hd').forEach(el=>{el.classList.remove('site-type-section');if(el.dataset.siteType==='section')delete el.dataset.siteType;});
   document.querySelectorAll('.fc.fch .fch-h').forEach(el=>{el.classList.remove('site-type-hero');if(el.dataset.siteType==='hero')delete el.dataset.siteType;});
-  const heroPages=['/about','/pricing','/solution/electronic','/services/support-agents','/services/workflow-automation'];
+  const heroPages=['/about','/pricing','/solution/electronic','/product/hardware','/product/model'];
   if(heroPages.includes(location.pathname.replace(/\/$/,'')))document.body.dataset.siteHero='shared';else delete document.body.dataset.siteHero;
   if(heroPages.includes(location.pathname.replace(/\/$/,'')))document.querySelectorAll('.fcph-copy,.fcsv-top .fcsv-copy').forEach(el=>{el.classList.add('site-hero-copy');el.parentElement.classList.add('site-hero-grid');el.closest('section')?.classList.add('site-hero-section');});
 

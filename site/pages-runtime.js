@@ -14,6 +14,8 @@
   const publishedPath = path => {
     let relative = path === base ? '/' : path.startsWith(base + '/') ? path.slice(base.length) : path;
     relative = relative.replace(/^\/work(?=\/|$)/, '/solution/electronic');
+    const products = {"/services":"/product/agent","/services/workflow-automation":"/product/model","/services/support-agents":"/product/hardware"};
+    relative = products[relative.replace(/\/$/, '')] || relative;
     return base + relative;
   };
   const syncNavigation = () => {

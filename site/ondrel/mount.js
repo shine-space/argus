@@ -47,6 +47,6 @@
   disconnectedCallback(){removeEventListener('scroll',this.onScroll);cancelAnimationFrame(this.frame);}
  }
  customElements.define('ondrel-plan',OndrelPlan);
- const mount=()=>{if(document.getElementById('ondrel-plan'))return;const isWorkflow=/^\/services\/workflow-automation\/?$/.test(location.pathname);const target=isWorkflow?document.querySelector('[data-framer-name="S1 FcCta"]'):document.querySelector('#business-applications')?.closest('.framer-1udua1m');if(!target)return;const host=document.createElement('ondrel-plan');host.id='ondrel-plan';host.lang='zh-CN';target.before(host);};
+ const mount=()=>{if(document.getElementById('ondrel-plan'))return;const isWorkflow=/^\/product\/model\/?$/.test(location.pathname);const target=isWorkflow?document.querySelector('[data-framer-name="S1 FcCta"]'):document.querySelector('#business-applications')?.closest('.framer-1udua1m');if(!target)return;const host=document.createElement('ondrel-plan');host.id='ondrel-plan';host.lang='zh-CN';target.before(host);};
  new MutationObserver(mount).observe(document.body,{childList:true,subtree:true});mount();
 })();

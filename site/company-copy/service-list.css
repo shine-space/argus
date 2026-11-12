@@ -1,3 +1,10 @@
+/* Every service illustration uses the same inward 1px outline. */
+.fcsl { --fcsl-demo-outline-color: rgb(0 0 0 / 7%); --fcsl-demo-inset: clamp(10px, 1.4vw, 20px); }
+.fcsl .fcsl-ch > .fcsl-demo {
+  outline: 1px solid var(--fcsl-demo-outline-color);
+  outline-offset: -1px;
+}
+
 
 #svc-custom-ai-apps > .fcsl-demo:has(> .service-models-frame) {
   position: relative;
@@ -24,19 +31,17 @@
 #svc-voice-agents > .fcsl-demo:has(employee-wall) { position: relative; overflow: hidden; }
 #svc-voice-agents > .fcsl-demo:has(employee-wall) > .v-voice { display: none !important; }
 employee-wall { position: absolute; inset: 0; display: block; overflow: hidden; }
+.fcsl .fcsl-demo > employee-wall { inset: var(--fcsl-demo-inset); border-radius: 16px; }
 employee-wall img {
   position: absolute;
   top: 0;
   left: 0;
   visibility: hidden;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 0;
   object-fit: cover;
   border-radius: 50%;
-  --ui-color-avatar-gradient-start: #ffad75;
-  --ui-color-avatar-gradient-middle: #f36a4b;
-  --ui-color-avatar-gradient-end: #be4329;
-  background: linear-gradient(135deg, var(--ui-color-avatar-gradient-start) 0%, var(--ui-color-avatar-gradient-middle) 48%, var(--ui-color-avatar-gradient-end) 100%);
+  background: transparent;
   box-shadow: 0 5px 16px #0006;
   user-select: none;
 }
@@ -45,8 +50,6 @@ employee-wall img {
 #svc-workflow-automation > .fcsl-demo:has(> [message-flow]) {
   position: relative;
   background: #e9e8e1 !important;
-  outline: 1px solid rgb(0 0 0 / 7%);
-  outline-offset: -1px;
   border-radius: 24px;
 }
 :is(#svc-workflow-automation, #svc-support-agents, #svc-knowledge-base) > .fcsl-demo {
@@ -204,7 +207,7 @@ article.fcsl-ch > .fcsl-copy > :is(.fcsl-meta,.fcsl-link) { display: none !impor
 .fcsl-idx > p { display: none !important; }
 #svc-voice-agents > .fcsl-demo:has(employee-wall) { position: relative; overflow: hidden; }
 #svc-voice-agents > .fcsl-demo:has(employee-wall) > .v-voice { display: none !important; }
-#svc-workflow-automation > .fcsl-demo:has(> [message-flow]) { position: relative; outline: rgba(0, 0, 0, 0.07) solid 1px; outline-offset: -1px; border-radius: 24px; background: rgb(233, 232, 225) !important; }
+#svc-workflow-automation > .fcsl-demo:has(> [message-flow]) { position: relative; border-radius: 24px; background: rgb(233, 232, 225) !important; }
 :is(#svc-workflow-automation, #svc-support-agents, #svc-knowledge-base) > .fcsl-demo { position: relative; }
 :is(#svc-workflow-automation, #svc-support-agents, #svc-knowledge-base) > .fcsl-demo > :is([message-flow], .service-workbench-preview, workbench-illustration) { position: absolute; inset: clamp(10px, 1.4vw, 20px) clamp(10px, 1.4vw, 20px) 0px; width: auto; height: auto; border-radius: 16px 16px 0px 0px; overflow: hidden; }
 #svc-workflow-automation > .fcsl-demo:has(> [message-flow]) > .v-flow { display: none !important; }
@@ -273,3 +276,5 @@ article.fcsl-ch > .fcsl-copy > :is(.fcsl-meta, .fcsl-link) { display: none !impo
 #svc-support-agents > .fcsl-demo { min-height: 0px; padding-bottom: 0px; }#work-service-list{width:100%;position:relative}#work-service-list .fcsl{padding-bottom:0}#work-service-list article[id]{scroll-margin-top:110px}
 
 #work-service-list{padding-bottom:clamp(100px,10vw,160px)}
+
+.fcsl #svc-voice-agents .fcsl-copy > h2 { text-wrap: balance; }

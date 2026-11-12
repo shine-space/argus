@@ -1,0 +1,5 @@
+/* One typography contract for section headings and supporting copy, including shadow components. */
+body.site-marketing.site-marketing :is(.site-type-section,[data-site-type="section"]),
+:host :is(.site-type-section,[data-site-type="section"]){font-family:var(--site-font-text,system-ui)!important;font-size:var(--site-size-section,clamp(28px,3.2vw,48px))!important;font-weight:500!important;line-height:var(--site-leading-heading,1.2)!important;letter-spacing:-.025em!important}
+body.site-marketing.site-marketing :is(.site-type-body,[data-site-type="body"]),
+:host :is(.site-type-body,[data-site-type="body"]){font-family:var(--site-font-text,system-ui)!important;font-size:var(--site-size-body,16px)!important;font-weight:400!important;line-height:var(--site-leading-copy,1.6)!important}

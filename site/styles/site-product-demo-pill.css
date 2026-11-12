@@ -1,0 +1,31 @@
+/* Shared product-demonstration label, used by the iframe and the process shadow component. */
+:is(#how-it-works .framer-uybxw2-container, #features .framer-1b26e52-container) button,
+:host .process-demo-label{
+ padding:7px 14px 7px 8px!important;border:0!important;border-radius:999px!important;
+ background:var(--site-inverse,#fff)!important;
+ box-shadow:inset 0 0 0 1px var(--pill-edge,#dad8d0);
+}
+:host .process-demo-label{display:inline-flex;align-items:center;gap:10px;box-sizing:border-box;vertical-align:middle}
+:is(#how-it-works .framer-uybxw2-container, #features .framer-1b26e52-container) button>svg{display:none}
+:is(#how-it-works .framer-uybxw2-container, #features .framer-1b26e52-container) button>div{gap:10px!important;color:var(--site-ink,#0e0f12)!important}
+:is(#how-it-works .framer-uybxw2-container, #features .framer-1b26e52-container) button span,
+:host .process-demo-label>span{
+ font:400 12px/20px var(--site-font-text,Inter,system-ui,sans-serif)!important;
+ letter-spacing:.1em!important;white-space:nowrap;
+ color:color-mix(in srgb,var(--site-accent,#f36a4b) 40%,var(--site-ink,#0e0f12))!important;
+}
+:is(#how-it-works .framer-uybxw2-container, #features .framer-1b26e52-container) button>div>div,
+:host .process-demo-label>i{
+ position:relative;display:block;flex:none;width:18px!important;height:18px!important;
+ border-radius:50%;background:var(--site-accent,#f36a4b)!important;
+}
+:is(#how-it-works .framer-uybxw2-container, #features .framer-1b26e52-container) button>div>div::after,
+:host .process-demo-label>i::after{
+ content:'';position:absolute;inset:5px;border:2px solid var(--site-ink,#0e0f12);
+ border-right-color:transparent;border-radius:50%;animation:cooperation-badge-spin 1.2s linear infinite;
+}
+@keyframes cooperation-badge-spin{to{rotate:360deg}}
+@media(prefers-reduced-motion:reduce){
+ :is(#how-it-works .framer-uybxw2-container, #features .framer-1b26e52-container) button>div>div::after,
+ :host .process-demo-label>i::after{animation:none}
+}

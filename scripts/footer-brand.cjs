@@ -7,9 +7,9 @@ const footerBundleQuery = 'brand=9';
 const footerTagline = '从朝到夕，把日常工作做好';
 const footerColumns = [
   { h: '产品', l: [
-    { l: '智能体平台', h: '/services' },
-    { l: '工业模型工程', h: '/services/workflow-automation' },
-    { l: '智能硬件', h: '/services/support-agents' },
+    { l: '智能体平台', h: '/product/agent' },
+    { l: '工业模型工程', h: '/product/model' },
+    { l: '智能硬件', h: '/product/hardware' },
   ] },
   { h: '解决方案', l: [
     { l: '业务场景', h: '/work' },

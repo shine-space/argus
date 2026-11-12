@@ -178,7 +178,7 @@
     }
   }
   customElements.define('orynthiq-intro', OrynthiqIntro);
-  if (!/^\/services\/?$/.test(location.pathname)) return;
+  if (!/^\/product\/agent\/?$/.test(location.pathname)) return;
   const mount = () => {
     if (document.getElementById('orynthiq-intro')) return;
     const target = document.querySelector('[data-framer-name="S0 FcPageHero"]');

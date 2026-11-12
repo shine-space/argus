@@ -5,17 +5,19 @@
   const services = [
     {
       id: 'svc-voice-agents',
+      heading: '能承担工作的数字员工',
       title: '数字员工',
-      keyword: '岗位配置',
-      description: '选一位适合当前任务的数字员工，在对话里说明要做什么。企业可以按岗位为数字员工配置知识、Skill 和工具，再发布给团队使用',
-      bullets: ['按岗位配置数字员工', '为员工配置知识和工具', '发布数字员工给团队使用', '在对话中交办任务'],
+      keyword: '企业智能体',
+      description: '把任务交给数字员工，减少反复跟进，让工作持续推进，按计划交付成果',
+      bullets: ['按岗定制能力专业执行', '积累工作记忆，越用越懂你', '成果入库，随时复用', '内置技能与工具，越装越强'],
       illustration: 'employee-wall',
     },
     {
       id: 'svc-workflow-automation',
       title: '多智能体协作',
       keyword: '协同执行',
-      bullets: ['邀请同事和数字员工', '按职责分派和交接任务', '按权限共享任务资料', '查看进度和交付文件'],
+      description: '一个项目同事与数字员工协作，主 Agent 拆解任务、协调分工，共享团队知识，跟进进度与交付',
+      bullets: ['专业岗位智能体协同分工', '主 Agent 拆分委派任务', '无需指挥，主动开工', '懂群聊讨论，@交办即做'],
       illustration: 'digital-employee-conversation[message-flow]',
     },
     {
@@ -23,22 +25,22 @@
       title: '业务工作台',
       illustration: '.service-workbench-preview',
       keyword: '业务复核',
-      description: '从对话打开工作台，可以查看业务记录、原件、文件和处理状态。比如，财务专员读完票据后会生成待审草稿，财务人员可以对照原件复核。',
-      bullets: ['从对话打开业务工作台', '查看业务记录与处理状态', '预览原件和交付文件', '对照票据复核待审草稿'],
+      description: '对话里交办，工作台里核对。业务记录、处理状态和交付文件放在一起，财务人员可以对照票据原件，复核数字员工生成的待审草稿',
+      bullets: ['从对话进入工作台', '业务进度，一眼看清', '原件、成果放在一起', '对照票据，复核草稿'],
     },
     {
       id: 'svc-knowledge-base',
       title: '企业知识库',
       keyword: '知识检索',
-      description: '把分散的文档、图片和工作经验集中到知识库，方便维护。提问时，系统按权限检索资料，并可在答案中附上原文、原图和出处。',
-      bullets: ['集中维护文档与图片', '整理业务经验供团队使用', '按权限检索企业资料', '查看答案引用的原文原图'],
+      description: '资料集中存，回答带出处。把文档、图片和工作经验整理进知识库，按权限检索，随时回看答案引用的原文和原图',
+      bullets: ['文档、图片集中维护', '业务经验留给团队', '按权限查找企业资料', '回答可回看原文原图'],
     },
     {
       id: 'svc-custom-ai-apps',
       title: 'Skill、工作流与工具',
       keyword: '能力编排',
-      description: '常用的处理方法可以做成 Skill，固定步骤和分支可以编成工作流。需要访问业务系统时，接入相应工具，并按任务选择模型和运行环境。',
-      bullets: ['把常用方法做成技能', '编排处理步骤和分支', '通过工具连接业务系统', '按任务选模型和运行环境'],
+      description: '好用的方法，留给下一次任务。把常用做法做成 Skill，把固定步骤编成工作流，再按需接入业务工具、模型和运行环境',
+      bullets: ['常用做法存为 Skill', '固定步骤编成工作流', '接入已有业务系统', '按任务选模型和环境'],
       illustration: '.service-models-frame',
     },
   ];
@@ -103,7 +105,7 @@
     try {
       services.forEach((service, index) => {
         pageContent.querySelectorAll(sectionSelector + ' [id="' + service.id + '"]').forEach(card => {
-          setText(card.querySelector('.fcsl-copy > h2'), service.title);
+          setText(card.querySelector('.fcsl-copy > h2'), service.heading || service.title);
           setText(card.querySelector('.fcsl-n'), String(index + 1).padStart(2, '0') + ' — ' + service.keyword);
           if (service.description) setText(card.querySelector('.fcsl-short'), service.description);
 

@@ -18,9 +18,9 @@ manifest = json.loads((RECON / 'asset-manifest.json').read_text(encoding='utf-8'
 assets = {item['url']: item['path'] for item in manifest if 'path' in item}
 PLATFORM_COPY = {
     'INTELLIGENCE BEHIND EVERY ORDER': '智能体平台',
-    'An AI operations layer for the next generation of commerce.': '应用、数字员工与工作台， 把知识、流程、工具和模型组织为可用的能力',
+    'An AI operations layer for the next generation of commerce.': '查资料、核订单、做报表。数字员工调用企业知识和工具推进任务，关键操作由你确认',
     'Less busywork. More business in motion.':
-        '一个工作入口，连接人、AI 与业务',
+        '与数字员工协作，省力出成果',
     'Great commerce feels effortless. Orynthiq brings orders, customers, and operations into one intelligent flow.':
         '我们以制造业为切入点，连接企业知识、业务数据与已有系统，让 AI Agent 和业务人员协同工作。',
     'Less switching tabs. Fewer loose ends. A connected way to handle the work behind every purchase, with your team in control.':

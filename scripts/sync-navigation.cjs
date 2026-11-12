@@ -20,6 +20,7 @@ function sync(directory) {
     const html = fs.readFileSync(file, 'utf8');
     if (!headerPattern.test(html)) continue;
     const next = html
+      .replace(/<head>(?!<script src="\/product-routes\.js")/, '<head><script src="/product-routes.js"></script>')
       .replace(headerPattern, (_, opening) => opening + shared + '</header>')
       .replace(/<template id="shared-navigation">[\s\S]*?<\/template><style>[^<]*<\/style>/g, '')
       .replace(/<script src="\/company-copy\/service-menu-link\.js[^"]*" defer><\/script>/g, '')

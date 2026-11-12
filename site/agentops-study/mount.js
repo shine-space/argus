@@ -1,4 +1,11 @@
 (() => {
+  function revealLaunch(frame) {
+    const wrapper = frame.parentElement;
+    if (!frame.dataset.layoutReady || !wrapper?.dataset.entered) return;
+    frame.style.visibility = '';
+    requestAnimationFrame(() => wrapper.classList.add('is-on'));
+  }
+
   function mountFrame(id, target, section) {
     if (!target || document.getElementById(id)) return;
     const frame = document.createElement('iframe');
@@ -8,14 +15,18 @@
     frame.dataset.lazySrc = '/agentops-study/?section=' + section;
     frame.style.cssText = 'display:block;width:100%;height:650px;border:0;';
     if (section === 'launch') {
+      // Wait for the embedded layout before exposing a fixed-height viewport.
+      frame.style.visibility = 'hidden';
       const wrapper = document.createElement('div');
       wrapper.className = 'fc-wrap';
       wrapper.append(frame);
       wrapper.classList.add('launch-reveal');
       target.before(wrapper);
+      document.dispatchEvent(new CustomEvent('agentops-launch:mounted'));
       const reveal = new IntersectionObserver(([entry]) => {
         if (!entry.isIntersecting) return;
-        wrapper.classList.add('is-on');
+        wrapper.dataset.entered = 'true';
+        revealLaunch(frame);
         reveal.disconnect();
       }, { rootMargin: '0px 0px -40px 0px' });
       reveal.observe(wrapper);
@@ -37,6 +48,10 @@
     const height = event.data.height;
     if (frame && Number.isSafeInteger(height) && height > 0 && frame.style.height !== height + 'px') {
       frame.style.height = height + 'px';
+    }
+    if (frame?.id === 'agentops-launch' && Number.isSafeInteger(height) && height > 0) {
+      frame.dataset.layoutReady = 'true';
+      revealLaunch(frame);
     }
   });
 

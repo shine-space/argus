@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url><loc>http://127.0.0.1:4175/</loc></url>
-<url><loc>http://127.0.0.1:4175/services</loc></url>
+<url><loc>http://127.0.0.1:4175/product/agent</loc></url>
 <url><loc>http://127.0.0.1:4175/solution/electronic</loc></url>
 <url><loc>http://127.0.0.1:4175/process</loc></url>
 <url><loc>http://127.0.0.1:4175/pricing</loc></url>
@@ -9,8 +9,8 @@
 <url><loc>http://127.0.0.1:4175/book</loc></url>
 <url><loc>http://127.0.0.1:4175/404</loc></url>
 <url><loc>http://127.0.0.1:4175/services/voice-agents</loc></url>
-<url><loc>http://127.0.0.1:4175/services/workflow-automation</loc></url>
-<url><loc>http://127.0.0.1:4175/services/support-agents</loc></url>
+<url><loc>http://127.0.0.1:4175/product/model</loc></url>
+<url><loc>http://127.0.0.1:4175/product/hardware</loc></url>
 <url><loc>http://127.0.0.1:4175/solution/electronic/northwind-dental</loc></url>
 <url><loc>http://127.0.0.1:4175/solution/electronic/ledgerly</loc></url>
 <url><loc>http://127.0.0.1:4175/solution/electronic/oakline-home</loc></url>
