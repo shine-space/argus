@@ -1,7 +1,7 @@
 /* The embedded contact page uses the homepage's Night, Pine, Bone and Brass palette. */
 html body {
   --book-night: #07100c;
-  --book-pine: #0d1b16;
+  --book-pine: #222222;
   --book-bone: #f1f0eb;
   --book-ink: #0e0f12;
   --book-brass: #f36a4b;
@@ -274,3 +274,16 @@ html body {
     color: var(--book-ink);
   }
 }
+
+/* Native-sized controls prevent iOS input zoom and keep both orientations usable. */
+@media (max-width:600px), (max-width:960px) and (max-height:500px) and (orientation:landscape) {
+ .framer-KaDTJ > section[data-framer-name="Page Hero"] { padding-top:112px;padding-bottom:48px; }
+ .hardware-products__demo-intro h2 { font-size:28px!important;line-height:1.4!important;white-space:normal; }
+ .hardware-products__demo-intro p { font-size:16px;line-height:1.75; }
+ form input:not([type=hidden]), form textarea, form select { font-size:16px!important;line-height:1.5!important; }
+ form input:not([type=hidden]) { min-height:28px; }
+ form select { min-height:48px; }
+ form button { min-height:48px; }
+}
+
+@media(max-width:600px){.hardware-products__demo-intro .contact-title-line{display:block}}

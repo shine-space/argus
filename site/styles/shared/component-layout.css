@@ -1,0 +1,33 @@
+
+.fc[data-kb] *,.fc[data-kb] *::before,.fc[data-kb] *::after{transition:none!important}
+.fc-sec{position:relative;z-index:10;display:block;width:100%;--sp:.5;--pp:0}
+.fc-rev{position:relative;width:100%;--rv:1} .fc-rev-in{position:relative} .fc-rev-sp{height:0}
+.fc-rev.is-act{--rv:0;--t:min(var(--h),100vh);--t:min(var(--h),100svh);z-index:var(--layer,9);margin-top:calc(var(--t)*-1)}
+.fc-rev.is-act>.fc-rev-in{position:sticky;top:calc(100vh - var(--t));top:calc(100svh - var(--t))} .fc-rev.is-act>.fc-rev-sp{height:var(--t)}
+/* the lifting edge throws a shadow on the section beneath, and that section comes out of the dark as it is uncovered */
+.fc-rev.is-act>.fc-rev-in::before{content:"";position:absolute;z-index:40;left:0;right:0;top:0;height:120px;translate:0 calc((1 - var(--rv))*var(--t));background:linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,0));opacity:min(1,calc(var(--rv)*(1 - var(--rv))*9));pointer-events:none}
+.fc-rev.is-act>.fc-rev-in::after{content:"";position:absolute;z-index:39;left:0;right:0;top:0;height:var(--t);background:#000;opacity:calc((1 - var(--rv))*.16);pointer-events:none}
+.fc-wrap{--pad:56px;width:100%;max-width:calc(clamp(1280px, 92vw, 1520px) + var(--pad)*2);margin:0 auto;padding-left:var(--pad);padding-right:var(--pad)}
+.fc-eb{display:inline-flex;align-items:center;gap:10px;width:max-content;max-width:100%;margin:0;padding:7px 14px 7px 8px;border-radius:999px;background:var(--fc-cloud);color:var(--fc-ink);box-shadow:inset 0 0 0 1px var(--fc-fog)!important;font-size:12px;letter-spacing:.1em;text-transform:uppercase;line-height:1.2;opacity:0;translate:0 10px;transition:opacity .7s ease,translate .8s cubic-bezier(.2,.8,.2,1);box-shadow:inset 0 1px 0 color-mix(in srgb,#fff 12%,transparent)} .fc-eb.is-on{opacity:1;translate:0 0}
+.fc-eb i{position:relative;width:18px;height:18px;display:block;flex:none;border-radius:50%;background:var(--fc-brass)} .fc-eb i::after{content:"";position:absolute;inset:5px;border-radius:50%;border:2px solid var(--fc-ink);border-right-color:transparent;animation:fcSpin 1.2s linear infinite} @keyframes fcSpin{to{rotate:360deg}} @keyframes fcLed{0%,100%{opacity:1}50%{opacity:.35}}
+.fc-dark .fc-eb{background:color-mix(in srgb,var(--fc-cloud) 8%,transparent);color:var(--fc-cloud);box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--fc-cloud) 16%,transparent)!important}
+.fc-hd{margin:0;letter-spacing:-.045em;text-wrap:balance} .fc-hd-l{display:block}
+.fc-hd-w{display:inline-block;overflow:hidden;vertical-align:top;padding:0 .05em .17em;margin:0 -.05em -.17em;white-space:pre}
+.fc-hd-i{position:relative;display:inline-block;translate:0 108%;transition:translate 1s cubic-bezier(.2,.75,.2,1)}
+.fc-hd.is-on .fc-hd-i{translate:0 0}
+.fc-hd-w.is-accw{overflow:visible;clip-path:inset(-.6em -.6em .02em -.2em)}
+.fc-it{position:relative;padding-right:.36em;background:linear-gradient(100deg,var(--fc-brass) 10%,color-mix(in srgb,var(--fc-brass) 35%,var(--fc-cloud)) 90%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent} :where(.fc:not(.fc-dark)) .fc-it{background:linear-gradient(100deg,var(--fc-ink) 10%,color-mix(in srgb,var(--fc-brass) 55%,var(--fc-ink)) 90%);-webkit-background-clip:text;background-clip:text}
+.fc-spark{position:absolute;right:-.02em;top:.02em;width:.34em;height:.34em;overflow:visible;fill:var(--fc-brass);scale:0;rotate:-90deg;transition:scale .7s cubic-bezier(.34,1.56,.64,1) var(--pd,0ms),rotate .9s cubic-bezier(.2,.8,.2,1) var(--pd,0ms)}
+.fc-hd.is-on .fc-spark{scale:1;rotate:0deg;animation:fcTw 3.2s ease-in-out calc(var(--pd,0ms) + 900ms) infinite} @keyframes fcTw{0%,100%{opacity:1;scale:1}50%{opacity:.55;scale:.72}}
+.fc-um{position:relative;overflow:hidden;transition:clip-path 1.35s cubic-bezier(.7,0,.2,1);background:color-mix(in srgb,var(--fc-stone) 22%,transparent)}
+.fc-um img{position:absolute;left:0;top:-9%;width:100%;height:118%;display:block;object-fit:cover;scale:1.28;translate:0 calc((var(--sp,.5) - .5)*var(--par,1)*-7%);transition:scale 1.9s cubic-bezier(.16,.84,.24,1);user-select:none}
+.fc-um.is-on img{scale:1}
+/* diagonal cuts: the section hangs over its neighbour and is cut on a slope (clip-path, so the neighbour shows through) */
+.fc-cut-t{margin-top:calc(var(--cut,7vw)*-1);clip-path:polygon(0 var(--cut,7vw),100% 0,100% 100%,0 100%);padding-top:var(--cut,7vw)}
+.fc-cut-b{margin-bottom:calc(var(--cut,7vw)*-1);padding-bottom:var(--cut,7vw)}
+.fc-cut-t.fc-cut-b{clip-path:polygon(0 var(--cut,7vw),100% 0,100% calc(100% - var(--cut,7vw)),0 100%)}
+.fc-cut-b:not(.fc-cut-t){clip-path:polygon(0 0,100% 0,100% calc(100% - var(--cut,7vw)),0 100%)}
+@media (max-width:1099px){.fc-wrap{--pad:32px}}
+@media (max-width:699px){.fc-wrap{--pad:20px}}
+:root{--g:56px}@media (max-width:1099px){:root{--g:32px}}@media (max-width:699px){:root{--g:20px}}
+@media (prefers-reduced-motion:reduce){.fc-hd-i{translate:0 0!important} .fc-spark{scale:1!important;rotate:0deg!important;animation:none!important} .fc-um{clip-path:none!important} .fc-um img{scale:1!important;translate:0 0!important}}

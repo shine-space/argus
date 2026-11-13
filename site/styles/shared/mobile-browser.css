@@ -1,0 +1,10 @@
+@media (max-width: 600px), (max-width: 960px) and (max-height: 500px) and (orientation: landscape) {
+  html {
+    --site-browser-background: #07100c;
+    background-color: var(--site-browser-background);
+  }
+  html body.site-marketing { background-color: var(--site-browser-background); }
+  body.site-marketing > #main {
+    background-color: var(--token-0891008a-32ca-47b1-8840-7637f8ffab38, #f1f0eb);
+  }
+}

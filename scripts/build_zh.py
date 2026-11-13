@@ -36,6 +36,7 @@ for line in (root/'scripts/zh-translations.tsv').read_text(encoding='utf-8').spl
     index,value=line.split('|',1);dictionary[source[int(index)]]=value
 
 dictionary.update({
+    'hello@argus.ai':'',
     'Services:/product/agent, Work:/work, Process:/process, Pricing:/pricing, About:/about, Journal:/journal':'产品能力:/product/agent, 解决方案:/work, 文档中心:/process, 价格:/pricing, 关于我们:/about, 观察:/journal',
     'Automate the work':'企业级 AI',
     'nobody *wants.*':'赋能制造业 *智能升级*',

@@ -13,6 +13,9 @@
     frame.loading = 'lazy';
     frame.title = section === 'launch' ? 'Launch Your AI Agent in Minutes' : 'AgentOps agents and features';
     frame.dataset.lazySrc = '/agentops-study/?section=' + section;
+    if (section === 'launch' && document.body.hasAttribute('data-agent-page')) {
+      frame.dataset.lazySrc += '&layout=module';
+    }
     frame.style.cssText = 'display:block;width:100%;height:650px;border:0;';
     if (section === 'launch') {
       // Wait for the embedded layout before exposing a fixed-height viewport.

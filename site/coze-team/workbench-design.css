@@ -1,6 +1,6 @@
 /* Fixed artwork coordinates match Figma node 3587:9230 (698 × 546).
    The host scales the composition uniformly; text stays real HTML. */
-.coze-workbench-preview { position:relative; height:auto!important; aspect-ratio:698/546; background:#e9e8e1!important; border-radius:24px; overflow:hidden; }
+#team-workroom > div > .order-2 > .coze-workbench-preview { position:relative; height:auto!important; aspect-ratio:698/546; background:#e9e8e1!important; border-radius:32px; overflow:hidden; }
 .workbench-design { position:absolute; top:0; left:0; width:698px; height:546px; overflow:hidden; border-radius:0; background:#e9e8e1; transform:scale(var(--workbench-design-scale,1)); transform-origin:top left; color:rgba(0,0,0,.85); font-family:inherit; font-size:12px; line-height:19.8px; cursor:default; }
 .workbench-design *, .workbench-design *::before, .workbench-design *::after { box-sizing:border-box; }
 .workbench-design p, .workbench-design h3 { margin:0; font:inherit; }

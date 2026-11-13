@@ -1,0 +1,18 @@
+/* Shared knowledge preview used on the product and solution pages. */
+@media (max-width: 600px), (max-width: 960px) and (max-height: 500px) and (orientation: landscape) {
+  :host(workbench-illustration) .framer-16vpjt1 {
+    display: flex; flex-wrap: wrap; gap: 8px; padding: 16px !important; height: auto; flex: none;
+  }
+  :host(workbench-illustration) .framer-16vpjt1 .framer-1sgdent { flex: 1 1 calc(100% - 60px); width: auto; }
+  :host(workbench-illustration) .framer-16vpjt1 .framer-tn361u { display: none; }
+  :host(workbench-illustration) .framer-16vpjt1 [data-framer-name^="Filter "] { flex: none; }
+  :host(workbench-illustration) .framer-1ebz82h > [data-framer-name^="Request "] {
+    display: grid; grid-template-columns: 32px minmax(0, 1fr) auto; gap: 2px 8px; padding: 10px 12px; min-height: 64px; height: auto; flex: none;
+  }
+  :host(workbench-illustration) .knowledge-file-icon { grid-row: 1 / 3; }
+  :host(workbench-illustration) [data-framer-name^="Request "][data-framer-name$=" Text"] { grid-column: 2; grid-row: 1 / 3; width: 100%; min-width: 0; }
+  :host(workbench-illustration) [data-framer-name^="Request "][data-framer-name$=" Source"] { grid-column: 3; grid-row: 1; }
+  :host(workbench-illustration) [data-framer-name^="Request "][data-framer-name$=" Status"] { grid-column: 3; grid-row: 2; width: auto; min-width: 0; margin: 0 !important; gap: 4px; }
+  :host(workbench-illustration) [data-framer-name$=" Status Text"] p { font-size: 11px !important; }
+  :host(workbench-illustration) [data-framer-name^="Request "][data-framer-name$=" Title"] p { font-size: 12px !important; white-space: normal; }
+}

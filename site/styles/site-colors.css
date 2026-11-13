@@ -3,6 +3,7 @@
  --site-ink:#0e0f12;
  --site-inverse:#fff;
  --site-accent:#f36a4b;
+ --site-surface-panel:#222222;
  --site-text-on-light-primary:var(--site-ink);
  --site-text-on-light-secondary:#5d605d;
  --site-text-on-light-muted:#686c66;
@@ -19,6 +20,7 @@
 body.site-marketing .fc{
  --fc-ink:var(--site-ink)!important;
  --fc-cloud:var(--site-inverse)!important;
+ --fc-pine:var(--site-surface-panel)!important;
  --fc-brass:var(--site-accent)!important;
  --fc-mut:var(--site-text-secondary)!important;
 }
@@ -45,7 +47,7 @@ body.site-marketing :is(.fchd-tx em,.fco-tag,.fcx-note,.fcpr-note,.fcsl-n,.fcpr-
 body.site-marketing .fcsl-n{color:var(--site-text-accent)!important}
 
 /* Light cards nested inside dark presentation panels must own their text theme. */
-body.site-marketing :is(.site-surface-light,.fc-lt,.service-workbench-preview,workbench-illustration){
+body.site-marketing :is(.site-surface-light,.fc-lt,.service-workbench-preview,workbench-illustration,.fcs-p:is(:nth-child(2),:nth-child(4)).is-open .fcs-copy){
  --site-text-primary:var(--site-text-on-light-primary);
  --site-text-secondary:var(--site-text-on-light-secondary);
  --site-text-muted:var(--site-text-on-light-muted);
@@ -53,3 +55,7 @@ body.site-marketing :is(.site-surface-light,.fc-lt,.service-workbench-preview,wo
  --fc-mut:var(--site-text-on-light-secondary)!important;
  color:var(--site-text-on-light-primary);
 }
+body.site-marketing .fcs-p:nth-child(2).is-open .fcs-copy{--site-text-secondary:var(--site-text-on-light-primary)}
+body.site-marketing .fcs-p:is(:nth-child(2),:nth-child(4)).is-open .fcs-copy .fcs-det{opacity:1}
+
+body.site-marketing .fco{border-top-color:color-mix(in srgb,var(--fc-cloud) 12%,transparent)}

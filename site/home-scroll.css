@@ -1,0 +1,6 @@
+/* Full-screen stops belong to the homepage; long content can keep its height. */
+html.home-screen-scroll [data-home-screen] {
+  box-sizing: border-box;
+  min-block-size: 100svh;
+  scroll-margin-block-start: 0;
+}

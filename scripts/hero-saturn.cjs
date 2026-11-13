@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const root = path.resolve(__dirname, '..');
-const importLine = 'import {heroVisual as __heroVisual,mountSaturnRings as __mountSaturnRings,createEarthMotion as __createEarthMotion} from "/particle-shapes/hero-saturn.mjs?v=5";\n';
+const importLine = 'import {heroVisual as __heroVisual,mountSaturnRings as __mountSaturnRings,createEarthMotion as __createEarthMotion} from "/particle-shapes/hero-saturn.mjs?v=6";\n';
 
 function preserveHeroInteractions(source) {
   return source

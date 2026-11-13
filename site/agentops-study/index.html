@@ -5,6 +5,7 @@
 <head>
 <script>
   document.documentElement.dataset.studySection = new URLSearchParams(location.search).get('section') || '';
+  document.documentElement.dataset.studyLayout = new URLSearchParams(location.search).get('layout') || '';
 </script>
 <script>
   if (new URLSearchParams(location.search).get('view') === 'models') {
@@ -394,7 +395,8 @@
     
     <!-- End of headEnd -->
 	
-<script type="module" src="/overlay-scrollbars.js?v=2"></script><link rel="stylesheet" href="/styles/site-product-demo-pill.css?v=1">
+<script type="module" src="/overlay-scrollbars.js?v=2"></script><link rel="stylesheet" href="/styles/site-section-heading.css?v=1"><link rel="stylesheet" href="/fonts/font-faces.css">
+<link rel="stylesheet" href="/product/agent/modules.css?v=2">
 </head>
 <body>
 	
@@ -660,7 +662,51 @@ linear-gradient(to bottom, rgba(138, 138, 138, 0.2) 1px, transparent 1px);backgr
   const videoSource = '/agentops-study/argus-launch-v16-1080p60.mp4';
   let observedVideos = new Set();
 
+  function syncSectionHeadings() {
+    if (window.parent !== window) {
+      try {
+        const parentStyle = window.parent.getComputedStyle(window.parent.document.documentElement);
+        document.documentElement.style.setProperty('--site-section-viewport', window.parent.innerWidth + 'px');
+        document.documentElement.toggleAttribute('data-site-section-desktop', window.parent.innerWidth >= 810);
+        for (const name of ['--site-font-text', '--site-size-body', '--site-leading-heading', '--site-leading-copy']) {
+          const value = parentStyle.getPropertyValue(name);
+          if (value) document.documentElement.style.setProperty(name, value);
+        }
+      } catch {}
+    }
+    for (const group of document.querySelectorAll('#how-it-works .framer-1u01hyh, #features .framer-1hgvd40')) {
+      const title = group.querySelector('h3');
+      const description = group.querySelector('p');
+      const label = group.querySelector('button');
+      if (!title || !description || !label) continue;
+      group.classList.add('site-section-heading');
+      group.parentElement.classList.add('site-section-layout');
+      const slotFor = (element, parent) => {
+        let slot = element;
+        while (slot.parentElement !== parent) slot = slot.parentElement;
+        return slot;
+      };
+      const titleSlot = slotFor(title, group);
+      const descriptionSlot = slotFor(description, group);
+      if (titleSlot === descriptionSlot) {
+        delete titleSlot.dataset.siteSectionPart;
+        titleSlot.dataset.siteSectionText = '';
+        slotFor(title, titleSlot).dataset.siteSectionPart = 'title';
+        slotFor(description, titleSlot).dataset.siteSectionPart = 'description';
+      } else {
+        titleSlot.dataset.siteSectionPart = 'title';
+        descriptionSlot.dataset.siteSectionPart = 'description';
+      }
+      slotFor(label, group).dataset.siteSectionPart = 'label';
+      label.classList.add('site-section-heading__label');
+      title.dataset.siteSectionTitle = '';
+      description.dataset.siteSectionDescription = '';
+    }
+  }
+  window.addEventListener('resize', syncSectionHeadings);
+
   function syncLaunchContent() {
+    syncSectionHeadings();
     // Framer can replace the initial HTML while loading or switching layouts.
     if (launch) {
       document.querySelectorAll('#how-it-works h3, #how-it-works h5, #how-it-works p, #how-it-works button span').forEach(element => {
@@ -692,6 +738,7 @@ linear-gradient(to bottom, rgba(138, 138, 138, 0.2) 1px, transparent 1px);backgr
   }
 
   syncLaunchContent();
+  if (!launch) new MutationObserver(syncSectionHeadings).observe(document.querySelector('#main'), { childList: true, subtree: true });
   if (launch) {
     new MutationObserver(syncLaunchContent).observe(document.querySelector('#main'), {
       subtree: true,
@@ -702,7 +749,7 @@ linear-gradient(to bottom, rgba(138, 138, 138, 0.2) 1px, transparent 1px);backgr
   }
   window.addEventListener('load', () => {
     document.querySelectorAll('#how-it-works .framer-uybxw2-container button span').forEach(label => {
-      label.textContent = '探索合作';
+      label.textContent = launch ? '产品演示' : '探索合作';
     });
     scheduleHeight();
   });

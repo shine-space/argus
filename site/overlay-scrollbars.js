@@ -13,6 +13,13 @@ const styles = await Promise.all([
 stylesheet.replaceSync(styles.join('\n'));
 
 const options = {
+  update: {
+    // These attributes only move/paint the clipped hero illustration. They do
+    // not change scroll extents; ResizeObserver still handles actual resizing.
+    ignoreMutation: record => record.type === 'attributes' &&
+      record.attributeName === 'style' && record.target instanceof Element &&
+      !!record.target.closest('.fch'),
+  },
   scrollbars: {
     theme: 'site-scrollbar',
     autoHide: 'move',
@@ -68,6 +75,7 @@ function scan(root) {
 }
 
 function inspect(element) {
+  if (!(element instanceof HTMLElement) || element.closest('.fch')) return;
   if (element.closest(internal)) return;
   mount(element);
   const shadow = element.shadowRoot;
@@ -119,6 +127,7 @@ function queueAncestors(element) {
 
 const observer = new MutationObserver(records => {
   for (const record of records) {
+    if (record.target instanceof Element && record.target.closest('.fch')) continue;
     if (record.target instanceof Element && record.target.closest(internal)) continue;
     if (record.type === 'attributes') {
       elements.add(record.target);

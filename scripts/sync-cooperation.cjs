@@ -5,7 +5,7 @@ const {pathToFileURL} = require('url');
 const root = path.resolve(__dirname, '..');
 const site = path.join(root, 'site');
 const remoteCta = '/_remote/framerusercontent.com/sites/2xG5N1t69lPfya3rt87ktW/FcCta.xuPCq5x9.mjs';
-const sharedCta = '/company-copy/FcCta.mjs?v=33';
+const sharedCta = '/company-copy/FcCta.mjs?v=35';
 const importLine = 'import {cooperationContent as __cooperationContent} from "/company-copy/cooperation-content.mjs?v=1";\n';
 
 function patchSharedCooperation(source) {
@@ -46,6 +46,8 @@ async function syncCooperation() {
   const {cooperationContent: copy} = await import(pathToFileURL(path.join(site, 'company-copy/cooperation-content.mjs')).href);
   for (const relative of ['company-copy/FcCta.mjs', 'particle-shapes/cta.mjs']) {
     const file = path.join(site, relative);
+    // The particle build input is optional in an exported checkout.
+    if (relative === 'particle-shapes/cta.mjs' && !fs.existsSync(file)) continue;
     const source = fs.readFileSync(file, 'utf8');
     const next = patchSharedCooperation(source);
     if (next !== source) fs.writeFileSync(file, next);

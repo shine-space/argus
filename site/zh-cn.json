@@ -352,7 +352,7 @@
   "Notes from the build.": "开发一线手记。",
   "Notify #finance": "通知 #finance",
   "Notion · Refunds": "Notion · 退款政策",
-  "Now booking Q4 builds · 3 slots left": "第四季度项目预约中 · 剩余 3 个名额",
+  "Now booking Q4 builds · 3 slots left": "",
   "Numbers": "数据",
   "Numbers from agents in production.": "来自实际运行中智能体的数据。",
   "Oakline Home — 7 in 10 support tickets closed by AI": "Oakline Home — 每 10 张客服工单中有 7 张由 AI 解决",
@@ -1229,7 +1229,7 @@
   "NOTES FROM THE BUILD.": "开发一线手记。",
   "NOTIFY #FINANCE": "通知 #finance",
   "NOTION · REFUNDS": "Notion · 退款政策",
-  "NOW BOOKING Q4 BUILDS · 3 SLOTS LEFT": "第四季度项目预约中 · 剩余 3 个名额",
+  "NOW BOOKING Q4 BUILDS · 3 SLOTS LEFT": "",
   "NUMBERS": "数据",
   "NUMBERS FROM AGENTS IN PRODUCTION.": "来自实际运行中智能体的数据。",
   "OAKLINE HOME — 7 IN 10 SUPPORT TICKETS CLOSED BY AI": "Oakline Home — 每 10 张客服工单中有 7 张由 AI 解决",
@@ -1739,5 +1739,6 @@
   "LEADS TO CRM · AGENT;EMAILS ANSWERED · AGENT;INVOICES CHASED · AGENT;BOOKINGS · VOICE AGENT;REPORTS · AGENT": "线索录入 CRM · 智能体;邮件回复 · 智能体;发票催收 · 智能体;预约安排 · 语音智能体;报告生成 · 智能体",
   "READING THE INBOX;ROUTING LEADS;BOOKING INVOICES;AGENTS LIVE": "读取收件箱中;分配客户线索中;发票入账中;运行中的智能体",
   "RECEPTIONIST|CLINICS|+38% BOOKINGS;INVOICE CLERK|FINANCE|1,900 INVOICES / WEEK;LEAD RESPONDER|REAL ESTATE|40 S FIRST REPLY;SUPPORT DESK|E-COMMERCE|71% TICKETS SOLVED;KNOWLEDGE SEARCH|LEGAL|9 S TO ANY ANSWER;PROPOSAL WRITER|AGENCIES|3X FASTER PROPOSALS;ONBOARDING AGENT|SAAS|+22% ACTIVATION;RECRUITING SCREENER|HR|12 H SAVED PER ROLE;REPORT WRITER|OPERATIONS|0 MANUAL STEPS;COLLECTIONS AGENT|FINANCE|-41% OVERDUE": "接待员|诊所|预约量 +38%;发票专员|金融|每周 1,900 张发票;线索响应专员|房地产|40 秒首次回复;客服工作台|电子商务|71% 的工单已解决;知识检索|Legal|9 秒找到答案;提案撰写助手|服务机构|提案撰写速度提升至 3 倍;新客引导智能体|SaaS|产品启用率 +22%;招聘初筛助手|HR|每个岗位节省 12 小时;报告撰写助手|运营|0 个人工步骤;催收智能体|金融|逾期款项减少 41%",
-  "NAME | LIVE / RUNNING / SCHEDULED | DETAIL — UP TO 6, ONE PER ;": "name | Live / 运行中 / 已安排 | detail — up to 6, one per ;"
+  "NAME | LIVE / RUNNING / SCHEDULED | DETAIL — UP TO 6, ONE PER ;": "name | Live / 运行中 / 已安排 | detail — up to 6, one per ;",
+  "hello@argus.ai": ""
 }

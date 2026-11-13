@@ -28,8 +28,8 @@
    const template=document.createElement('template');template.innerHTML=html;
    const intro=template.content.querySelector('[data-framer-name="Features Intro"]');
    const heading=intro.querySelector('h2'),title=heading.querySelector('span');
-   title.textContent='一个工作入口，连接人、AI 与业务';
-   heading.replaceChildren(title,document.createTextNode('在对话里交办任务，在工作台核对结果，接着已有工作继续做'));
+   title.textContent='与数字员工协作，省力出成果';
+   heading.replaceChildren(title,document.createTextNode('不是对话框，它更能接手工作，把需求做成可用的成果'));
    intro.querySelector('[data-framer-name="Features Eyebrow"]').innerHTML='<slot name="eyebrow"></slot>';
    const shell=template.content.firstElementChild.cloneNode(false);
    const context=template.content.querySelector('.framer-ivkTB').cloneNode(false);
@@ -50,7 +50,7 @@
     fetch('/coze-team/manufacturing-files.json?v=1').then(r=>r.json())
    ]);
    if(!this.isConnected)return;
-   this.shadowRoot.innerHTML='<link rel="stylesheet" href="/coze-team/source.css?v=2"><link rel="stylesheet" href="/coze-team/theme.css?v=11"><link rel="stylesheet" href="/coze-team/manufacturing-stream.css?v=3"><link rel="stylesheet" href="/coze-team/workbench-design.css?v=5">'+html;
+   this.shadowRoot.innerHTML='<link rel="stylesheet" href="/coze-team/source.css?v=2"><link rel="stylesheet" href="/coze-team/theme.css?v=12"><link rel="stylesheet" href="/coze-team/manufacturing-stream.css?v=3"><link rel="stylesheet" href="/coze-team/workbench-design.css?v=6">'+html;
    const header=this.shadowRoot.querySelector('#team-workroom > div > .order-2 > .relative > .absolute > .h-12');
    header.classList.add('coze-project-header');
    header.innerHTML='<span class="coze-project-name">订单交付保障</span><span class="coze-project-divider" aria-hidden="true"></span><span class="coze-project-count" aria-label="5 位成员"><img src="/coze-team/assets/users.svg" alt="" width="16" height="16"><span>5</span></span><span class="coze-project-count" aria-label="4 位数字员工"><img src="/coze-team/assets/bot.svg" alt="" width="16" height="16"><span>4</span></span>';
@@ -78,7 +78,7 @@
     ['商务报表，汇总经营数据','按统一口径生成报表，汇总数字可以查到对应明细'],
     ['采购寻源，筛选合格供应商','按采购规则比较供应商，说明推荐理由，最终名单由采购确认']
    ]:[
-    ['多个数字员工，分工配合','任务交给谁、做到哪一步、交回了什么，都能查看；关键操作由人确认'],
+    ['多智能体协作，分工配合','任务交给谁、做到哪一步、交回了什么，都能查看；关键操作由人确认'],
     ['企业知识库','统一查找企业资料，回答附上原文和原图，方便核对来源'],
     ['飞书里沟通，平台上处理','用飞书沟通、接收通知，在平台操作和确认，随时查看业务进度']
    ];
@@ -135,7 +135,18 @@
    this.viewport.style.visibility='';
    this.resizeObserver=new ResizeObserver(()=>this.scrollToLatest());
    this.resizeObserver.observe(this.viewport);
-   if(this.step===0)this.timer=setInterval(()=>this.setStep((this.step+1)%this.messages.length),3000);
+   this.syncPlayback=()=>{
+    clearInterval(this.timer);
+    if(this.visible&&!document.hidden&&!matchMedia('(prefers-reduced-motion: reduce)').matches)
+     this.timer=setInterval(()=>this.setStep((this.step+1)%this.messages.length),3000);
+   };
+   this.visibilityObserver=new IntersectionObserver(([entry])=>{
+    this.visible=entry.isIntersecting;
+    if(this.visible)this.scrollToLatest();
+    this.syncPlayback();
+   });
+   this.visibilityObserver.observe(this);
+   document.addEventListener('visibilitychange',this.syncPlayback);
   }
   setStep(step){
    this.step=step;
@@ -155,7 +166,8 @@
    // Section ordering can move this element without ending its lifetime.
    queueMicrotask(()=>{
     if(this.isConnected)return;
-    clearInterval(this.timer);this.resizeObserver?.disconnect();this.eyebrowObserver?.disconnect();
+    clearInterval(this.timer);this.resizeObserver?.disconnect();this.eyebrowObserver?.disconnect();this.visibilityObserver?.disconnect();
+    document.removeEventListener('visibilitychange',this.syncPlayback);
     window.removeEventListener('click',this.handlePreviewClick,true);
    });
   }
@@ -171,7 +183,7 @@
   const intro=document.createElement('digital-employee-intro');intro.id='digital-employee-intro';intro.lang='zh-CN';
   const module=document.createElement('section');module.id='digital-employee-platform';
   module.setAttribute('aria-label','数字员工与业务操作');
-  module.style.cssText='display:block;width:100%;background:#f2f0eb;--coze-content-gap:100px';
+  module.style.cssText='display:block;width:100%;background-color:#f2f0eb;background-image:linear-gradient(to bottom,#07100c 0,#07100c var(--conversation-background-cut,356px),#f2f0eb var(--conversation-background-cut,356px),#f2f0eb 100%);border-top-left-radius:0;border-top-right-radius:0;clip-path:none;--coze-content-gap:100px';
   const conversation=document.createElement('digital-employee-conversation');conversation.id='digital-employee-conversation';conversation.lang='zh-CN';
   module.append(conversation,intro,host,reversed);target.before(module);
  };

@@ -3,6 +3,8 @@ from html.parser import HTMLParser
 from pathlib import Path
 import html
 import re
+import json
+import subprocess
 
 SITE = Path(__file__).resolve().parents[1] / 'site'
 
@@ -27,6 +29,22 @@ def write_css(css):
     target = SITE / 'styles/blocks' / css_name(css)
     target.parent.mkdir(parents=True, exist_ok=True)
     if target.exists() and target.read_text(encoding='utf-8') != css:
+        stored = target.read_text(encoding='utf-8')
+        if '/styles/shared/component-' in stored:
+            expanded = re.sub(
+                r'@import url\("/styles/shared/(component-(?:base|layout)\.css)\?v=shared-1"\);',
+                lambda match: (SITE / 'styles/shared' / match.group(1)).read_text(encoding='utf-8'),
+                stored,
+            )
+            comparison = subprocess.run(
+                ['node', '-e', "const fs=require('node:fs');const {signatures}=require('./scripts/shared-site.cjs');"
+                 "const [a,b]=JSON.parse(fs.readFileSync(0,'utf8'));"
+                 "process.exit(JSON.stringify(signatures(a))===JSON.stringify(signatures(b))?0:1)"],
+                input=json.dumps([css, expanded]), text=True, encoding='utf-8',
+                cwd=Path(__file__).resolve().parents[1], capture_output=True,
+            )
+            if comparison.returncode == 0:
+                return '/' + target.relative_to(SITE).as_posix()
         raise ValueError(f'Stylesheet hash collision: {target}')
     target.write_text(css, encoding='utf-8')
     return '/' + target.relative_to(SITE).as_posix()

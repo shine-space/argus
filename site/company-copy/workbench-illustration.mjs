@@ -108,7 +108,7 @@ if (document.querySelector(serviceListSelector)) {
               flex: none;
               width: 56px;
               height: 64px;
-              zoom: .625;
+              zoom: .75;
               border-radius: 8px;
               overflow: hidden;
               background: url("/company-copy/knowledge-cover-gradients.svg") 40% 0 / 600% 100% no-repeat;
@@ -137,7 +137,7 @@ if (document.querySelector(serviceListSelector)) {
               border-bottom-right-radius: 0;
               background: transparent;
             }
-          </style>
+          </style><link rel="stylesheet" href="/ondrel/knowledge-mobile.css?v=1">
         `;
         const wrapper = document.createElement('div');
         wrapper.className = panel.closest('.framer-ivkTB').className;

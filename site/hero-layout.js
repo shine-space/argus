@@ -435,17 +435,20 @@
   const handleServiceCardClick = (event) => {
     const targetCard = event.target.closest('.fcs-strip')?.closest('.fcs-p');
     const services = targetCard?.closest('.fc.fcs');
-    if (!services || services.classList.contains('is-ph')) return;
+    if (!services) return;
     const currentCards = services.querySelectorAll('.fcs-p');
     const nextIndex = [...currentCards].indexOf(targetCard);
     if (nextIndex < 0 || currentCards.length !== 4) return;
-    event.preventDefault();
-    event.stopImmediatePropagation();
+    if (!services.classList.contains('is-ph')) {
+      event.preventDefault();
+      event.stopImmediatePropagation();
+    }
     userSelectedServices.add(services);
     [...currentCards].forEach((item, index) => {
       const isOpen = index === nextIndex;
       item.classList.toggle('is-open', isOpen);
       item.querySelector('.fcs-strip')?.setAttribute('aria-expanded', `${isOpen}`);
+      item.querySelector('.fcs-body')?.setAttribute('aria-hidden', `${!isOpen}`);
     });
     const progressLabel = services.querySelector('.fcs-prog > span');
     if (progressLabel) progressLabel.textContent = `${String(nextIndex + 1).padStart(2, '0')} / 04`;
@@ -453,18 +456,6 @@
     applyServiceLayout(services, currentCards, nextIndex, true);
   };
   const updateKnowledgeCard = () => {
-    const closing = document.querySelector('.fc.fcx');
-    const closingTitle = closing?.querySelectorAll('h2 .fc-hd-l');
-    const closingCopy = [
-      [closingTitle?.[0]?.querySelector('.fc-hd-i'), '从你的业务问题'],
-      [closingTitle?.[1]?.querySelector('.fc-hd-i'), '开始聊起'],
-    ];
-    closingCopy.forEach(([node, value]) => {
-      if (node && node.textContent !== value) node.textContent = value;
-    });
-    closing?.querySelectorAll('.fcx-core, .fcx-core *').forEach(node => {
-      if (node.childElementCount === 0 && node.textContent.trim() === '预约免费评估') node.textContent = '商务合作';
-    });
     const services = document.querySelector('.fc.fcs');
     const sectionLabel = services?.querySelector('.fcs-head .fc-eb');
     if (sectionLabel && sectionLabel.textContent !== '业务应用') sectionLabel.textContent = '业务应用';

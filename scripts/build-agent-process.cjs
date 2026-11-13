@@ -1,4 +1,4 @@
-/* Keep the original two Framer illustrations; publish only their dependency closure. */
+/* Publish only the dependency closure used by the retained process cards. */
 const fs = require('node:fs');
 const path = require('node:path');
 const acorn = require('acorn');
@@ -44,7 +44,7 @@ function componentSource() {
     graph[index].forEach(include);
   }
   const initializers = [];
-  for (const name of ['Gd', 'Fu']) {
+  for (const name of ['Gd']) {
     const index = owners.get(name);
     include(index);
     const writes=bindings.find(binding=>binding.name===name).references.filter(reference=>reference.isWrite());
@@ -60,7 +60,7 @@ function componentSource() {
     return statement.type==='VariableDeclarator'?statement.kind+' '+code+';':code;
   }).join('\n')
     + '\n' + initializers.map(name => name+'();').join('\n')
-    + '\nexport {Gd as VeyloOrganize,Fu as VeyloActions};\n'
+    + '\nexport {Gd as VeyloOrganize};\n'
     + 'export {n as initDOM,r as createRoot,c as jsx} from "./react.CHKtYt_3.mjs";\n';
 }
 
@@ -81,7 +81,7 @@ function replaceElementInner(html, className, content) {
 }
 
 function cleanFragment(html) {
-  for (const slot of ['framer-nz4g09','framer-1n57i0g','framer-1xltms7']) html=replaceElementInner(html,slot,'');
+  for (const slot of ['framer-nz4g09','framer-1n57i0g']) html=replaceElementInner(html,slot,'');
   html=html.replace(/<ul\b[^>]*>[\s\S]*?<\/ul>/g,'');
   html=html.replace(/<[^>]+data-veylo-reveal[^>]*>/g, tag => tag
     .replace(/\sdata-veylo-reveal=""/,'')
@@ -181,7 +181,7 @@ function publish(result,html,css,report) {
     }
   }
   removeObsoleteChunks(generatedRoot);
-  const snapshot='<veylo-process id="veylo-process"><template shadowrootmode="open"><style data-process-base>'+css+'</style>'+html+'</template></veylo-process>';
+  const snapshot='<veylo-process id="veylo-process"></veylo-process>';
   const page=path.join(root,'site/product/agent/index.html');
   let document=read(page);
   report.pageBefore=Buffer.byteLength(document);
@@ -190,7 +190,8 @@ function publish(result,html,css,report) {
   document=document.slice(0,start)+snapshot+document.slice(end+'</veylo-process>'.length);
   if(!document.includes('id="ondrel-plan"'))document=document.replace(/<script\b[^>]*src="\/ondrel-new30\/mount\.js[^\"]*"[^>]*><\/script>/g,'');
   document=document.replace(/<link\b[^>]*href="\/veylo-process\/fonts\.css[^\"]*"[^>]*>/g,'');
-  document=document.replace('/veylo-process/mount.mjs?v=1','/veylo-process/mount.mjs?v=2');
+  document=document.replace(/\/veylo-process\/mount\.mjs\?v=[^"']+/g,'/veylo-process/mount.mjs?v=section-headings-20261113');
+  document=document.replace(/\/company-copy\/site-typography\.js(?:\?[^"'<> ]*)?/g,'/company-copy/site-typography.js?v=section-headings-1').replace(/\/styles\/site-typography\.css(?:\?[^"'<> ]*)?/g,'/styles/site-typography.css?v=section-headings-1');
   const deduplicated=deduplicateStyleLinks(document);
   report.duplicateStyleLinksRemoved=deduplicated.removed;
   report.pageAfter=Buffer.byteLength(deduplicated.html);
@@ -198,7 +199,7 @@ function publish(result,html,css,report) {
   fs.writeFileSync(path.join(site,'process.css'),css);
   fs.writeFileSync(path.join(site,'process.html'),html);
   fs.writeFileSync(path.join(site,'snapshot.html'),snapshot);
-  fs.writeFileSync(path.join(site,'preview.html'),'<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Product process preview</title><link rel="stylesheet" href="/styles/site-typography.css?v=1"><style>body{margin:0;background:#f1f0eb}</style></head><body class="site-marketing">'+snapshot+'<script type="module" src="/veylo-process/mount.mjs?v=2"></script></body></html>');
+  fs.writeFileSync(path.join(site,'preview.html'),'<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Product process preview</title><link rel="stylesheet" href="/styles/site-typography.css?v=section-headings-1"><style>body{margin:0;background:#f1f0eb}</style></head><body class="site-marketing">'+snapshot+'<script type="module" src="/veylo-process/mount.mjs?v=section-headings-20261113"></script></body></html>');
 }
 
 (async()=>{

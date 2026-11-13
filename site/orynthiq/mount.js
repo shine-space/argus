@@ -143,7 +143,7 @@
       const serverRendered = this.dataset.ready === 'ssr';
       const html = serverRendered ? null : await fragment(name);
       if (name !== this.breakpoint || !this.isConnected) return;
-      if (!serverRendered) this.shadowRoot.innerHTML = `<link rel="stylesheet" href="${base}source.css"><link rel="stylesheet" href="/styles/blocks/6c8fadfe-3b35.css"><link rel="stylesheet" href="${base}laptop-screen.css?v=3"><link rel="stylesheet" href="/typography.css?v=3">${html}`;
+      if (!serverRendered) this.shadowRoot.innerHTML = `<link rel="stylesheet" href="${base}source.css"><link rel="stylesheet" href="/styles/blocks/6c8fadfe-3b35.css"><link rel="stylesheet" href="${base}laptop-screen.css?v=3"><link rel="stylesheet" href="/typography.css?v=3"><link rel="stylesheet" href="/orynthiq/mobile.css?v=1">${html}`;
       const overline = this.shadowRoot.querySelector('[data-framer-name="Hero Overline"]');
       if (overline) {
         const badge = document.createElement('p');

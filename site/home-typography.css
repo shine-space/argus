@@ -27,6 +27,8 @@ body .fc.fch h1.fch-h span {
 .fc.fcs .fc-hd,
 .fc.fcpr .fc-hd { font-size: var(--marketing-heading-size) !important; }
 .fc.fch { --hero-title-size: var(--marketing-hero-size); }
+/* All three particle shapes share this stage position. */
+.fc.fch:not(.is-ph) .fch-orb { left: 55%; }
 .fc.fch .fc-hd { font-size: var(--marketing-hero-size) !important; }
 /* Use the shared word reveal, with room for the display font's slanted glyphs. */
 .fc.fch .fch-h .fc-hd-i {
@@ -106,4 +108,28 @@ body .fc.fch h1.fch-h span {
   .zx-faq-item summary { font-size: 16px; }
   .fc.fcx h2.fc-hd { font-size: clamp(32px, 8.5vw, 42px) !important; }
   .fc.fco .fco-mail { font-size: 24px; }
+}
+
+/* SSR content stays readable while the decorative runtime loads. Only the
+   opening owns this brief hold; hydration cannot hide the content again. */
+html .fc.fch :is(.fch-top, .fch-top .fc-eb, .fch-left, .fch-stats),
+html .fc.fch .fch-h .fc-hd-i {
+  opacity: 1 !important;
+  translate: 0 0 !important;
+  transition: opacity .45s ease, translate .6s cubic-bezier(.2,.75,.2,1) !important;
+}
+html .fc.fch .fch-h2 .fc-hd-i { transition-delay: 60ms !important; }
+html .fc.fch .fch-left { transition-delay: 80ms !important; }
+html .fc.fch .fch-stats { transition-delay: 120ms !important; }
+html.fc-hold-early:not(.fc-hero-ready) .fc.fch :is(.fch-top, .fch-top .fc-eb, .fch-left, .fch-stats) {
+  opacity: 0 !important;
+  translate: 0 12px !important;
+}
+html.fc-hold-early:not(.fc-hero-ready) .fc.fch .fch-h .fc-hd-i {
+  opacity: 0 !important;
+  translate: 0 108% !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  html .fc.fch :is(.fch-top, .fch-top .fc-eb, .fch-left, .fch-stats),
+  html .fc.fch .fch-h .fc-hd-i { transition: none !important; }
 }

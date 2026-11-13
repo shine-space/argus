@@ -7,6 +7,7 @@
 @import url("/styles/site-pills.css?v=1");
 @import url("/styles/site-hero.css?v=1");
 @import url("/styles/site-section-type.css?v=1");
+@import url("/styles/site-section-heading.css?v=1");
 @font-face{font-family:"SiteDingTalk";src:url('/fonts/dingding/ddjbt.woff2') format('woff2'),url('/fonts/dingding/ddjbt.woff') format('woff');font-style:normal;font-weight:400;font-display:swap}
 :root{
  --site-font-display:"SiteDingTalk",sans-serif;
@@ -25,6 +26,10 @@
 body.site-marketing.site-marketing :is(.site-type-hero,[data-site-type="hero"]){font-family:var(--site-font-display)!important;font-size:var(--site-size-hero)!important;font-weight:400!important;line-height:var(--site-leading-hero)!important;letter-spacing:-.035em!important;font-variation-settings:normal}
 body.site-marketing.site-marketing :is(.site-type-hero,[data-site-type="hero"]) :is(span,em,strong){font-family:inherit!important;font-size:inherit!important;font-weight:inherit!important;line-height:inherit!important}
 body.site-marketing.site-marketing :is(.site-type-card,[data-site-type="card"]){font-family:var(--site-font-text)!important;font-size:var(--site-size-card)!important;font-weight:500!important;line-height:1.35!important;letter-spacing:-.015em!important}
+body.site-marketing.site-marketing .fc.fcs .fcs-copy > .site-type-card{
+ --site-size-card:clamp(28px,2.2vw,36px);
+ font-size:var(--site-size-card)!important;
+}
 body.site-marketing.site-marketing :is(.site-type-description,[data-site-type="description"]){font-family:var(--site-font-text)!important;font-size:var(--site-size-description)!important;font-weight:400!important;line-height:var(--site-leading-copy)!important}
 body.site-marketing.site-marketing :is(.site-type-label,[data-site-type="label"]){font-size:var(--site-size-label)!important;font-weight:500!important;line-height:1.5!important;letter-spacing:.04em!important}
 /* Native roles inside the isolated six-card module share the same tokens. */

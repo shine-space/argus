@@ -1,3 +1,5 @@
+import {navigationHTML} from './shared/navigation-template.mjs?v=shared-1';
+
 const setNavigationCurrentPage = header => {
   const normalizePath = pathname => {
     const path = pathname.replace(/\/+$/, '') || '/';
@@ -34,14 +36,148 @@ const setNavigationCurrentPage = header => {
   });
 };
 
+const setupNavigationDropdowns = (() => {
+  const controllers = new WeakMap();
+  let sequence = 0;
+  return () => document.querySelectorAll('header.fc.fchd').forEach(header => {
+    const triggers = [...header.querySelectorAll('.fchd-nav > ul > li > a')].slice(0, 2);
+    const product = header.querySelector('.fchd-drawer:not(.fchd-solution-drawer)');
+    if (triggers.length !== 2 || !product) return;
+    const previous = controllers.get(header);
+    if (previous?.product === product && triggers.every((trigger, index) => trigger === previous.triggers[index]) && header.contains(previous.solution)) return;
+    previous?.dispose();
+    header.querySelectorAll('.fchd-solution-drawer').forEach(drawer => drawer.remove());
+    const solution = product.cloneNode(true);
+    solution.classList.add('fchd-solution-drawer');
+    solution.setAttribute('aria-label', '解决方案');
+    solution.querySelector('.fchd-feat')?.remove();
+    solution.querySelector('.fchd-all')?.remove();
+    solution.querySelector('.fchd-dt').textContent = '电子制造解决方案';
+    const list = solution.querySelector('.fchd-list > ul');
+    const item = list.firstElementChild.cloneNode(true);
+    list.replaceChildren();
+    for (let index = 0; index < 3; index++) {
+      const row = item.cloneNode(true);
+      row.style.setProperty('--i', index);
+      const link = row.querySelector('a');
+      link.classList.remove('is-hv');
+      link.removeAttribute('aria-current');
+      link.href = '/solution/electronic';
+      row.querySelector('.fchd-tx b').textContent = '电子制造';
+      row.querySelector('.fchd-tx em').textContent = '物料齐套与生产准备的 AI 方案';
+      row.querySelector('.fchd-out').textContent = '查看方案';
+      list.append(row);
+    }
+    header.append(solution);
+    header.dataset.dropdownController = 'shared';
+    const drawers = [product, solution];
+    const listeners = new AbortController();
+    const options = {capture: true, signal: listeners.signal};
+    let active = null, pinned = null, closeTimer, returningFocus = false;
+    const setOpen = index => {
+      clearTimeout(closeTimer);
+      if (active !== index) pinned = null;
+      active = index;
+      if (index === null) { pinned = null; delete header.dataset.openMenu; }
+      else header.dataset.openMenu = String(index);
+      drawers.forEach((drawer, current) => {
+        const open = current === index;
+        triggers[current].setAttribute('aria-expanded', String(open));
+        drawer.setAttribute('aria-hidden', String(!open));
+        drawer.inert = !open;
+        drawer.querySelectorAll('a').forEach(link => link.tabIndex = open ? 0 : -1);
+      });
+    };
+    triggers.forEach((trigger, index) => {
+      const drawer = drawers[index];
+      drawer.id = 'navigation-menu-' + (++sequence);
+      trigger.removeAttribute('href');
+      trigger.setAttribute('role', 'button');
+      trigger.setAttribute('aria-haspopup', 'true');
+      trigger.setAttribute('aria-controls', drawer.id);
+      trigger.tabIndex = 0;
+      trigger.dataset.dropdownTrigger = String(index);
+    });
+    const activate = index => {
+      if (active === index && pinned === index) setOpen(null);
+      else { setOpen(index); pinned = index; }
+    };
+    const highlight = target => {
+      const row = target.closest('.fchd-drawer .fchd-list > ul > li > a');
+      if (row) row.closest('.fchd-drawer').querySelectorAll('.fchd-list > ul > li > a').forEach(link => link.classList.toggle('is-hv', link === row));
+    };
+    // Own both dropdowns before React's delegated product-only handlers run.
+    header.addEventListener('mouseover', event => {
+      clearTimeout(closeTimer);
+      if (!event.target.closest('.fchd-nav, .fchd-drawer')) return;
+      event.stopPropagation();
+      const index = triggers.findIndex(trigger => trigger.contains(event.target));
+      if (index >= 0) setOpen(index);
+      else if (event.target.closest('.fchd-nav')) setOpen(null);
+      highlight(event.target);
+    }, options);
+    header.addEventListener('mouseout', event => {
+      if (event.target.closest('.fchd-nav, .fchd-drawer')) event.stopPropagation();
+      if (!header.contains(event.relatedTarget)) closeTimer = setTimeout(() => setOpen(null), 180);
+    }, options);
+    header.addEventListener('focusin', event => {
+      if (!event.target.closest('.fchd-nav, .fchd-drawer')) return;
+      event.stopPropagation();
+      const index = triggers.indexOf(event.target);
+      if (index >= 0 && !returningFocus) setOpen(index);
+      else if (index < 0 && event.target.closest('.fchd-nav')) setOpen(null);
+      highlight(event.target);
+    }, options);
+    header.addEventListener('focusout', event => {
+      if (event.target.closest('.fchd-nav, .fchd-drawer')) event.stopPropagation();
+      if (!header.contains(event.relatedTarget)) setOpen(null);
+    }, options);
+    header.addEventListener('click', event => {
+      const index = triggers.findIndex(trigger => trigger.contains(event.target));
+      if (index < 0) return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      activate(index);
+    }, options);
+    header.addEventListener('keydown', event => {
+      const index = triggers.indexOf(event.target);
+      if (event.key === 'Escape' && active !== null) {
+        const last = active;
+        event.preventDefault(); event.stopPropagation(); setOpen(null);
+        returningFocus = true; triggers[last].focus({preventScroll: true}); returningFocus = false;
+      } else if (index >= 0 && ['Enter', ' '].includes(event.key)) {
+        event.preventDefault(); event.stopPropagation();
+        if (!event.repeat) activate(index);
+      } else if (index >= 0 && ['ArrowDown', 'ArrowUp'].includes(event.key)) {
+        event.preventDefault(); event.stopPropagation(); setOpen(index);
+        const links = drawers[index].querySelectorAll('.fchd-list > ul > li > a');
+        const target = event.key === 'ArrowDown' ? links[0] : links[links.length - 1];
+        requestAnimationFrame(() => { if (active === index) target?.focus(); });
+      } else if (active !== null && event.target.closest('.fchd-drawer') && ['ArrowDown', 'ArrowUp', 'Home', 'End'].includes(event.key)) {
+        const links = [...drawers[active].querySelectorAll('.fchd-list > ul > li > a')];
+        const current = links.indexOf(event.target);
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? links.length - 1 : (current + (event.key === 'ArrowDown' ? 1 : -1) + links.length) % links.length;
+        event.preventDefault(); event.stopPropagation(); links[next]?.focus();
+      }
+    }, options);
+    document.addEventListener('click', event => { if (!header.contains(event.target)) setOpen(null); }, {signal: listeners.signal});
+    window.addEventListener('resize', () => setOpen(null), {signal: listeners.signal});
+    window.addEventListener('popstate', () => setOpen(null), {signal: listeners.signal});
+    window.addEventListener('pageshow', () => setOpen(null), {signal: listeners.signal});
+    controllers.set(header, {product, solution, triggers, dispose() { clearTimeout(closeTimer); listeners.abort(); }});
+    setOpen(null);
+  });
+})();
+
 (() => {
   const selector = '.fchd-list > ul > li:first-child > a[href="/services/voice-agents"]';
-  const menuEntry = '.fchd-list > ul > li:first-child > a';
-  const triggerSelector = '.fchd-nav > ul > li:first-child > a[aria-expanded]';
-  const template = document.getElementById('shared-navigation')?.content;
+  const menuEntry = '.fchd-list > ul > li > a[href]';
+  const sharedTemplate = document.createElement('template');
+  sharedTemplate.innerHTML = navigationHTML;
+  const template = sharedTemplate.content;
   const copySelector = '.fchd-nav > ul > li:nth-child(-n+5) > a, .fchd-dt, .fchd-tx b, .fchd-tx em, .fchd-out';
   const retiredLinks = 'a[href="/services/knowledge-base"], a[href="/services/custom-ai-apps"]';
-  const activeCopy = root => [...root.querySelectorAll(copySelector)].filter(element => !element.closest(retiredLinks));
+  const activeCopy = root => [...root.querySelectorAll(copySelector)].filter(element => !element.closest(retiredLinks + ', .fchd-solution-drawer'));
   const sharedCopy = template ? activeCopy(template) : [];
   const iconSelector = '.fchd-list > ul > li > a[href]';
   const sharedIcons = new Map(
@@ -50,24 +186,11 @@ const setNavigationCurrentPage = header => {
     ])
   );
   document.addEventListener('click', event => {
-    const trigger = event.target.closest(triggerSelector);
-    if (!trigger) return;
-    event.preventDefault();
-    if (trigger.getAttribute('aria-expanded') === 'false') {
-      trigger.dispatchEvent(new MouseEvent('mouseover', { bubbles: true }));
-    }
-  }, true);
-  document.addEventListener('keydown', event => {
-    if (!event.target.matches(triggerSelector) || !['Enter', ' '].includes(event.key)) return;
-    event.preventDefault();
-    event.target.click();
-  });
-  document.addEventListener('click', event => {
     const link = event.target.closest(menuEntry + ', header.fc.fchd .fchd-nav a[href]');
     if (!link || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
     event.preventDefault();
     event.stopImmediatePropagation();
-    window.location.assign(link.matches(menuEntry) && !link.closest('.fchd-solution-drawer') ? '/product/agent' : link.href);
+    window.location.assign(link.href);
   }, true);
   // Mobile uses the same navigation template and active product entries as desktop.
   const syncMobileNavigation = () => {
@@ -75,6 +198,7 @@ const setNavigationCurrentPage = header => {
     const mainLinks = [...template.querySelectorAll('.fchd-nav > ul > li > a')];
     const productLinks = [...template.querySelectorAll('.fchd-list > ul > li > a')];
     document.querySelectorAll('.fchd-sheet').forEach(sheet => {
+      sheet.querySelectorAll('.fchd-sfoot a[href="mailto:hello@argus.ai"], .fchd-sfoot a[href="mailto:"]').forEach(link => link.remove());
       const list = sheet.querySelector('.fchd-slinks');
       if (!list || sheet.dataset.navigationSynced === 'shared') return;
       sheet.dataset.navigationSynced = 'shared';
@@ -157,7 +281,7 @@ const setNavigationCurrentPage = header => {
     });
   };
   const update = () => {
-    document.querySelectorAll('link[href="/styles/blocks/6be71b81-3805.css"]').forEach(link=>link.href='/styles/blocks/6be71b81-3805.css?v=solution-shared-2');
+    document.querySelectorAll('link[href="/styles/blocks/6be71b81-3805.css"]').forEach(link=>link.href='/styles/blocks/6be71b81-3805.css?v=solution-shared-3');
     document.querySelectorAll('a[href*="/work"]').forEach(link => {
       const url=new URL(link.getAttribute('href'),location.href);
       if(url.origin===location.origin && /^\/work(?:\/|$)/.test(url.pathname)){
@@ -192,11 +316,7 @@ const setNavigationCurrentPage = header => {
         if (text && text.data !== expected.textContent) text.data = expected.textContent;
       });
     });
-    document.querySelectorAll(triggerSelector).forEach(trigger => {
-      if (trigger.hasAttribute('href')) trigger.removeAttribute('href');
-      if (trigger.getAttribute('role') !== 'button') trigger.setAttribute('role', 'button');
-      if (trigger.tabIndex !== 0) trigger.tabIndex = 0;
-    });
+    setupNavigationDropdowns();
     document.querySelectorAll(selector).forEach(link => link.setAttribute('href', '/product/agent'));
     document.querySelectorAll(headerSelector).forEach(setNavigationCurrentPage);
     syncMobileNavigation();
@@ -217,47 +337,4 @@ const setNavigationCurrentPage = header => {
   window.addEventListener('popstate', update);
   window.addEventListener('pageshow', update);
   update();
-})();
-
-// Reuse the product drawer for the solutions navigation.
-(()=>{
- const style=document.createElement('style');style.textContent=`
- /* Visibility routing only; appearance and motion use the shared header stylesheet. */
- .fchd .fchd-solution-drawer{display:none}
- .fchd.is-solution-mega>.fchd-drawer:not(.fchd-solution-drawer){display:none!important}
- .fchd.is-solution-mega>.fchd-solution-drawer{display:grid}
- @media(max-width:1060px){.fchd.is-solution-mega>.fchd-solution-drawer{display:none}}
- `;document.head.append(style);
- const bound=new WeakSet();
- function mount(){document.querySelectorAll('header.fc.fchd').forEach(header=>{
-  const trigger=header.querySelector('.fchd-nav>ul>li:nth-child(2)>a');const original=header.querySelector('.fchd-drawer:not(.fchd-solution-drawer)');
-  if(!trigger||!original||bound.has(header))return;bound.add(header);
-  const drawer=original.cloneNode(true);drawer.classList.add('fchd-solution-drawer');drawer.id='solution-menu';drawer.setAttribute('aria-label','解决方案');drawer.querySelector('.fchd-feat')?.remove();drawer.querySelector('.fchd-all')?.remove();drawer.querySelector('.fchd-dt').textContent='电子制造解决方案';
-  const list=drawer.querySelector('.fchd-list>ul');const item=list.firstElementChild.cloneNode(true);list.replaceChildren();
-  for(let i=0;i<3;i++){const row=item.cloneNode(true);row.style.setProperty('--i',i);const link=row.querySelector('a');link.classList.remove('is-hv');link.href='/solution/electronic';link.tabIndex=-1;row.querySelector('.fchd-tx b').textContent='电子制造';row.querySelector('.fchd-tx em').textContent='物料齐套与生产准备的 AI 方案';row.querySelector('.fchd-out').textContent='查看方案';list.append(row);}
-  header.append(drawer);trigger.removeAttribute('href');trigger.dataset.solutionTrigger='';trigger.setAttribute('role','button');trigger.tabIndex=0;trigger.setAttribute('aria-haspopup','true');trigger.setAttribute('aria-controls',drawer.id);trigger.setAttribute('aria-expanded','false');
-  if(!trigger.querySelector('.fchd-car')){const arrow=document.createElement('span');arrow.className='fchd-car';arrow.setAttribute('aria-hidden','true');trigger.append(arrow);}
-  let closeTimer;function setOpen(open){clearTimeout(closeTimer);header.classList.toggle('is-solution-mega',open);trigger.setAttribute('aria-expanded',String(open));drawer.setAttribute('aria-hidden',String(!open));drawer.querySelectorAll('a').forEach(link=>link.tabIndex=open?0:-1);}
-  trigger.addEventListener('mouseenter',()=>setOpen(true));trigger.addEventListener('focus',()=>setOpen(true));trigger.addEventListener('click',event=>{event.preventDefault();setOpen(!header.classList.contains('is-solution-mega'));});
-  trigger.addEventListener('keydown',event=>{if(['Enter',' '].includes(event.key)){event.preventDefault();setOpen(!header.classList.contains('is-solution-mega'));}if(event.key==='ArrowDown'){event.preventDefault();setOpen(true);drawer.querySelector('a').focus();}});
-  drawer.addEventListener('mouseenter',()=>setOpen(true));header.addEventListener('mouseenter',()=>clearTimeout(closeTimer));header.addEventListener('mouseleave',()=>{clearTimeout(closeTimer);closeTimer=setTimeout(()=>setOpen(false),180);});header.addEventListener('focusout',event=>{if(!header.contains(event.relatedTarget))setOpen(false)});header.addEventListener('keydown',event=>{if(event.key==='Escape'){setOpen(false);trigger.blur();}});
-  header.querySelectorAll('.fchd-nav>ul>li:not(:nth-child(2))>a').forEach(link=>link.addEventListener('mouseenter',()=>setOpen(false)));
-  setNavigationCurrentPage(header);
- });}
- let scheduled=false;new MutationObserver(records=>{if(scheduled||!records.some(r=>r.target.closest?.('header.fchd')||[...r.addedNodes].some(n=>n.matches?.('header.fchd')||n.querySelector?.('header.fchd'))))return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;mount()})}).observe(document.body,{childList:true,subtree:true});mount();
-})();
-
-(() => {
- const style = document.createElement('style');
- style.textContent = `
- .fchd-sheet .fchd-mobile-group{display:flex;align-items:baseline;gap:14px;width:100%;padding:14px 0;border:0;background:none;color:var(--fc-cloud);font:inherit;font-size:36px;font-weight:500;letter-spacing:-.045em;text-align:left;cursor:pointer}
- .fchd-mobile-group::after{content:'+';margin-left:auto;font-size:24px;font-weight:400}
- .fchd-mobile-group[aria-expanded="true"]::after{content:'−'}
- .fchd-sheet .fchd-mobile-submenu{list-style:none;margin:0;padding:0 0 0 28px;overflow:hidden}
- .fchd-sheet .fchd-mobile-submenu[hidden],.fchd-sheet .fchd-schips[hidden]{display:none}
- .fchd-sheet .fchd-mobile-submenu li{border:0;animation:none}
- .fchd-sheet .fchd-mobile-submenu a{display:flex;flex-direction:column;gap:3px;padding:12px 0;font-size:18px;letter-spacing:normal}
- .fchd-sheet .fchd-mobile-submenu small{font-size:12px;font-weight:400;color:var(--site-text-on-dark-secondary,rgba(255,255,255,.78));letter-spacing:normal}
- `;
- document.head.append(style);
 })();

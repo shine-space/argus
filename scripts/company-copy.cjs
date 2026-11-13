@@ -20,12 +20,28 @@ const map={
 '智能体开发':'FDE 现场实施','$8,500':'应用交付','起 / 每个智能体':'围绕真实业务样本','一个智能体或一条工作流，数周即可上线':'围绕实际系统，交付可持续使用的业务应用','包含评估计划的全部内容;设计、开发与测试;与你现有工具集成;团队培训与交接;上线后提供 30 天调优':'配置数字员工、流程与工作台;组织知识、数据与模型能力;完成接口、权限及设备适配;试运行与联合验收;培训、运行说明与运维交接','启动开发':'讨论实施方案',
 'AI 长期合作计划':'持续运营与扩展','$3,900':'能力积累','per month':'以验证结果持续迭代','每月都有 AI 团队随时支持':'将验证有效的方法沉淀为企业可复用资产','每月新增自动化流程;运行监控与月度报告;Slack 优先支持;季度策略研讨':'维护知识、规则与业务配置;跟踪运行、定位问题与改进;沉淀流程、连接器和评测用例;验证新岗位与新场景','联系我们':'探索合作',
 '免费自动化评估':'探索合作','告诉我们时间都花在了哪里。20 分钟内，我们会指出最值得优先构建的三项自动化，以及预计能节省的时间。':'从一个业务问题出发，用真实样本验证价值','无需演示文稿，没有合作义务，2 小时内回复。':'明确范围、职责与验收，推进下一步交流','或留下你的工作邮箱':'留下工作邮箱，沟通业务需求',
-'全部服务':'全部业务应用'
+'全部服务':'了解产品详情'
 };
 const clients='智能体|理解目标，协同执行|理解岗位目标，在授权范围内调用工具推进任务;工作流|串联步骤，推进业务|串联业务步骤、分支判断与人工确认;企业知识|沉淀经验，有据可查|汇聚文档与经验，关联原文来源，让回答有据可查;业务数据|统一口径，连接业务|连接业务记录，统一数据口径与任务上下文;工具与模型|按需组合，拓展能力|按需组合工具与模型，适配具体业务任务;运行治理|权限可控，过程可溯|管理权限、版本与记录，让操作可控、过程可溯';
 const agents='ERP|经营管理|连接订单、采购与财务数据;MES|生产执行|关联工单、生产进度与质量记录;CRM|客户管理|连接客户、商机与服务记录;WMS|仓储管理|查询库存、库位与出入库记录;OA|办公协同|衔接审批、通知与协同流程;数据库|业务数据|按授权查询业务数据与关联明细;文档|知识资料|检索制度、手册与原始资料;API 接口|系统集成|通过授权接口调用所需业务能力';
 const steps='场景诊断|明确目标|还原现有流程，明确首期目标、业务负责人及验收样本。|业务流程,首期范围,验收口径;配置与联调|连接能力|构建应用，连接授权接口，核对规则、权限和异常路径。|应用配置,系统连接,人工边界;联合验收|验证结果|通过真实业务样本检查结果、操作、状态与人工确认。|业务样本,验证记录,联合验收;持续积累|运营迭代|交接维护职责，将知识、流程与连接方法沉淀为可复用资产。|操作培训,运维分工,复用资产';
-function translated(v){if(Object.hasOwn(map,v))return map[v];
+const homepageServices=[
+ ['knowledge-base','企业知识库','回答附上原文和原图','把分散的文档、图片和经验整理到一起。查到答案后，可以查看原文和配图，判断能否用于手头的工作','智能问答,查看原文原图,整理业务经验'],
+ ['finance','财务专员','从票据原件核对到账务记录','数字员工和财务工作台使用同一账套、期间和业务规则，读取原件，整理待审申请和凭证草稿。每一步都能回查，由人复核','票据识别,账务核对,凭证草稿'],
+ ['reporting','商务报表','把业务台账整理成报表','按约定口径整理台账、计算并对账，生成业务类型、销售团队和年度趋势三类工作簿。汇总数字都能查到明细','台账汇总,经营分析,查看明细'],
+ ['procurement','采购寻源','推荐供应商，也说明理由','先核对供应商资格和物料规格，再比较合格候选的历史记录。采购规则可以调整，也能预演权重变化的影响；最终名单由采购确认','资格筛选,供应商比选,推荐依据'],
+].map(([slug,f1,f2,f7,f6])=>({slug,f1,f2,f3:'',f4:'',f5:'',f6,f7}));
+function patchCurrentHomepageServices(source){
+ // The public cards already use these four applications. Do not mount the
+ // retired phone/CRM demos while hero-layout installs the current flow diagrams.
+ source=source.replace('S=hi(`services`,Bi.services).slice(0,5)','S='+JSON.stringify(homepageServices));
+ source=source.replace('className:`fcs-demo`,children:d(gi,{kind:e.f5,M:m,D:f})','className:`fcs-demo`,children:null');
+ return source;
+}
+function translated(v){if(/^(?:Now booking Q4 builds · 3 slots left|第四(?:个)?季度项目预约中 · 剩余 3 个名额)$/i.test(v))return '';
+ if(v==='hello@argus.ai')return '';
+ if(v==='价格以美元计，不包含你自有工具的订阅费。每个开发项目均包含 30 天调优。')return '';
+ if(Object.hasOwn(map,v))return map[v];
  if(v.startsWith('Northwind Dental|'))return clients;
  if(v.startsWith('接待员|诊所|'))return agents;
  if(v.startsWith('Audit|Week 1|')||v.startsWith('评估|第 1 周|'))return steps;
@@ -35,7 +51,44 @@ function translated(v){if(Object.hasOwn(map,v))return map[v];
  return v;
 }
 function transform(s){let edits=[];const ast=acorn.parse(s,{ecmaVersion:'latest',sourceType:'module'});function walk(n){if(!n||typeof n!=='object')return;const v=n.type==='Literal'?n.value:n.type==='TemplateLiteral'&&n.expressions.length===0?n.quasis[0].value.cooked:null;if(typeof v==='string'){const t=translated(v);if(t!==v)edits.push({start:n.start,end:n.end,text:JSON.stringify(t)});if(n.type==='Literal'||n.type==='TemplateLiteral')return;}for(const v of Object.values(n)){if(Array.isArray(v))v.forEach(walk);else if(v&&typeof v==='object')walk(v)}}walk(ast);for(const e of edits.sort((a,b)=>b.start-a.start))s=s.slice(0,e.start)+e.text+s.slice(e.end);return s;}
+function syncHomepageSectionOrder(html) {
+  const block = className => {
+    const start = html.indexOf('<div class="' + className + '"');
+    if (start < 0) throw new Error('Homepage section missing: ' + className);
+    const tags = /<\/?div\b[^>]*>/g;
+    tags.lastIndex = start;
+    let depth = 0, tag;
+    while ((tag = tags.exec(html))) {
+      depth += tag[0].startsWith('</') ? -1 : 1;
+      if (depth === 0) return {start, end: tags.lastIndex};
+    }
+    throw new Error('Unclosed homepage section: ' + className);
+  };
+  const impact = block('framer-n3blqa'), agents = block('framer-184qns8');
+  if (agents.start < impact.start) return html;
+  const between = html.slice(impact.end, agents.start);
+  if (between.trim()) throw new Error('Unexpected content between homepage sections');
+  return html.slice(0, impact.start) + html.slice(agents.start, agents.end) + between +
+    html.slice(impact.start, impact.end) + html.slice(agents.end);
+}
+
 const names=[home,'FcLogos.C56jAPIg.mjs','FcProcess.DD6BEyf_.mjs','FcPricing.BHcVFo1n.mjs','FcCta.xuPCq5x9.mjs'];
+function removeRetiredHomeSections(source){
+ const tree=acorn.parse(source,{ecmaVersion:'latest',sourceType:'module'}),edits=[];
+ const value=node=>node?.type==='Literal'?node.value:node?.type==='TemplateLiteral'&&!node.expressions.length?node.quasis[0].value.cooked:undefined;
+ function visit(node){
+  if(!node||typeof node!=='object')return;
+  if(node.type==='CallExpression'&&node.arguments[1]?.type==='ObjectExpression'){
+   const props=node.arguments[1].properties;
+   const className=value(props.find(prop=>(prop.key?.name||value(prop.key))==='className')?.value);
+   if(['framer-nt5jd6','framer-10h0c00'].includes(className)){edits.push({start:node.start,end:node.end});return;}
+  }
+  for(const child of Object.values(node)){if(Array.isArray(child))child.forEach(visit);else if(child&&typeof child==='object')visit(child);}
+ }
+ visit(tree);
+ for(const edit of edits.sort((a,b)=>b.start-a.start))source=source.slice(0,edit.start)+'null'+source.slice(edit.end);
+ return source;
+}
 fs.mkdirSync(path.join(site,'company-copy'),{recursive:true});
 let html=fs.readFileSync(path.join(site,'index.html'),'utf8');const imports=JSON.parse(html.match(/<script type="importmap">(.*?)<\/script>/)[1]);
 for(const name of names){let s=fs.readFileSync(name===home?path.join(site,'reviews-home.mjs'):name.startsWith('FcCta')?path.join(site,'particle-shapes/cta.mjs'):path.join(site,remote,name,'plain.zh'),'utf8');
@@ -55,6 +108,8 @@ for(const name of names){let s=fs.readFileSync(name===home?path.join(site,'revie
  if(name===home)s=s.replace('d(`p`,{className:`fci-note`,style:v,children:f})','null').replace('O=[i,a,c,l]','O=[1,2,3,4].map(n=>({src:`/about-scenes/scene-${n}.webp`}))');
  if(name===home)s=s.replace(/Dn=\[[\s\S]*?\],On=/, "Dn=[\"shape(from 10% 4%, curve to 54% 4% with 16.13% -1.63% / 43.25% 3.38%, curve to 96% 9% with 64.75% 4.63% / 90.75% 3.25%, curve to 96% 50% with 101.25% 14.75% / 96.63% 39.13%, curve to 91% 96% with 95.38% 60.88% / 97% 90.25%, curve to 48% 96% with 85% 101.75% / 58.75% 96.5%, curve to 5% 92% with 37.25% 95.5% / 10.38% 97.88%, curve to 5% 49% with -0.38% 86.13% / 4.38% 60%, curve to 10% 4% with 5.63% 38% / 3.88% 9.63%, close)\",\"shape(from 8% 7%, curve to 51% 4% with 13.75% 1.13% / 40.25% 4%, curve to 94% 7% with 61.75% 4% / 88.5% 1.5%, curve to 95% 48% with 99.5% 12.5% / 95% 37.38%, curve to 94% 92% with 95% 58.63% / 99.38% 86%, curve to 52% 96% with 88.63% 98% / 62.88% 95.63%, curve to 7% 95% with 41.13% 96.38% / 12.88% 100.63%, curve to 5% 51% with 1.13% 89.38% / 4.88% 62%, curve to 8% 7% with 5.13% 40% / 2.25% 12.88%, close)\",\"shape(from 10% 4%, curve to 54% 4% with 16.13% -1.63% / 43.25% 3.38%, curve to 96% 9% with 64.75% 4.63% / 90.75% 3.25%, curve to 96% 50% with 101.25% 14.75% / 96.63% 39.13%, curve to 91% 96% with 95.38% 60.88% / 97% 90.25%, curve to 48% 96% with 85% 101.75% / 58.75% 96.5%, curve to 5% 92% with 37.25% 95.5% / 10.38% 97.88%, curve to 5% 49% with -0.38% 86.13% / 4.38% 60%, curve to 10% 4% with 5.63% 38% / 3.88% 9.63%, close)\",\"shape(from 8% 7%, curve to 51% 4% with 13.75% 1.13% / 40.25% 4%, curve to 94% 7% with 61.75% 4% / 88.5% 1.5%, curve to 95% 48% with 99.5% 12.5% / 95% 37.38%, curve to 94% 92% with 95% 58.63% / 99.38% 86%, curve to 52% 96% with 88.63% 98% / 62.88% 95.63%, curve to 7% 95% with 41.13% 96.38% / 12.88% 100.63%, curve to 5% 51% with 1.13% 89.38% / 4.88% 62%, curve to 8% 7% with 5.13% 40% / 2.25% 12.88%, close)\"],On=");
  s=transform(s).replace(/from"\.\//g,'from"'+remote);
+ if(name===home)s=s.replace(/(button1:\s*(?:\{[^{}]*defaultValue:\s*)?)(["`])预约免费评估\2/g,'$1"探索业务应用"');
+ s=s.replaceAll('预约免费评估','商务合作');
  if(name.startsWith('FcLogos'))s=s.replace('F=Math.max(6,M.length)','F=Math.max(12,M.length)');
  if(name.startsWith('FcLogos'))s=s.replace('.fcl-cap{min-height:118px;','.fcl-cap{');
  if(name.startsWith('FcLogos'))s=s.replace(",s(`span`,{style:S,children:J.a})",'').replace('.fcl-now em{font-style:normal;font-size:15px;','.fcl-now em{font-style:normal;font-size:13px;');
@@ -69,6 +124,11 @@ for(const name of names){let s=fs.readFileSync(name===home?path.join(site,'revie
   locate(tree);const a=sections['framer-n3blqa'],b=sections['framer-184qns8'];
   if(!a||!b)throw Error('Section order targets missing');
   if(a.start<b.start)s=s.slice(0,a.start)+s.slice(b.start,b.end)+s.slice(a.end,b.start)+s.slice(a.start,a.end)+s.slice(b.end);
+ }
+ if(name===home){
+  s=s.replace(/(button:\w+=(?:"了解产品详情"|`了解产品详情`),buttonLink:\w+=)`\/product\/model`/g,'$1`/product/agent`');
+  s=s.replace(/(button:\{[^{}]*defaultValue:(?:"了解产品详情"|`了解产品详情`)\},buttonLink:\{[^{}]*defaultValue:)`\/product\/model`/g,'$1`/product/agent`');
+  s=s.replace(/(button:"了解产品详情",buttonLink:)`\/product\/model`/g,'$1`/product/agent`');
  }
  if(name===home)s=s.replaceAll('AI Agent 平台','企业智能体平台').replaceAll('N="工业模型"','N="工业模型与硬件"');
  if(name===home){
@@ -85,15 +145,25 @@ for(const name of names){let s=fs.readFileSync(name===home?path.join(site,'revie
  }
  if(name===home)s=s.replace('d(Li,{text:t,on:b,M:m}),d(Ii,{text:n,on:b,D:f,','d(Ii,{text:n,on:b,D:f,');
  if(name===home)s=require('./hero-saturn.cjs').patchSaturnHero(s);
+ if(name===home)s=require('./hero-entrance.cjs').patchHeroEntrance(s);
+ if(name===home)s=require('./hero-performance.cjs').patchHeroPerformance(s);
+ if(name===home)s=require('./hero-performance.cjs').patchMotionLayout(s);
  if(name===home)s=require('./platform-capabilities.cjs').removeHomepageCapabilities(s);
-  if(name===home||name.startsWith('FcPricing')||name.startsWith('FcCta')){
+ if(name===home)s=removeRetiredHomeSections(s);
+ if(name===home)s=patchCurrentHomepageServices(s);
+  if(name===home||name.startsWith('FcPricing')){
    for(const [before,after] of Object.entries(require('./home-humanized-copy.json')))s=s.replaceAll(before,after);
   }
   if(name.startsWith('FcPricing'))s=require('./shared-pricing.cjs').patchPricingCards(s);
+  if(name.startsWith('FcCta'))s=require('./sync-cooperation.cjs').patchSharedCooperation(s);
   acorn.parse(s,{ecmaVersion:'latest',sourceType:'module'});
  const file=name===home?'home.mjs':name.split('.')[0]+'.mjs';fs.writeFileSync(path.join(site,'company-copy',file),s);imports.imports[remote+name]='/company-copy/'+file+'?v=30';
 }
+html=html.replaceAll('>全部业务应用</span>','>了解产品详情</span>');
+html=(html=>html.replace(/<a\b[^>]*href="\/product\/model"[^>]*>[\s\S]*?<\/a>/g,a=>a.includes('>了解产品详情</span>')?a.replace('href="/product/model"','href="/product/agent"'):a))(html);
+html=syncHomepageSectionOrder(html);
 html=html.replace(/<script type="importmap">.*?<\/script>/,'<script type="importmap">'+JSON.stringify(imports)+'</script>');
 fs.writeFileSync(path.join(site,'index.html'),html);
 fs.writeFileSync(path.join(root,'RECON/company-copy-sources.json'),JSON.stringify({sources:['https://zhaoxi-ai.com/','http://127.0.0.1:4186/index.html'],mapping:map,notes:'Homepage structure retained. User-approved reviews and application flow diagrams preserved. Original template pricing and numerical claims replaced with source-backed services and governance stages.'},null,2));
+require('./sync-cooperation.cjs').syncCooperation().catch(error=>{console.error(error);process.exitCode=1;});
 console.log('Published five syntax-checked homepage modules.');

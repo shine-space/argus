@@ -1,0 +1,31 @@
+/* The three light modules share one rhythm; row and card spacing stay local. */
+body[data-agent-page] {
+  --agent-module-gap: clamp(104px, 10vw, 152px);
+  --process-heading-space-before: 0px;
+  --process-space-after: 0px;
+}
+
+body[data-agent-page] [data-framer-name="S1 FcServiceList"] .fcsl {
+  padding-block: var(--agent-module-gap) 0;
+}
+
+body[data-agent-page] :is([data-process-section], .launch-reveal) {
+  margin-block-start: var(--agent-module-gap);
+}
+
+body[data-agent-page] .launch-reveal {
+  margin-block-end: var(--agent-module-gap);
+}
+
+body[data-agent-page] #agentops-launch {
+  margin-block: 0;
+}
+
+body[data-agent-page] [data-framer-name="S2 FcCta"] .fcx {
+  margin-block-start: 0;
+}
+
+/* Embedded content leaves module spacing to its parent page. */
+html[data-study-layout="module"][data-study-section="launch"] #how-it-works > .framer-177g9np {
+  padding-block: 0 !important;
+}
