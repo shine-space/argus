@@ -35,6 +35,15 @@ class ExportTests(unittest.TestCase):
         text = r'if (!/^\/services\/?$/.test(location.pathname)) return;'
         self.assertEqual(self.exporter.rewrite(text), r'if (!/^\/argus\/services\/?$/.test(location.pathname)) return;')
 
+    def test_home_mount_guards_use_the_published_root(self):
+        text = "if(location.pathname!=='/')return;const home=location.pathname === '/' || location.pathname === '/index.html';path.split('/');"
+        result = self.exporter.rewrite(text)
+        self.assertIn("if(location.pathname!=='/argus/')return;", result)
+        self.assertIn("location.pathname === '/argus/'", result)
+        self.assertIn("location.pathname === '/argus/index.html'", result)
+        self.assertIn("path.split('/')", result)
+        self.assertEqual(result, self.exporter.rewrite(result))
+
 
 if __name__ == '__main__':
     unittest.main()

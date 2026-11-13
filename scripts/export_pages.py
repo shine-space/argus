@@ -104,6 +104,9 @@ class PagesExport:
         # Only link destinations, never JS split('/') / join('/') delimiters.
         text = re.sub(r'''(\b(?:href|action)\s*(?:=|:)\s*)(["'`])/(\2)''',
                       lambda m: m[1] + m[2] + self.base + '/' + m[3], text)
+        # Root-route guards also need the project prefix; unrelated '/' strings do not.
+        text = re.sub(r'''(\blocation\.pathname\s*(?:===|!==|==|!=)\s*)(["'`])/(\2)''',
+                      lambda m: m[1] + m[2] + self.base + '/' + m[3], text)
         # Preserve escaped slashes in route regexes, while matching the project prefix.
         if self.base:
             text = text.replace(r'^\/', '^' + self.base.replace('/', r'\/') + r'\/')
